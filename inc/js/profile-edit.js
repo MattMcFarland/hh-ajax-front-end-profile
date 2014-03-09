@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
                 /* html FileRender Api */
                 if (img_exts.indexOf(ext) > -1) {
                     var oFReader = new FileReader();
-                    oFReader.readAsDataURL(document.getElementById("hvac-hacks-post-file").files[0]);
+                    oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
 
                     oFReader.onload = function (oFREvent) {
                         preview.css('visibility', 'visible');
