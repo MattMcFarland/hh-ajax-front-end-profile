@@ -169,7 +169,8 @@ jQuery(document).ready(function($) {
                         setSelect: [100,100,400,400],
                         minSize: [150,150],
                         aspectRatio: 1,
-                        boxHeight: $canvas.height()
+                        boxHeight: $canvas.height(),
+                        boxWidth: $canvas.width()
                     },function() {
                         jcrop_api = this;
                         $canvas.width(jcrop_api.getWidgetSize()[0]);
