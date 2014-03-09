@@ -122,6 +122,7 @@ jQuery(document).ready(function($) {
         previewFields.hide();
         errorFields.hide();
         selectFields.show();
+        jcrop_api.destroy();
 
     });
 
