@@ -56,7 +56,15 @@
 
 }
 
+#ileUpload-inner h1 {
+    font-size:20px;
+}
+
 @media (min-width: 768px) {
+    #ileUpload-inner h1 {
+        font-size:30px;
+    }
+
     #fileUpload-tutorial {
         font-size: 28px;
     }
