@@ -35,55 +35,13 @@ function hh_generate_text_field($label, $meta_key) {
 ';
 }
 
-/**
- * Loads the profile editor via Ajax
- */
-function hh_ajax_load_profile_editor() {
-    global $current_user; ?>
-    <div id = "hh_update_profile" class="container">
-
-        <div class="row" style="padding:1em">
-            <?php hh_notify('Edit Profile','Click on whatever you wish to change'); ?>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <div id="hh_pfe-avatar" class="well well-inverse">
-                    <h2>Profile Photo</h2><br/>
-                    <div>
-                        <?php if (get_the_author_meta( 'profile_pic', $current_user->ID ) =="") hh_download_gravatar($current_user->ID ); ?>
-                        <img class="thumbnail" style="width:150px; height:150px;" src="<?php the_author_meta( 'profile_pic', $current_user->ID ); ?>"/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-7">
-                <div id="hh_pfe-name" class="well well-inverse">
-                    <h2>Basic Info</h2><br/>
-                    <?php hh_generate_text_field('Display Name','display_name'); ?>
-                    <?php hh_generate_text_field('First Name','first_name'); ?>
-                    <?php hh_generate_text_field('Last Name','last_name'); ?>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="hh_pfe-details" class="well well-inverse">
-                    <h2>Details</h2><br/>
-                    <?php hh_generate_text_field('Website','user_url'); ?>
-                    <?php do_action('hh_add_form_fields') ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php die();
-}
-
 
 /**
 * Shortcode to display the form.
 * Usage: [display_profile_editor]
 *
 * Note: The real form is loaded by ajax.
-* @return string - Form itself
+* @return string - a div that tells the js to load the form via ajax.
 */
 function hh_display_profile_editor() {
     if (!is_user_logged_in()) return '<h1>You must be logged in to view this page</h1>';

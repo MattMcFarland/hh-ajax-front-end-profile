@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Ajax Front End Profile
  * Description: Adds a Front End Profile / Account / Custom Avatar to wordpress.
- * Version: 0.1
+ * Version: 0.1.1
  * Author: Matthew A McFarland
  * Email: mmcfarland@hvac-hacks.com
  * Dependencies: Twitter Bootstrap 3.0.3
@@ -65,10 +65,8 @@ if ( !is_admin() )
 
 
 function inline_comments_enqueue_scripts(){
-    $plugin_headers = get_file_data( __FILE__, array( 'Version' => 'Version', 'Name' => 'Plugin Name' ) );
-    $clean_name = strtolower( str_replace( ' ', '-', $plugin_headers['Name'] ) );
 
-    wp_register_style( $clean_name . '-style', plugin_dir_url( __FILE__ ) . 'inc/css/hh_ajax_fe_profile.css' );
-    wp_register_script( $clean_name . '-script', plugin_dir_url( __FILE__ ) . 'inc/js/hh_ajax_fe_profile.js', array('jquery'),'a01');
+    wp_register_style( 'hh_profile_editor-style', plugin_dir_url( __FILE__ ) . 'inc/css/style.css' );
+    wp_register_script( 'hh_profile_editor_script', plugin_dir_url( __FILE__ ) . 'inc/js/script.js', array('jquery'),'a01');
 }
 add_action('wp_enqueue_scripts', 'inline_comments_enqueue_scripts', 2);

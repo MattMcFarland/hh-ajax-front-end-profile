@@ -1,0 +1,93 @@
+.pr-field {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ccc;
+    background-color:#343434;
+    transition: background-color 0.5s ease;
+    padding-left:15px;
+    padding-top:1em;
+    padding-bottom:1em;
+    border-bottom: thin solid rgba(255,255,255,0.2);
+}
+.pr-message {
+
+    display:none;
+    overflow: hidden;
+    color: #ccc;
+    background-color:#343434;
+    transition: background-color 0.5s ease;
+    border-bottom: thin solid rgba(255,255,255,0.2);
+    padding-bottom: 0;       }
+.pr-message .alert {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom:0;
+
+}
+.pr-process {
+    display:none;
+}
+.pr-label {
+    color:#eee;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+.edit-field {
+    transition: background-color 0.5s ease;
+    background-color:rgba(255,255,255,0);
+    line-height:2;
+}
+.edit-highlight {
+    background-color:rgba(255,255,255,0.2);
+}
+.field-highlight {
+    background-color:rgba(0,0,0,0.8);
+}
+.edit-field:hover {
+    background-color:rgba(255,255,255,0.2);
+    cursor:pointer;
+}
+.edit-field:hover .pr-field{
+    color: #242e42;
+    background-color:rgba(255,255,255,0.8);
+}
+.pr-change {
+    float:right;
+    color:rgba(255,255,255,0.15);
+}
+.edit-field:hover .pr-field .pr-change{
+    color:rgba(0,0,0,0.4);
+}
+.pr-input-wrap {
+    display:none; padding-left:0; padding-right:0;
+}
+.save {
+
+}
+.cancel {
+
+}
+.edit-field input {
+    background-color:#fff!important;
+    line-height:2;
+    width:100%;
+    padding-top:1em;
+    padding-bottom:1em;
+    padding-left:15px;
+
+}
+.edit-field input:focus {
+
+}
+.pr-control {
+    background-color:#111;
+    transition: height 0.5 ease;
+    height:0px;
+    display:none;
+    width:100%;
+}
+.pr-control:hover {
+    background-color:#000!important;
+}
