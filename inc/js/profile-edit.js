@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     console.log('hello');
     $.ajaxSetup({
         type: "POST",
-        url: hh_ajax_fe_profile._hh_ajax_fe_profile
+        url: hh_ajax_fe_profile.ajaxurl
     });
 
 
@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 
         $.ajax({
             dataType : "html",
-            data: { action: "hh_get_profile_data",
+            data: { action: "hh_ajax_load_profile_editor",
                 target_div : "#profile-editor-container"
             },
             success: function (msg) {
