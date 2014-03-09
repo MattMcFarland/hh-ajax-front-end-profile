@@ -18,7 +18,8 @@
     max-width:700px;
     max-height:700px;
     background-color: #fff;
-    overflow:scroll;
+    overflow-x:hidden;
+    overflow-y:auto;
 }
 #fileUpload-canvas {
     text-align: center;
