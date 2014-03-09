@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
                 $('#message-'+meta_key).hide();
             },
             success: function(response) {
-                $data = $('#data-'+meta_key);
+                var $data = $('#data-'+meta_key);
                 $data.html(response.new_value);
                 $('#input-'+meta_key).val(response.new_value);
                 $data.append(' <span class="label label-success fadeOut">Updated</span>');
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
                 });
             },
             error: function () {
-                $data = $('#data-'+meta_key);
+                var $data = $('#data-'+meta_key);
                 $data.append(' <span class="label label-danger fadeOut">Failed!!!!</span>');
                 $('.fadeOut').fadeOut(1600,function(){
                     $(this).remove();
@@ -95,10 +95,11 @@ jQuery(document).ready(function($) {
     function edit_alert_show(meta_key,type,message,show_process) {
         $('#main-'+meta_key).addClass('disabled');
         $('#pad-'+meta_key).hide();
-        msg  = '<div class="alert alert-'+type+'">';
+        var processing_img = $('#hh_update_profile').attr('data-processing-uri');
+        var msg  = '<div class="alert alert-'+type+'">';
         msg  += '<p>'+message+'</p>';
         if (show_process) {
-            msg += '<img src="/wp-content/themes/hvac-hacks-pro/prcoess.gif" />';
+            msg += '<img src="'+processing_img+'" />';
         }
         msg += '</div>';
         $('#message-'+meta_key).html(msg).show();

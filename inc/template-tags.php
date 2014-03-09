@@ -8,17 +8,17 @@
  */
 function hh_ajax_fe_profile_loaded(){
     global $current_user;
+
     if (!isset($current_user))
         $current_user = wp_get_current_user();
 
     if (empty($current_user))
         $current_user = wp_get_current_user();
 
-    add_action( 'wp_ajax_inline_comments_add_comment', 'inline_comments_add_comment' );
-    add_action( 'wp_ajax_nopriv_inline_comments_add_comment', 'inline_comments_add_comment' );
-    add_action( 'wp_ajax_nopriv_inline_comments_load_template', 'inline_comments_load_template' );
-    add_action( 'wp_ajax_inline_comments_load_template', 'inline_comments_load_template' );
-    add_filter( 'template_redirect', 'inline_comments_template_redirect' );
+    add_action( 'wp_ajax_nopriv_hh_update_user_profile', 'hh_update_user_profile' );
+    add_action( 'wp_ajax_hh_update_user_profile', 'hh_update_user_profile' );
+    add_action( 'wp_ajax_nopriv_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
+    add_action( 'wp_ajax_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
 }
 add_action('plugins_loaded', 'hh_ajax_fe_profile_loaded');
 
@@ -86,7 +86,7 @@ die();
  */
 function hh_ajax_load_profile_editor() {
     global $current_user; ?>
-    <div id = "hh_update_profile" class="container">
+    <div id = "hh_update_profile" class="container" data-processing-uri="<?php echo plugin_dir_url( __FILE__ ) . 'img/processing.gif '?>" data-loading-uri="">
 
         <div class="row" style="padding:1em">
             <?php hh_notify('Edit Profile','Click on whatever you wish to change'); ?>
