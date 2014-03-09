@@ -60,7 +60,7 @@
 }
 
 @media (min-width: 768px) {
-    #ileUpload-inner h1 {
+    #fileUpload-inner h1 {
         font-size:30px;
     }
 
