@@ -83,4 +83,4 @@ function hh_profile_editor_enqueue_scripts(){
     }
 
 }
-add_action('wp_enqueue_scripts', 'hh_profile_editor_enqueue_scripts', 2);
+add_action('init', 'hh_profile_editor_enqueue_scripts');
