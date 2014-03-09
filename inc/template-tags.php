@@ -22,29 +22,6 @@ function hh_ajax_fe_profile_loaded(){
 }
 add_action('plugins_loaded', 'hh_ajax_fe_profile_loaded');
 
-/**
- * Load our JavaScript and Stylesheet.
- *
- * @uses wp_enqueue_script()
- * @uses wp_enqueue_style()
- *
- * @since 0.1-alpha
- */
-function hh_ajax_fe_profile_scripts(){
-    if (!is_admin()) {
-        wp_enqueue_script( 'hh_ajax_fe_profile-script' );
-        wp_enqueue_style( 'hh_ajax_fe_profile-style' );
-        wp_localize_script(
-            'hh_ajax_fe_profile',
-            '_hh_ajax_fe_profile',
-            array(
-                'ajaxurl' => admin_url("admin-ajax.php")
-            )
-        );
-    }
-}
-add_action( 'wp_enqueue_scripts', 'hh_ajax_fe_profile_scripts' );
-
 
 /**
  * Update a profile field via ajax.
