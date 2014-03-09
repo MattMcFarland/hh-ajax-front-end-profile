@@ -92,12 +92,12 @@ jQuery(document).ready(function($) {
     }
 
     $(document).on('click','#hh-change-profile-photo',function() {
-        ('#fileUpload-container').show();
+        $('#fileUpload-container').show();
         $('.edit-field').addClass('disabled');
     });
 
     $(document).on('click','.close-fileUpload-container',function() {
-        ('#fileUpload-container').hide();
+        $('#fileUpload-container').hide();
         $('.edit-field').removeClass('disabled');
     });
 
