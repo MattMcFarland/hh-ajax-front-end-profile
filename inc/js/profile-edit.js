@@ -106,11 +106,15 @@ jQuery(document).ready(function($) {
 
 
     $(document).on('change','#fileUpload-file', function() {
-        console.log('change');
         var fileData = $('#fileUpload-fileData');
-        var preview = $('#fileUpload-preview');
-        $('#fileUpload-btn').hide();
-        preview.hide();
+        var filePreview = $('#fileUpload-preview');
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        selectFields.hide();
+        previewFields.hide();
+        errorFields.hide();
+
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
         var ext = file.name.split('.').pop().toLowerCase();
@@ -121,15 +125,17 @@ jQuery(document).ready(function($) {
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
                 oFReader.onload = function (oFREvent) {
-                    preview.css('visibility', 'visible');
-                    preview.attr('src', oFREvent.target.result).fadeIn();
-                    $('#fileUpload-previewCanvas').show();
+                    previewFields.show();
+                    filePreview.css('visibility', 'visible');
+                    filePreview.attr('src', oFREvent.target.result).fadeIn();
                 }
             } else {
-                fileData.html('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Your file must be less than 1MB in size)');
+                errorFields.fadeIn();
+                $('#fileUpload-errorMessage').html('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Your file must be less than 1MB in size)');
             }
         } else {
-            fileData.html('<span style="font-weight:bold;color:#FF0000;">Invalid Filetype!</span><br/> (Only jpeg, jpg, png, gif are supported)');
+            errorFields.fadeIn();
+            $('#fileUpload-errorMessage').html('<span style="font-weight:bold;color:#FF0000;">Invalid Filetype!</span><br/> (Only jpeg, jpg, png, gif are supported)');
         }
     });
 

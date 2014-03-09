@@ -59,37 +59,68 @@ function hh_file_upload_ui() {
     <div id="fileUpload-container">
         <div id="fileUpload-bg">
             <div id="fileUpload-inner">
-                <div class="row">
+                <header class="row">
                     <div class="col-xs-10">
-                        <h1 style="color:#999">Upload Profile Photo</h1>
+                        <h1>Upload Profile Photo</h1>
                     </div>
                     <div class="col-xs-2">
                         <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
                     </div>
-                </div>
-                <div class="row" style="text-align:center;">
+                </header>
+
+                <section class="row fileUpload-body">
+
+                    <!--- Above Canvas --->
+                    <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Image Preview</div>
+                    <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
+
+                    <!--- Canvas Area --->
                     <div id = "fileUpload-canvas">
-                        <a id="fileUpload-btn" onclick="jQuery('#fileUpload-file').trigger('click')">
-                            <div class="fileUpload-icon">
-                                <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-img">
-                                <div id="fileUpload-tutorial">Tap here to browse your photos</div>
+
+                        <!--- Select Stage --->
+                        <a class="fileUpload-select fileUpload-canvasInner" id="fileUpload-btn" onclick="jQuery('#fileUpload-file').trigger('click')">
+                            <div>
+                                <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" class="fileUpload-img">
+                                <div class="fileUpload-Title">Tap here to browse your photos</div>
                             </div>
                         </a>
-                        <div id="fileUpload-previewCanvas" style="display:none;">
-                            <div id="fileUpload-previewTitle">Image Preview</div>
-                            <img class="thumbnail" src="" style="width:100%; overflow:hidden" id="fileUpload-preview"/>
-                            <div id="fileUpload-previewTutorial">Was this the image you wanted?
-                                <p style="font-size:80%">No worries, you'll be able to edit the image next...</p>
-                            </div>
+                        <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
-                            <button id="fileUpload-approvePreview" type="button" class="btn btn-success btn-large"><i class="fa fa-check"></i> Yes</button>
-                            <button id="fileUpload-declinePreview" type="button" class="btn btn-danger btn-large"><i class="fa fa-times"></i> No</button>
+                        <!--- Preview Stage --->
+                        <div class="fileUpload-preview fileUpload-canvasInner" id="fileUpload-previewCanvas">
+                            <img src="" class="thumbnail fileUpload-preview" id="fileUpload-preview"/>
                         </div>
-                        <div id="fileUpload-fileData"></div>
+
+                        <!--- Error Stage --->
+                        <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
+                            <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>
+                        </div>
+
+
                     </div>
-                    <div id="fileUpload-info"></div>
-                    <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
-                </div>
+                </section>
+
+                <!--- Below Canvas --->
+                <footer class="row">
+
+                    <!--- Preview Stage --->
+                    <div class="fileUpload-preview">
+                        <div id="fileUpload-fileData"></div>
+                        <div class= "fileUpload-message" id="fileUpload-previewTutorial">Was this the image you wanted?
+                            <p class= "fileUpload-subMessage" >No worries, you'll be able to edit the image next...</p>
+                        </div>
+                        <button id="fileUpload-approvePreview" type="button" class="btn btn-success btn-large"><i class="fa fa-check"></i> Yes</button>
+                        <button id="fileUpload-declinePreview" type="button" class="btn btn-danger btn-large"><i class="fa fa-times"></i> No</button>
+                    </div>
+
+                    <!--- Error Stage --->
+                    <div class="fileUpload-error">
+                        <div class= "fileUpload-message" id="fileUpload-errorMessage"></div>
+                        <button type="button" class="btn btn-success btn-large" onclick="jQuery('#fileUpload-file').trigger('click')" ><i class="fa fa-check"></i> Try Again</button>
+                        <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban-circle "></i> Nevermind</button>
+                    </div>
+
+                </footer>
             </div>
         </div>
     </div>
