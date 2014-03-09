@@ -32,7 +32,6 @@
 }
 #fileUpload-tutorial {
     margin-top:-1em;
-    line-height:1;
     font-size: 43px;
     color: #aaa;
 }
@@ -42,6 +41,7 @@
     overflow:hidden;
     min-height:320px;
     min-width:320px;
+    max-width:480px;
     margin: 0 auto;
 }
 #fileUpload-btn {
