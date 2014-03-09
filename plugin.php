@@ -66,7 +66,7 @@ if ( is_admin() )
     require_once plugin_dir_path( __FILE__ ) . 'inc/templates/edit-profile.php';
 
 
-function inline_comments_enqueue_scripts(){
+function hh_profile_editor_enqueue_scripts(){
 
     wp_register_style( 'hh_profile_editor-style', plugin_dir_url( __FILE__ ) . 'inc/css/profile-edit.min.css' );
     wp_register_script( 'hh_profile_editor-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.js', array('jquery'),'a01');
