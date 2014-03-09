@@ -164,6 +164,8 @@ jQuery(document).ready(function($) {
                         boxWidth: $editImage.width()
                     },function() {
                         jcrop_api = this;
+                        console.log(jcrop_api.getWidgetSize()[0]);
+                        console.log(jcrop_api.getWidgetSize()[1]);
                         $editImage.width(jcrop_api.getWidgetSize()[0]);
                         $editImage.height(jcrop_api.getWidgetSize()[1]);
                     });
