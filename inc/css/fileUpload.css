@@ -51,6 +51,9 @@
 #fileUpload-icon {
     opacity:0.3;
 }
+#fileUpload-icon img {
+    width:60%;
+}
 
 #fileUpload-info {
 
