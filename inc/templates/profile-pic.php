@@ -11,6 +11,18 @@
  */
 function hh_download_gravatar($user_id,$size='150') {
 
+    //ImageMagick location
+    $imagick = '/usr/local/bin/convert';
+
+    /**
+     * IF you do not have ImageMagick installed or not sure, then uncomment the following block of code.
+     */
+    /*
+    $profile_pic = plugin_dir_url( __FILE__ ) . 'img/mystery.gif';
+    update_user_meta($user_id,'profile_pic',$profile_pic);
+
+    return;
+    */
     $gravatar = get_avatar_url(get_avatar($user_id),'150');
     $site = parse_url($gravatar);
     if ($site['host'] !=='0.gravatar.com' && $site['host'] !=='1.gravatar.com') {
