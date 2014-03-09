@@ -47,12 +47,12 @@
     cursor:pointer;
 }
 #fileUpload-img {
-    margin-top:2em;
+    margin-top:4em;
     opacity:0.3;
     width: 60%;
 }
 #fileUpload-icon {
-    margin-top:2em;
+    margin-top:4em;
 }
 
 #fileUpload-info {
@@ -86,7 +86,7 @@
     }
     #fileUpload-icon,
     #fileUpload-img{
-        margin-top:4em;
+        margin-top:10em;
     }
 }
 
