@@ -69,7 +69,7 @@ if ( is_admin() )
 function hh_profile_editor_enqueue_scripts(){
 
     wp_register_style( 'hh_ajax_fe_profile-style', plugin_dir_url( __FILE__ ) . 'inc/css/profile-edit.min.css' );
-    wp_register_script( 'hh_ajax_fe_profile-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.js', array('jquery'),'a02');
+    wp_register_script( 'hh_ajax_fe_profile-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.js', array('jquery'),'a03');
     if (!is_admin()) {
         wp_enqueue_script( 'hh_ajax_fe_profile-script' );
         wp_enqueue_style( 'hh_ajax_fe_profile-style' );
