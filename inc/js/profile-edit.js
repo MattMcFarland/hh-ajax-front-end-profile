@@ -156,7 +156,8 @@ jQuery(document).ready(function($) {
                     cropFields.show();
                     $editImage = $('#fileUpload-preview')
                     $editImage.Jcrop({
-                        setSelect: [0,0,150,150],
+                        setSelect: [100,100,400,400],
+                        minSize: [150,150],
                         aspectRatio: 1,
                         boxWidth: $editImage.width(),
                         boxHeight: $editImage.height()
