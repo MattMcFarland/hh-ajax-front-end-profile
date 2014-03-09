@@ -90,7 +90,8 @@ To add custom fields, simply add this function to your functions.php file:
     }
     add_action('hh_add_form_fields','my_hh_custom_fields');
 ```
-___
+
+---
 
 ## 4. Troubleshooting ##
 
