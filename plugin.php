@@ -55,13 +55,13 @@ register_deactivation_hook( __FILE__, 'hh_ajax_front_end_profile_deactivate' );
 
 
 if ( is_admin() )
-    require_once plugin_dir_path( __FILE__ ) . 'admin/admin-tags.inc';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/admin-tags.php';
 
 /**
  * Theme only functions
  */
-if ( !is_admin() )
-    require_once plugin_dir_path( __FILE__ ) . 'inc/template-tags.inc';
+
+    require_once plugin_dir_path( __FILE__ ) . 'inc/template-tags.php';
 
 
 function inline_comments_enqueue_scripts(){

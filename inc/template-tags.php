@@ -35,7 +35,7 @@ function hh_ajax_fe_profile_redirect() {
 
 
 /**
- * Load our JavaScript and Stylesheet, we include the login-register script only if it is installed.
+ * Load our JavaScript and Stylesheet.
  *
  * @uses wp_enqueue_script()
  * @uses wp_enqueue_style()
