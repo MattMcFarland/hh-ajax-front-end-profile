@@ -118,16 +118,12 @@ jQuery(document).ready(function($) {
             if (file.size < 1048576) {
                 fileData.html(file.name+' ('+bytesToSize(file.size)+')');
                 /* html FileRender Api */
-                if (img_exts.indexOf(ext) > -1) {
-                    var oFReader = new FileReader();
-                    oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
-
-                    oFReader.onload = function (oFREvent) {
-                        preview.css('visibility', 'visible');
-                        preview.attr('src', oFREvent.target.result).fadeIn();
-                        $('#fileUpload-previewCanvas').show();
-
-                    }
+                var oFReader = new FileReader();
+                oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
+                oFReader.onload = function (oFREvent) {
+                    preview.css('visibility', 'visible');
+                    preview.attr('src', oFREvent.target.result).fadeIn();
+                    $('#fileUpload-previewCanvas').show();
                 }
             } else {
                 fileData.html('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Your file must be less than 1MB in size)');
@@ -135,7 +131,6 @@ jQuery(document).ready(function($) {
         } else {
             fileData.html('<span style="font-weight:bold;color:#FF0000;">Invalid Filetype!</span><br/> (Only jpeg, jpg, png, gif are supported)');
         }
-
     });
 
 
