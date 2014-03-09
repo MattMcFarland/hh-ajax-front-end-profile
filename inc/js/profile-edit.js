@@ -127,13 +127,13 @@ jQuery(document).ready(function($) {
         $('#fileUpload-canvas').removeAttr('style');
         errorFields.hide();
         selectFields.show();
-        jcrop_api.destroy();
+        jcrop_api.release();
 
     });
 
     $(document).on('change','#fileUpload-file', function() {
         if (jcrop_api) {
-            jcrop_api.destroy();
+            jcrop_api.release();
         }
         var fileData = $('#fileUpload-fileData');
         var filePreview = $('#fileUpload-preview');
