@@ -177,7 +177,6 @@ jQuery(document).ready(function($) {
         errorFields.hide();
         cropFields.show();
         $('#fileUpload-preview').Jcrop({
-            onSelect: showCoords,
             setSelect: [0,0,50,50],
             aspectRation: 1,
             minSize: 50,
