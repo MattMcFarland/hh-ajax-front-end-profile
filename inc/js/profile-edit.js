@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 
     $.ajaxSetup({
         type: "POST",
-        url: hh_profile_editor._hh_profile_editor
+        url: hh_ajax_fe_profile._hh_ajax_fe_profile
     });
 
 
