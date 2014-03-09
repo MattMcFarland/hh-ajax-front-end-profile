@@ -71,7 +71,6 @@ function hh_file_upload_ui() {
                 <section class="row fileUpload-body">
 
                     <!--- Above Canvas --->
-                    <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Image Preview</div>
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
                     <div class="fileUpload-Title fileUpload-crop" id="fileUpload-previewTitle">Set your Pic</div>
                     <!--- Canvas Area --->
@@ -87,8 +86,8 @@ function hh_file_upload_ui() {
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
                         <!--- Preview & Crop Stage --->
-                        <div class="fileUpload-preview fileUpload-canvasInner fileUpload-crop" id="fileUpload-previewCanvas">
-                            <img src="" class="thumbnail fileUpload-preview fileUpload-crop" id="fileUpload-preview"/>
+                        <div class="fileUpload-canvasInner fileUpload-crop" id="fileUpload-previewCanvas">
+                            <img src="" class="thumbnail fileUpload-crop" id="fileUpload-preview"/>
                         </div>
 
                         <!--- Error Stage --->
@@ -107,16 +106,6 @@ function hh_file_upload_ui() {
                         <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
                     </div>
 
-                    <!--- Preview Stage --->
-                    <div class="fileUpload-preview">
-                        <div id="fileUpload-fileData"></div>
-                        <div class= "fileUpload-message" id="fileUpload-previewTutorial">Was this the image you wanted?
-                            <p class= "fileUpload-subMessage" >No worries, you'll be able to edit the image next...</p>
-                        </div>
-                        <button id="fileUpload-approvePreview" type="button" class="btn btn-success btn-large"><i class="fa fa-check"></i> Yes</button>
-                        <button id="fileUpload-declinePreview" type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-times"></i> No</button>
-                    </div>
-
                     <!--- Error Stage --->
                     <div class="fileUpload-error">
                         <div class= "fileUpload-message" id="fileUpload-errorMessage"></div>
@@ -126,6 +115,7 @@ function hh_file_upload_ui() {
 
                     <!--- Crop Stage --->
                     <div class="fileUpload-crop">
+                        <div id="fileUpload-fileData"></div>
                         <div class= "fileUpload-message" id="fileUpload-cropMessage">Select the portion of the pic you want to use then save.</div>
                         <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
                         <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>

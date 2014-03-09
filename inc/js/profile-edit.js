@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
         cropFields.hide();
         previewFields.hide();
         errorFields.hide();
-        previewFields.show();
+
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
@@ -151,6 +151,14 @@ jQuery(document).ready(function($) {
                     previewFields.show();
                     filePreview.css('visibility', 'visible');
                     filePreview.attr('src', oFREvent.target.result).fadeIn();
+                    cropFields.show();
+                    $('#fileUpload-preview').Jcrop({
+                        setSelect: [0,0,150,150],
+                        aspectRatio: 1,
+                        boxWidth:300,
+                        boxHeight:300
+                    });
+
                 }
             } else {
                 errorFields.fadeIn();
@@ -162,34 +170,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-
-    /**
-     * Handle upload photo
-     */
-    $(document).on('click','#fileUpload-approvePreview',function() {
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        selectFields.hide();
-        cropFields.hide();
-        previewFields.hide();
-        errorFields.hide();
-        cropFields.show();
-        $('#fileUpload-preview').Jcrop({
-            setSelect: [0,0,150,150],
-            aspectRatio: 1,
-            boxWidth:300,
-            boxHeight:300
-        });
-
-        //Show native file upload UI
-
-        //ajax hh_upload_profile_pic() - which should return the cropping UI
-
-        //Can you do both file upload UI and submit?
-
-    });
 
 
     /**
