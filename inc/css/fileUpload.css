@@ -43,6 +43,8 @@
     height:280px;
     margin: 0 auto;
     margin-top: -1em;
+    position:absolute;
+    bottom:1em;
 }
 #fileUpload-btn {
     cursor:pointer;
@@ -76,7 +78,7 @@
     #fileUpload-inner {
         width: 95%!important;
         height: 95%;
-        margin: 1em;
+        margin: 1em auto;
         padding: 1em;
     }
 
