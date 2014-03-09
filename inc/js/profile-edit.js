@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
 window.hh_profile_edit_ajax_load_template = function () {
     jQuery(document).ready(function($) {
         $target = $('#profile-editor-container');
-        $loader = $target.insertafter('<img src="../img/loading-form.gif"/>');
+        $loader = $target.insertAfter('<img src="../img/loading-form.gif"/>');
         $.ajax({
             dataType : "html",
             data: { action: "hh_ajax_load_profile_editor" },
