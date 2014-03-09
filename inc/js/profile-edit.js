@@ -152,11 +152,12 @@ jQuery(document).ready(function($) {
                     filePreview.css('visibility', 'visible');
                     filePreview.attr('src', oFREvent.target.result).fadeIn();
                     cropFields.show();
-                    $('#fileUpload-preview').Jcrop({
+                    $editImage = $('#fileUpload-preview')
+                    $editImage.Jcrop({
                         setSelect: [0,0,150,150],
                         aspectRatio: 1,
-                        boxWidth:300,
-                        boxHeight:300
+                        boxWidth: $editImage.width(),
+                        boxHeight: $editImage.height()
                     });
 
                 }
