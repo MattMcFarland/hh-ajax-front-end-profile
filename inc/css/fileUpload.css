@@ -47,6 +47,7 @@
     cursor:pointer;
 }
 #fileUpload-img {
+    margin-top:2em;
     opacity:0.3;
     width: 60%;
 }
@@ -83,7 +84,8 @@
         margin: 1em auto;
         padding: 1em;
     }
-    #fileUpload-icon {
+    #fileUpload-icon,
+    #fileUpload-img{
         margin-top:4em;
     }
 }
