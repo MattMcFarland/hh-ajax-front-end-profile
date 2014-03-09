@@ -31,9 +31,14 @@
     text-shadow: 0 0 8px #00F;
     cursor:pointer;
 }
+#fileUpload-previewTitle,
 #fileUpload-tutorial {
     font-size: 21px;
     color: #aaa;
+}
+#fileUpload-previewTutorial {
+    font-size:18px;
+    color:#999;
 }
 #fileUpload-canvas {
     text-align: center;
@@ -68,6 +73,7 @@
         font-size:22px;
     }
 
+    #fileUpload-previewTitle,
     #fileUpload-tutorial {
         font-size: 20px;
     }
@@ -93,6 +99,7 @@
         font-size:22px;
     }
 
+    #fileUpload-previewTitle,
     #fileUpload-tutorial {
         font-size: 20px;
     }
@@ -122,7 +129,7 @@
     #fileUpload-inner h1 {
         font-size:28px;
     }
-
+    #fileUpload-previewTitle,
     #fileUpload-tutorial {
         font-size: 26px;
     }
