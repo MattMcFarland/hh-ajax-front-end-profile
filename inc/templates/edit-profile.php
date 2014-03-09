@@ -60,7 +60,10 @@ function hh_file_upload_ui() {
         <div id="fileUpload-bg">
             <div id="fileUpload-inner" class="container">
                 <div class="row">
-                    <div class="col-xs-2 col-xs-offset-10">
+                    <div class="col-xs-10">
+                        <h1 style="color:#999">Upload Profile Photo</h1>
+                    </div>
+                    <div class="col-xs-2">
                         <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
                     </div>
                 </div>
@@ -68,7 +71,7 @@ function hh_file_upload_ui() {
                     <div id = "fileUpload-preview" class="col-xs-12">
                         <div id="fileUpload-tutorial">Tap here to begin...</div>
                         <a id="fileUpload-btn" onclick="fileUpload_select()">
-                            <div id="fileUpload-icon"></div>
+                            <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon"></div>
                         </a>
                         <div id="fileUpload-info"></div>
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
