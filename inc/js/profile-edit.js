@@ -1,13 +1,13 @@
 
 jQuery(document).ready(function($) {
-    console.log('hello');
+
     $.ajaxSetup({
         type: "POST",
         url: _hh_ajax_fe_profile.ajaxurl
     });
 
 
-
+    if ( $('#profile-editor-container').length ) hh_profile_edit_ajax_load_template();
 
 
     $(document).on('submit','.hh-update-profile',function(e) {
