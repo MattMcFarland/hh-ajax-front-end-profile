@@ -2,6 +2,7 @@
 jQuery(document).ready(function($) {
     var jcrop_api;
 
+
     $.ajaxSetup({
         type: "POST",
         url: _hh_ajax_fe_profile.ajaxurl
@@ -105,9 +106,10 @@ jQuery(document).ready(function($) {
         var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
-        previewFields.hide();
+        previewFields.hide().removeAttr('style');
         errorFields.hide();
         selectFields.show();
+        jcrop_api.destroy();
         $('#fileUpload-container').hide();
         $('.edit-field').removeClass('disabled');
     });
@@ -120,7 +122,7 @@ jQuery(document).ready(function($) {
         var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
-        previewFields.hide();
+        previewFields.hide().removeAttr('style');
         errorFields.hide();
         selectFields.show();
         jcrop_api.destroy();
@@ -162,8 +164,10 @@ jQuery(document).ready(function($) {
                         boxWidth: $editImage.width()
                     },function() {
                         jcrop_api = this;
+                        $editImage.width(jcrop_api.getWidgetSize()[0]);
+                        $editImage.height(jcrop_api.getWidgetSize()[1]);
                     });
-                    console.log(jcrop_api.getWidgetSize());
+
 
                 }
             } else {
