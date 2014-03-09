@@ -41,7 +41,7 @@
     position: absolute;
     border:thick dashed #aaa;
     padding:2em;
-
+    overflow:hidden;
 }
 #fileUpload-btn {
     cursor:pointer;
