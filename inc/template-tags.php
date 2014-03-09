@@ -88,7 +88,7 @@ function hh_ajax_load_profile_editor() {
     <div id = "hh_update_profile" class="container" data-processing-uri="<?php echo plugin_dir_url( __FILE__ ) . 'img/processing.gif '?>" data-loading-uri="">
 
         <div class="row" style="padding:1em">
-            <?php hh_notify('Edit Profile','Click on whatever you wish to change'); ?>
+            <?php hh_fe_notify('Edit Profile','Click on whatever you wish to change'); ?>
         </div>
         <div class="row">
             <div class="col-sm-5">
