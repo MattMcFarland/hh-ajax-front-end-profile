@@ -95,6 +95,7 @@ function hh_ajax_load_profile_editor() {
             </div>
         </div>
     </div>
+    <?php echo hh_file_upload_ui(); ?>
     <?php die();
 }
 
@@ -103,12 +104,24 @@ function hh_ajax_load_profile_editor() {
  */
 function hh_upload_profile_pic() {
 
+    //Handle uploaded photo
+
+    //ImageMagick Photo to smaller size / jpeg; keep aspect ratio
+
+    //return modified photo with cropping UI
+
 }
 
 /**
  * Save action after clicking save in cropping tool view.
  */
 function hh_save_profile_pic() {
+
+    //Copy Photo into wordpress upload dir
+
+    //update user_meta for profile_pic
+
+    //Return new image on the form
 
 }
 

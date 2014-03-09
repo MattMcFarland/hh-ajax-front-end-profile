@@ -54,3 +54,4 @@ function hh_get_profile_photo($user_id,$size){
 function hh_profile_pic_reset($user_id) {
     hh_download_gravatar($user_id );
 }
+

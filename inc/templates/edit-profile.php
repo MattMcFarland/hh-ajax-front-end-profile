@@ -52,3 +52,51 @@ function hh_display_profile_editor() {
 
 add_shortcode('display_profile_editor','hh_display_profile_editor');
 
+
+
+function hh_file_upload_ui() {
+    ob_start() ?>
+    <style>
+        #fileUpload-container {
+            display:none;
+        }
+        #fileUpload-bg {
+            position:absolute;
+            background-color:rgba(0,0,0,0.8);
+            width:100%;
+            height:100%;
+        }
+        #fileUpload-inner {
+            width:95%;
+            height:95%;
+            margin-top:1em;
+        }
+        #fileUpload-preview {
+
+        }
+        #fileUpload-btn {
+            width:100%;
+            height:100%;
+        }
+        #fileUpload-info {
+
+        }
+    </style>
+
+    <div id="fileUpload-container">
+        <div id="fileUpload-bg">
+            <div id="fileUpload-inner" class="container">
+                <div class="row">
+                    <div id = "fileUpload-preview" class="col-xs-12">
+                        <a id="fileUpload-btn" onclick="fileUploadSelect()"></i></a>
+                        <div id="fileUpload-info"></div>
+                        <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php $result = ob_get_clean();
+    return $result;
+}

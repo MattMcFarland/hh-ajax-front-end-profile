@@ -92,6 +92,37 @@ jQuery(document).ready(function($) {
         msg += '</div>';
         $('#message-'+meta_key).html(msg).show();
     }
+
+    /**
+     * Handle upload photo
+     */
+    $(document).on('submit','.hh-update-profile-photo',function(e) {
+
+        //Show native file upload UI
+
+        //ajax hh_upload_profile_pic() - which should return the cropping UI
+
+        //Can you do both file upload UI and submit?
+
+    });
+
+
+    /**
+     * Save Cropped Photo
+     */
+    $(document).on('submit','.hh-update-profile-photo',function(e) {
+
+        //close the cropping tool.
+
+        //ajax save the cropped file - hh_save_profile_pic()
+
+        //ajax return the new file to the form
+
+    });
+
+
+
+
 });
 
 window.hh_profile_edit_ajax_load_template = function () {
