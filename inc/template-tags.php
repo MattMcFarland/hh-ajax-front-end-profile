@@ -43,7 +43,7 @@ function hh_ajax_fe_profile_scripts(){
         );
     }
 }
-add_action( 'init', 'hh_ajax_fe_profile_scripts' );
+add_action( 'wp_enqueue_scripts', 'hh_ajax_fe_profile_scripts' );
 
 
 /**
