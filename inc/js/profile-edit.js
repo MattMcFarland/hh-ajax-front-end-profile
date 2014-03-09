@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function($) {
-
+    console.log('hello');
     $.ajaxSetup({
         type: "POST",
         url: hh_ajax_fe_profile._hh_ajax_fe_profile
