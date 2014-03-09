@@ -77,7 +77,11 @@
 
 
 /* Common */
-
+.fileUpload-crop,
+.fileUpload-error,
+.fileUpload-preview {
+    display:none;
+}
 .fileUpload-Title {
     font-size: 14px;
     color: #aaa;
