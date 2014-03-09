@@ -78,7 +78,10 @@ function hh_file_upload_ui() {
                         <div id="fileUpload-previewCanvas" style="display:none;">
                             <div id="fileUpload-previewTitle">Image Preview</div>
                             <img class="thumbnail" src="" style="width:100%; overflow:hidden" id="fileUpload-preview"/>
-                            <div id="fileUpload-previewTutorial">Was this the image you wanted?</div>
+                            <div id="fileUpload-previewTutorial">Was this the image you wanted?
+                                <p style="font-size:80%">No worries, you'll be able to edit the image next...</p>
+                            </div>
+
                             <button id="fileUpload-approvePreview" type="button" class="btn btn-success btn-large"><i class="fa fa-check"></i> Yes</button>
                             <button id="fileUpload-declinePreview" type="button" class="btn btn-danger btn-large"><i class="fa fa-times"></i> No</button>
                         </div>
