@@ -38,7 +38,6 @@
 }
 #fileUpload-canvas {
     text-align: center;
-    position: absolute;
     border:thick dashed #aaa;
     overflow:hidden;
     min-height:320px;
