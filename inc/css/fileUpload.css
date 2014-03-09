@@ -86,9 +86,10 @@
     display:none;
 }
 .fileUpload-Title {
-    font-size: 14px;
+    font-size: 22px;
     color: #aaa;
-
+    margin-top: -2em;
+    margin-bottom: 2em;
 }
 .fileUpload-message {
     font-size:13px;
@@ -113,6 +114,7 @@
     .fileUpload-Title {
         font-size: 20px;
         display:block;
+        margin:0;
     }
     #fileUpload-canvas {
         margin:0.2em auto;
