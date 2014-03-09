@@ -10,11 +10,13 @@
     left: 0;
     z-index: 9999;
 }
+#fileUpload-wrapper {
+    float:left;
+    height:50%;
+    margin-bottom:-240px;
+}
 #fileUpload-inner {
-    width: 95%!important;
-    height: 95%;
-    margin-top: 1em;
-    padding:1em;
+    clear:both; height:420px; position:relative;
     background-color: #fff;
 }
 .close-fileUpload-container {

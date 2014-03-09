@@ -37,12 +37,12 @@ function hh_generate_text_field($label, $meta_key) {
 
 
 /**
-* Shortcode to display the form.
-* Usage: [display_profile_editor]
-*
-* Note: The real form is loaded by ajax.
-* @return string - a div that tells the js to load the form via ajax.
-*/
+ * Shortcode to display the form.
+ * Usage: [display_profile_editor]
+ *
+ * Note: The real form is loaded by ajax.
+ * @return string - a div that tells the js to load the form via ajax.
+ */
 function hh_display_profile_editor() {
     if (!is_user_logged_in()) return '<h1>You must be logged in to view this page</h1>';
     if (!current_user_can('manage_options')) return 'Under Construction... -Matt';
@@ -56,29 +56,33 @@ add_shortcode('display_profile_editor','hh_display_profile_editor');
 
 function hh_file_upload_ui() {
     ob_start() ?>
-     <div id="fileUpload-container">
+    <div id="fileUpload-container">
         <div id="fileUpload-bg">
-            <div id="fileUpload-inner" class="container">
-                <div class="row">
-                    <div class="col-xs-10">
-                        <h1 style="color:#999">Upload Profile Photo</h1>
+            <div id="fileUpload-wrapper">
+                <div id="fileUpload-inner" class="container">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <h1 style="color:#999">Upload Profile Photo</h1>
+                        </div>
+                        <div class="col-xs-2">
+                            <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
+                        </div>
                     </div>
-                    <div class="col-xs-2">
-                        <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id = "fileUpload-canvas" class="col-xs-12">
-                        <div id="fileUpload-tutorial">Tap here to begin...</div>
-                        <a id="fileUpload-btn" onclick="fileUpload_select()">
-                            <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon"></div>
-                        </a>
+                    <div class="row">
+                        <div id = "fileUpload-canvas" class="col-xs-12">
+                            <div id="fileUpload-tutorial">Tap here to begin...</div>
+                            <a id="fileUpload-btn" onclick="fileUpload_select()">
+                                <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon">
+                            </a>
+                        </div>
                         <div id="fileUpload-info"></div>
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
                     </div>
                 </div>
             </div>
         </div>
+
+    </div>
     </div>
 
     <?php $result = ob_get_clean();
