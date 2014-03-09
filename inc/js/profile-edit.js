@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
         url: hh_ajax_fe_profile.ajaxurl
     });
 
-
+/*
 
     window.hh_profile_edit_ajax_load_template = function () {
 
@@ -104,4 +104,5 @@ jQuery(document).ready(function($) {
         msg += '</div>';
         $('#message-'+meta_key).html(msg).show();
     }
+    */
 });
