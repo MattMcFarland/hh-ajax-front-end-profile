@@ -86,10 +86,6 @@
     #fileUpload-icon {
         margin-top:4em;
     }
-    #fileUpload-img {
-        opacity:0.3;
-        width: 100%;
-    }
 }
 
 @media (min-width: 992px) {
