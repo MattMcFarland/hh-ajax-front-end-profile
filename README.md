@@ -10,16 +10,16 @@ all the necessary things front-end only people love. Unfortunately I don't have 
 If you dont enjoy coding, then this plugin is not for you.
 
 # Table of Contents #
-1.  [Features](#1)
-    1.  UI Features
-    2.  Backend Features
-2.  Prerequisites
-    1.  Dependencies
-    2.  Knowledge Prerequisites
-3.  Usage
-    1.  Adding Form to Site
-    2.  Adding Custom Fields
-4.  Troubleshooting
+1.  [Features](#1-features)
+    1.  [UI Features](#11-ui-features)
+    2.  [Backend Features](#12-backend-features)
+2.  [Prerequisites](#2-prerequisites)
+    1.  [Dependencies](#21-dependencies)
+    2.  [Knowledge Prerequisites](#22-knowledge-prerequisites)
+3.  [Usage](#3-usage)
+    1.  [Adding Form to Site](#31-adding-form-to-site)
+    2.  [Adding Custom Fields](#32-adding-custom-fields)
+4.  [Troubleshooting](#4-troubleshooting)
 
 ___
 
@@ -95,7 +95,7 @@ To add custom fields, simply add this function to your functions.php file:
 
 ## 4. Troubleshooting ##
 
-### 4.1. Profile Picture Errors ###
+### 4.1. Errors ###
 
 If you are getting any errors, the most common culprit is the profile picture.  This is because it is using data
 specific to my server.  Follow the instructions in the comments at templates/profile-pic.php (line 18)
