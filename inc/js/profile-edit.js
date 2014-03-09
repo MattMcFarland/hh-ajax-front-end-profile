@@ -177,10 +177,10 @@ jQuery(document).ready(function($) {
         errorFields.hide();
         cropFields.show();
         $('#fileUpload-preview').Jcrop({
-            setSelect: [0,0,50,50],
-            aspectRation: 1,
+            setSelect: [0,0,150,150],
+            aspectRatio: 1,
             minSize: 50,
-            maxSize: 50,
+            maxSize: 150,
             boxWidth:300,
             boxHeight:300
         });
