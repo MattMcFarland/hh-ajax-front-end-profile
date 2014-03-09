@@ -22,16 +22,6 @@ function hh_ajax_fe_profile_loaded(){
 }
 add_action('plugins_loaded', 'hh_ajax_fe_profile_loaded');
 
-
-/**
- * Load JavaScript in front-end area only
- *
- * @since 0.1-alpha
- */
-if (!is_admin())
-    add_action( 'wp_enqueue_scripts', 'hh_ajax_fe_profile_scripts');
-
-
 /**
  * Load our JavaScript and Stylesheet.
  *
@@ -41,17 +31,19 @@ if (!is_admin())
  * @since 0.1-alpha
  */
 function hh_ajax_fe_profile_scripts(){
-    wp_enqueue_script( 'hh_ajax_fe_profile-script' );
-    wp_enqueue_style( 'hh_ajax_fe_profile-style' );
-    wp_localize_script(
-        'hh_ajax_fe_profile',
-        '_hh_ajax_fe_profile',
-        array(
-            'ajaxurl' => admin_url("admin-ajax.php")
-        )
-    );
+    if (!is_admin()) {
+        wp_enqueue_script( 'hh_ajax_fe_profile-script' );
+        wp_enqueue_style( 'hh_ajax_fe_profile-style' );
+        wp_localize_script(
+            'hh_ajax_fe_profile',
+            '_hh_ajax_fe_profile',
+            array(
+                'ajaxurl' => admin_url("admin-ajax.php")
+            )
+        );
+    }
 }
-
+add_action( 'init', 'hh_ajax_fe_profile_scripts' );
 
 
 /**
