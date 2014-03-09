@@ -163,6 +163,7 @@ jQuery(document).ready(function($) {
                     },function() {
                         jcrop_api = this;
                     });
+                    console.log(jcrop_api);
 
                 }
             } else {
