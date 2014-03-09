@@ -101,7 +101,9 @@ jQuery(document).ready(function($) {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
+        var cropFields = $('.cropFields-error');
         selectFields.hide();
+        cropFields.hide();
         previewFields.hide();
         errorFields.hide();
         selectFields.show();
@@ -110,11 +112,13 @@ jQuery(document).ready(function($) {
     });
 
 
-    $(document).on('click','#fileUpload-declinePreview',function() {
+    $(document).on('click','.reset-fileUpload-container',function() {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
+        var cropFields = $('.cropFields-error');
         selectFields.hide();
+        cropFields.hide();
         previewFields.hide();
         errorFields.hide();
         selectFields.show();
@@ -127,7 +131,9 @@ jQuery(document).ready(function($) {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
+        var cropFields = $('.cropFields-error');
         selectFields.hide();
+        cropFields.hide();
         previewFields.hide();
         errorFields.hide();
 
@@ -160,8 +166,18 @@ jQuery(document).ready(function($) {
      * Handle upload photo
      */
     $(document).on('click','#fileUpload-approvePreview',function() {
+        selectFields.hide();
+        cropFields.hide();
+        previewFields.hide();
+        errorFields.hide();
 
-        $('#fileUpload-preview').Jcrop();
+        $('#fileUpload-preview').Jcrop({
+            onSelect: showCoords,
+            setSelect: [0,0,50,50],
+            aspectRation: 1,
+            minSize: 50,
+            maxSize: 50
+        });
 
         //Show native file upload UI
 

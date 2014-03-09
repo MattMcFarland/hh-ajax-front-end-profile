@@ -73,7 +73,7 @@ function hh_file_upload_ui() {
                     <!--- Above Canvas --->
                     <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Image Preview</div>
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
-
+                    <div class="fileUpload-Title fileUpload-crop" id="fileUpload-previewTitle">Set your Pic</div>
                     <!--- Canvas Area --->
                     <div id = "fileUpload-canvas">
 
@@ -86,9 +86,9 @@ function hh_file_upload_ui() {
                         </a>
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
-                        <!--- Preview Stage --->
-                        <div class="fileUpload-preview fileUpload-canvasInner" id="fileUpload-previewCanvas">
-                            <img src="" class="thumbnail fileUpload-preview" id="fileUpload-preview"/>
+                        <!--- Preview & Crop Stage --->
+                        <div class="fileUpload-preview fileUpload-canvasInner fileUpload-crop" id="fileUpload-previewCanvas">
+                            <img src="" class="thumbnail fileUpload-preview fileUpload-crop" id="fileUpload-preview"/>
                         </div>
 
                         <!--- Error Stage --->
@@ -114,7 +114,7 @@ function hh_file_upload_ui() {
                             <p class= "fileUpload-subMessage" >No worries, you'll be able to edit the image next...</p>
                         </div>
                         <button id="fileUpload-approvePreview" type="button" class="btn btn-success btn-large"><i class="fa fa-check"></i> Yes</button>
-                        <button id="fileUpload-declinePreview" type="button" class="btn btn-danger btn-large"><i class="fa fa-times"></i> No</button>
+                        <button id="fileUpload-declinePreview" type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-times"></i> No</button>
                     </div>
 
                     <!--- Error Stage --->
@@ -124,6 +124,12 @@ function hh_file_upload_ui() {
                         <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban "></i> Nevermind</button>
                     </div>
 
+                    <!--- Crop Stage --->
+                    <div class="fileUpload-crop">
+                        <div class= "fileUpload-message" id="fileUpload-croprMessage">Select the portion of the pic you want to use then save.</div>
+                        <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
+                        <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
+                    </div>
                 </footer>
             </div>
         </div>
