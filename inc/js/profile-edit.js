@@ -34,6 +34,7 @@ jQuery(document).ready(function($) {
                 $('#message-'+meta_key).hide();
             },
             success: function(response) {
+                console.log(response);
                 var $data = $('#data-'+meta_key);
                 $data.html(response.new_value);
                 $('#input-'+meta_key).val(response.new_value);
