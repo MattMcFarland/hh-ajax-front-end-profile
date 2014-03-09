@@ -1,5 +1,5 @@
-# HTML5 WP Front End Ajax Profile Editor 0.1-alpha #
-Front end Profile editor Plugin for WP users, designed for hvac-hacks.com but am sharing with the world.
+# WP Front End Ajax Profile Editor 0.1-alpha #
+HTML5 Front end Profile editor Plugin for WP users, designed for hvac-hacks.com but am sharing with the world.
 *A super light weight plugin that lets your users edit their profile in an intuitive way.*
 By Matt McFarland
 
