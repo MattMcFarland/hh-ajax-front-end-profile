@@ -19,6 +19,7 @@ function hh_ajax_fe_profile_loaded(){
     add_action( 'wp_ajax_hh_update_user_profile', 'hh_update_user_profile' );
     add_action( 'wp_ajax_nopriv_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
     add_action( 'wp_ajax_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
+    add_filter( 'template_redirect', 'hh_ajax_fe_profile_scripts' );
 }
 add_action('plugins_loaded', 'hh_ajax_fe_profile_loaded');
 
