@@ -26,11 +26,12 @@
     width:160px;
     height:160px;
     margin: 0 auto;
-    margin-top:-1em;
+    margin-top:-4em;
 }
 #fileUpload-inner h1 {
     font-size:20px;
     color:#888;
+    display:none;
 }
 .fileUpload-body {
     text-align:center;
@@ -80,6 +81,7 @@
 .fileUpload-Title {
     font-size: 16px;
     color: #aaa;
+    display:none;
 }
 .fileUpload-message {
     font-size:14px;
@@ -98,10 +100,12 @@
 @media (min-height: 460px) {
     #fileUpload-inner h1 {
         font-size:22px;
+        display:block;
     }
 
     .fileUpload-Title {
         font-size: 20px;
+        display:block;
     }
     #fileUpload-canvas {
         margin:0.2em auto;
