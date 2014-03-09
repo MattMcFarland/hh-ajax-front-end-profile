@@ -41,7 +41,7 @@
     text-align:center;
 }
 /* Upper Right Close Button */
-.close-fileUpload-container {
+#fileUpload-X-button {
     float: right;
     font-size: 40px;
     color: rgb(231, 231, 231);

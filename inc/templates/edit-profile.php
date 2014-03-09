@@ -64,7 +64,7 @@ function hh_file_upload_ui() {
                         <h1>Upload Profile Photo</h1>
                     </div>
                     <div class="col-xs-2">
-                        <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
+                        <a type="button" class="close-fileUpload-container" id="fileUpload-X-button"><i class="fa fa-times"></i></a>
                     </div>
                 </header>
 
