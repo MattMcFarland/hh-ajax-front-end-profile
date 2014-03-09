@@ -10,7 +10,7 @@ all the necessary things front-end only people love. Unfortunately I don't have 
 If you dont enjoy coding, then this plugin is not for you.
 
 # Table of Contents #
-1.  Features
+1.  [Features](#1)
     1.  UI Features
     2.  Backend Features
 2.  Prerequisites
