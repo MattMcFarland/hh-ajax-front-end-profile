@@ -168,7 +168,7 @@ jQuery(document).ready(function($) {
                         jcrop_api = this;
                         $canvas = $('#fileUpload-canvas');
                         $canvas.width(jcrop_api.getWidgetSize()[0]);
-                        $canvas.height(jcrop_api.getWidgetSize()[1]);
+                        //$canvas.height(jcrop_api.getWidgetSize()[1]);
                     });
 
 
