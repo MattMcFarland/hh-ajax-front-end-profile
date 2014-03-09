@@ -70,8 +70,10 @@ function hh_file_upload_ui() {
                 <div class="row" style="text-align:center;">
                     <div id = "fileUpload-canvas">
                         <a id="fileUpload-btn" onclick="fileUpload_select()">
-                            <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon">
-                            <div id="fileUpload-tutorial">Tap here to browse your photos</div>
+                            <div class="fileUpload-icon">
+                                <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon">
+                                <div id="fileUpload-tutorial">Tap here to browse your photos</div>
+                            </div>
                         </a>
                     </div>
                     <div id="fileUpload-info"></div>
