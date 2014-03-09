@@ -78,7 +78,7 @@ function hh_ajax_load_profile_editor() {
                     </div>
                     <div>
                         <?php if (get_the_author_meta( 'profile_pic', $current_user->ID ) =="") hh_download_gravatar($current_user->ID ); ?>
-                        <img class="thumbnail" style="width:150px; height:150px;" src="<?php the_author_meta( 'profile_pic', $current_user->ID ); ?>"/>
+                        <img id = "hh-change-profile-photo" class="thumbnail" style="width:150px; height:150px;" src="<?php the_author_meta( 'profile_pic', $current_user->ID ); ?>"/>
                     </div>
                 </div>
             </div>

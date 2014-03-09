@@ -19,15 +19,13 @@ jQuery(document).ready(function($) {
         var nonce = $formfield.attr('data-nonce');  console.log('nonce: '+nonce);
         var meta_value = $('#input-'+meta_key).val();  console.log('meta_value: '+meta_value);
 
-        $('.edit-field').addClass('disabled');
-
         $.ajax({
             dataType : "json",
             data : {action: "hh_update_user_profile", meta_key : meta_key, meta_value : meta_value, nonce: nonce},
             beforeSend: function() {
                 edit_stop(meta_key);
                 edit_alert_show(meta_key,'info','Submitting Request...',true);
-                $('.edit-field').removeClass('disabled');
+                $('.edit-field').addClass('disabled');
             },
             complete: function() {
                 edit_stop(meta_key);
@@ -92,6 +90,17 @@ jQuery(document).ready(function($) {
         msg += '</div>';
         $('#message-'+meta_key).html(msg).show();
     }
+
+    $(document).on('click','#hh-change-profile-photo',function() {
+        ('#fileUpload-container').show();
+        $('.edit-field').addClass('disabled');
+    });
+
+    $(document).on('click','.close-fileUpload-container',function() {
+        ('#fileUpload-container').hide();
+        $('.edit-field').removeClass('disabled');
+    });
+
 
     /**
      * Handle upload photo

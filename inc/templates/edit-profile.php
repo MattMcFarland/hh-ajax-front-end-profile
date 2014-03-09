@@ -71,6 +71,9 @@ function hh_file_upload_ui() {
             height:95%;
             margin-top:1em;
         }
+        .close-fileUpload-container {
+            font-size:20px;
+        }
         #fileUpload-preview {
 
         }
@@ -87,8 +90,14 @@ function hh_file_upload_ui() {
         <div id="fileUpload-bg">
             <div id="fileUpload-inner" class="container">
                 <div class="row">
+                    <div class="col-xs-2 col-xs-offset-10">
+                        <a type="button" role="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="row">
                     <div id = "fileUpload-preview" class="col-xs-12">
-                        <a id="fileUpload-btn" onclick="fileUploadSelect()"></i></a>
+                        <div id="fileUpload-tutorial">Tap here to begin...</div>
+                        <a id="fileUpload-btn" onclick="fileUpload_select()"></i></a>
                         <div id="fileUpload-info"></div>
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
                     </div>
