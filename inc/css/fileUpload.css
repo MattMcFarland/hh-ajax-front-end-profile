@@ -31,6 +31,7 @@
     cursor:pointer;
 }
 #fileUpload-tutorial {
+    line-height:0;
     font-size: 43px;
     color: #aaa;
 }
@@ -39,9 +40,15 @@
     margin-top: auto;
     position: absolute;
 }
+#fileUpload-btn {
+    cursor:pointer;
+    padding:2em;
+    border:thick dashed #aaa;
+}
 #fileUpload-icon {
     opacity:0.3;
 }
+
 #fileUpload-info {
 
 }
