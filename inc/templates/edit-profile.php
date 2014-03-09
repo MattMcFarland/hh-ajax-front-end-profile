@@ -75,8 +75,7 @@ function hh_file_upload_ui() {
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
                     <div class="fileUpload-Title fileUpload-crop" id="fileUpload-previewTitle">
                         <div class="fileUpload-crop">
-                            <div id="fileUpload-fileData"></div>
-                            <div class= "fileUpload-message" id="fileUpload-cropMessage">Select the portion of the pic you want to use then save.</div>
+                            <div class= "fileUpload-message" id="fileUpload-cropMessage">Crop Image</div>
                             <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
                             <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
                         </div>
