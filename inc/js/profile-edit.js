@@ -167,11 +167,9 @@ jQuery(document).ready(function($) {
                     },function() {
                         jcrop_api = this;
                         jcrop_width = jcrop_api.getWidgetSize()[0];
-                        if (jcrop_width > window.innerWidth) {
                         $canvas = $('#fileUpload-canvas');
                         $canvas.width(jcrop_width);
-                        }
-                        //$canvas.height(jcrop_api.getWidgetSize()[1]);
+                        $canvas.height(jcrop_api.getWidgetSize()[1]);
                     });
 
 
