@@ -68,10 +68,15 @@ ___
 
 ### 3.1. Adding Form to Site ###
 1.  Create a blank page in wordpress
-2.  Insert the following shortcode:
+2.  Insert the following shortcode: (easiest)
     *   `[display_profile_editor]`
 3.  OR Insert the following PHP:
     *   `echo '<div id="profile-editor-container" data-preloader="'.plugin_dir_url( __FILE__ ).'"img/loading-form.gif"></div>';`
+3.  OR use your own preloader:
+    *   `<div id="profile-editor-container" data-preloader="{PATH_TO_YOUR_PRELOADER_IMAGE}"></div>`
+
+> NOTE:
+> You must add the data-preloader tag or form will not load.  Use the shortcode if you are unsure how to do this.
 
 ### 3.2. Adding Custom User Meta ###
 Wordpress comes out of the box with giving room for custom fields!
