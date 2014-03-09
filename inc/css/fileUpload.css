@@ -23,8 +23,8 @@
     text-align: center;
     border:thick dashed #aaa;
     overflow:hidden;
-    width:240px;
-    height:240px;
+    width:160px;
+    height:160px;
     margin: 0 auto;
 }
 #fileUpload-inner h1 {
@@ -77,11 +77,11 @@
 /* Common */
 
 .fileUpload-Title {
-    font-size: 21px;
+    font-size: 16px;
     color: #aaa;
 }
 .fileUpload-message {
-    font-size:18px;
+    font-size:14px;
     color:#666;
 }
 .fileUpload-message .fileUpload-subMessage {
@@ -90,15 +90,9 @@
 .fileUpload-img {
     margin-top:4em;
     opacity:0.3;
-    width: 60%;
+    width: 40%;
 }
-/* Smartphone Landscape */
-@media (max-height: 380px) {
-    #fileUpload-canvas {
-        width:150px;
-        height:150px;
-    }
-}
+
 /* Smartphone Portrait (above this is landscape)*/
 @media (min-height: 480px) {
     #fileUpload-inner h1 {
