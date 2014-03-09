@@ -97,12 +97,11 @@ jQuery(document).ready(function($) {
 
 window.hh_profile_edit_ajax_load_template = function () {
     jQuery(document).ready(function($) {
-        $target = $('#profile-editor-preloader');
         $.ajax({
             dataType : "html",
             data: { action: "hh_ajax_load_profile_editor" },
             success: function (data) {
-                $loader.fadeOut('fast');
+                $('#profile-editor-preloader').fadeOut('fast');
                 $('#profile-editor-container').fadeIn('slow').html(data);
             }
         });
