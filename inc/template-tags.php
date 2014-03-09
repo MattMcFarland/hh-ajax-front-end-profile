@@ -24,13 +24,12 @@ add_action('plugins_loaded', 'hh_ajax_fe_profile_loaded');
 
 
 /**
- * Load our JavaScript and Stylesheet on single page only
+ * Load JavaScript on single page only
  *
  * @since 0.1-alpha
  */
 function hh_ajax_fe_profile_redirect() {
-    add_action( 'wp_enqueue_scripts', 'inline_comments_scripts');
-    add_action( 'wp_head', 'inline_comments_head');
+    add_action( 'wp_enqueue_scripts', 'hh_ajax_fe_profile_scripts');
 }
 
 
