@@ -167,7 +167,7 @@ jQuery(document).ready(function($) {
                     $canvas = $('#fileUpload-canvas');
                     $editImage.Jcrop({
                         setSelect: [100,100,400,400],
-                        minSize: [150,150],
+                        minSize: [80,80],
                         aspectRatio: 1,
                         boxWidth: $canvas.width()
                     },function() {
