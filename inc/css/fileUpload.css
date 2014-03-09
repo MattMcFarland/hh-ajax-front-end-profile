@@ -12,10 +12,9 @@
 }
 
 #fileUpload-inner {
-    width: 95%!important;
-    height: 95%;
-    margin:1em auto;
-    padding:1em;
+    height: 100%;
+    margin: 0;
+    padding: 6px;
     max-width:700px;
     max-height:700px;
     background-color: #fff;
@@ -40,8 +39,8 @@
     text-align: center;
     border:thick dashed #aaa;
     overflow:hidden;
-    width:300px;
-    height:300px;
+    width:280px;
+    height:280px;
     margin: 0 auto;
     margin-top: -1em;
 }
@@ -50,9 +49,7 @@
 }
 #fileUpload-icon {
     opacity:0.3;
-}
-#fileUpload-icon img {
-    width:60%;
+    width: 60%;
 }
 
 #fileUpload-info {
@@ -68,6 +65,13 @@
         width:500px;
         height:500px;
     }
+    #fileUpload-inner {
+        width: 95%!important;
+        height: 95%;
+        margin: 1em;
+        padding: 1em;
+    }
+
 }
 
 @media (min-width: 992px) {
