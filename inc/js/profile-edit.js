@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
             success: function(response) {
                 var $data = $('#data-'+meta_key);
                 $data.html(response.new_value);
-                $data.append(' <span class="label label-success fadeOut">Updated</span>');
+                $('<span class="label label-success fadeOut">Updated</span>').insertBefore('#data-'+meta_key);
                 $('.fadeOut').fadeOut(1600,function(){
                     $(this).remove();
                     $('.edit-field').removeClass('disabled');
@@ -44,8 +44,8 @@ jQuery(document).ready(function($) {
             },
             error: function () {
                 var $data = $('#data-'+meta_key);
-                $data.append(' <span class="label label-danger fadeOut">Failed!!!!</span>');
-                $('.fadeOut').fadeOut(1600,function(){
+                $('<span class="label label-danger fadeOut">Failed!!</span>').insertBefore('#data-'+meta_key);
+                $('.fadeOut').fadeOut(2600,function(){
                     $(this).remove();
                     $('.edit-field').removeClass('disabled');
                 });
