@@ -73,9 +73,9 @@ function hh_file_upload_ui() {
 
                     <!--- Above Canvas --->
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
-                    <div class="fileUpload-Title fileUpload-crop" id="fileUpload-previewTitle">
+                    <div class="fileUpload-Title fileUpload-crop" id="fileUpload-previewTitle">Crop Photo
                         <div class="fileUpload-crop">
-                            <div class= "fileUpload-message" id="fileUpload-cropMessage">Crop Image</div>
+                            <div class= "fileUpload-message" id="fileUpload-cropMessage"><div id="fileUpload-fileData"></div></div>
                             <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
                             <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
                         </div>
