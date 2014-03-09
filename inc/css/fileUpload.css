@@ -92,7 +92,13 @@
     opacity:0.3;
     width: 60%;
 }
-
+/* Smartphone Landscape */
+@media (min-height: 380px) {
+    #fileUpload-canvas {
+        width:150px;
+        height:150px;
+    }
+}
 /* Smartphone Portrait (above this is landscape)*/
 @media (min-height: 480px) {
     #fileUpload-inner h1 {
