@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
         cropFields.hide();
         previewFields.hide();
         errorFields.hide();
-
+        filePreview.removeAttr('style');
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
