@@ -62,6 +62,8 @@ if ( is_admin() )
  */
 
     require_once plugin_dir_path( __FILE__ ) . 'inc/template-tags.php';
+    require_once plugin_dir_path( __FILE__ ) . 'inc/templates/profile-pic.php';
+    require_once plugin_dir_path( __FILE__ ) . 'inc/templates/edit-profile.php';
 
 
 function inline_comments_enqueue_scripts(){
