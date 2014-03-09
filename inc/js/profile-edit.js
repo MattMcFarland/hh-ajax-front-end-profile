@@ -180,7 +180,9 @@ jQuery(document).ready(function($) {
             setSelect: [0,0,50,50],
             aspectRation: 1,
             minSize: 50,
-            maxSize: 50
+            maxSize: 50,
+            boxWidth:300,
+            boxHeight:300
         });
 
         //Show native file upload UI
