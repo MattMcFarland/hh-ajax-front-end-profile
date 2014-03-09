@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
-        var cropFields = $('.cropFields-error');
+        var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
         previewFields.hide();
@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
-        var cropFields = $('.cropFields-error');
+        var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
         previewFields.hide();
@@ -131,11 +131,12 @@ jQuery(document).ready(function($) {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
-        var cropFields = $('.cropFields-error');
+        var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
         previewFields.hide();
         errorFields.hide();
+        previewFields.show();
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
@@ -166,11 +167,15 @@ jQuery(document).ready(function($) {
      * Handle upload photo
      */
     $(document).on('click','#fileUpload-approvePreview',function() {
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
         previewFields.hide();
         errorFields.hide();
-
+        cropFields.show();
         $('#fileUpload-preview').Jcrop({
             onSelect: showCoords,
             setSelect: [0,0,50,50],
