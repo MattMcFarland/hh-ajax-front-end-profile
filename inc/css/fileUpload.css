@@ -93,7 +93,7 @@
     width: 60%;
 }
 /* Smartphone Landscape */
-@media (min-height: 380px) {
+@media (max-height: 380px) {
     #fileUpload-canvas {
         width:150px;
         height:150px;
