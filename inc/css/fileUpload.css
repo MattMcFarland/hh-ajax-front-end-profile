@@ -72,12 +72,12 @@
         font-size: 20px;
     }
     #fileUpload-canvas {
-        margin:2em auto;
+        margin:0em auto;
         width:300px;
         height:300px;
     }
     #fileUpload-inner {
-        margin: -1em auto;
+        margin: 0em auto;
         padding: 0;
     }
     #fileUpload-icon,
