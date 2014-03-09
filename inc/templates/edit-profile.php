@@ -121,7 +121,7 @@ function hh_file_upload_ui() {
                     <div class="fileUpload-error">
                         <div class= "fileUpload-message" id="fileUpload-errorMessage"></div>
                         <button type="button" class="btn btn-success btn-large" onclick="jQuery('#fileUpload-file').trigger('click')" ><i class="fa fa-check"></i> Try Again</button>
-                        <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban-circle "></i> Nevermind</button>
+                        <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban "></i> Nevermind</button>
                     </div>
 
                 </footer>
