@@ -43,6 +43,8 @@
     border:thick dashed #aaa;
     margin:2em;
     overflow:hidden;
+    min-height:320px;
+    min-width:320px;
 }
 #fileUpload-btn {
     cursor:pointer;
