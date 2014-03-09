@@ -20,6 +20,7 @@ If you dont enjoy coding, then this plugin is not for you.
     1.  Adding Form to Site
     2.  Adding Custom Fields
 4.  Troubleshooting
+
 ___
 
 ##  1. Features ##
