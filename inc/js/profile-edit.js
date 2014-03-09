@@ -91,7 +91,8 @@ jQuery(document).ready(function($) {
         $('#message-'+meta_key).html(msg).show();
     }
 
-    $(document).on('click','#hh-change-profile-photo',function() {
+    $(document).on('click','#hh-change-profile-photo',function(e) {
+        e.preventDefault();
         $('#fileUpload-container').show();
         $('.edit-field').addClass('disabled');
     });

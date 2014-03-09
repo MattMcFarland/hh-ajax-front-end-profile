@@ -61,19 +61,33 @@ function hh_file_upload_ui() {
             display:none;
         }
         #fileUpload-bg {
-            position:absolute;
-            background-color:rgba(0,0,0,0.8);
-            width:100%;
-            height:100%;
+            position: fixed;
+            background-color: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
         }
         #fileUpload-inner {
-            width:95%;
-            height:95%;
-            margin-top:1em;
+            width: 95%!important;
+            height: 95%;
+            margin-top: 1em;
+            background-color: #fff;
         }
         .close-fileUpload-container {
-            font-size:20px;
+            float: right;
+            font-size: 40px;
+            color: rgb(231, 231, 231);
+            text-shadow: 0 0 4px #00F;
         }
+        .close-fileUpload-container:hover {
+            float: right;
+            font-size: 40px;
+            color: rgb(211, 211, 211);
+            text-shadow: 0 0 8px #00F;
+        }
+
         #fileUpload-preview {
 
         }

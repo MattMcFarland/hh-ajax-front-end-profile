@@ -103,7 +103,6 @@ function hh_ajax_load_profile_editor() {
             </div>
         </div>
     </div>
-    <?php echo hh_file_upload_ui(); ?>
     <?php die();
 }
 
