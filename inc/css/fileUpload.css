@@ -23,15 +23,17 @@
     font-size: 40px;
     color: rgb(231, 231, 231);
     text-shadow: 0 0 4px #00F;
+    line-height:0.5;
 }
 .close-fileUpload-container:hover {
-    float: right;
-    font-size: 40px;
     color: rgb(211, 211, 211);
     text-shadow: 0 0 8px #00F;
     cursor:pointer;
 }
-
+#fileUpload-tutorial {
+    font-size: 43px;
+    color: #aaa;
+}
 #fileUpload-canvas {
     text-align: center;
     margin-top: auto;
