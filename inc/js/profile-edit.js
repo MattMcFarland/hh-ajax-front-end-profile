@@ -97,15 +97,16 @@ jQuery(document).ready(function($) {
 
 window.hh_profile_edit_ajax_load_template = function () {
     jQuery(document).ready(function($) {
+        $target = $('#profile-editor-container');
+        $loader = $target.insertafter('<img src="../img/loading-form.gif"/>');
         $.ajax({
             dataType : "html",
-            data: { action: "hh_ajax_load_profile_editor",
-                target_div : "#profile-editor-container"
-            },
+            data: { action: "hh_ajax_load_profile_editor" },
             success: function (data) {
-                console.log(data);
+                $loader.fadeOut();
                 $('#profile-editor-container').fadeIn('slow').html(data);
             }
         });
+
     });
 };
