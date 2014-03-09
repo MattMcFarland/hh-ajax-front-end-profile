@@ -127,7 +127,11 @@ jQuery(document).ready(function($) {
         $('#fileUpload-canvas').removeAttr('style');
         errorFields.hide();
         selectFields.show();
-        jcrop_api.release();
+        if (jcrop_api) {
+            console.log(jcrop_api);
+            jcrop_api.release();
+            console.log(jcrop_api);
+        }
 
     });
 
