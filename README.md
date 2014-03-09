@@ -87,10 +87,8 @@ To add custom fields, simply add this function to your functions.php file:
          hh_generate_text_field('Education','user_education');
          hh_generate_text_field('Bio','description');
     }
-    add_action('hh_add_form_fields','my_hh_custom_fields');```
-
-
-
+    add_action('hh_add_form_fields','my_hh_custom_fields');
+```
 ___
 
 ## 4. Troubleshooting ##
