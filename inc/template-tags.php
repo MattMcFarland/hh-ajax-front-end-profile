@@ -19,6 +19,10 @@ function hh_ajax_fe_profile_loaded(){
     add_action( 'wp_ajax_hh_update_user_profile', 'hh_update_user_profile' );
     add_action( 'wp_ajax_nopriv_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
     add_action( 'wp_ajax_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
+    add_action( 'wp_ajax_nopriv_hh_upload_profile_pic', 'hh_upload_profile_pic' );
+    add_action( 'wp_ajax_hh_upload_profile_pic', 'hh_upload_profile_pic' );
+    add_action( 'wp_ajax_nopriv_hh_save_profile_pic', 'hh_save_profile_pic' );
+    add_action( 'wp_ajax_hh_save_profile_pic', 'hh_save_profile_pic' );
 }
 add_action('plugins_loaded', 'hh_ajax_fe_profile_loaded');
 
@@ -94,6 +98,20 @@ function hh_ajax_load_profile_editor() {
     <?php die();
 }
 
+/**
+ * Ajax upload of profile pic, then loads the cropping tool UI into view.
+ */
+function hh_upload_profile_pic() {
+
+}
+
+/**
+ * Save action after clicking save in cropping tool view.
+ */
+function hh_save_profile_pic() {
+
+}
+
 
 /**
  * hh notify, requires bootstrap to look decent.
@@ -111,3 +129,4 @@ function hh_fe_notify($title,$message,$type='info') {
         </div>
     ';
 }
+
