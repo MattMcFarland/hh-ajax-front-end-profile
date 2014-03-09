@@ -14,7 +14,7 @@
 #fileUpload-inner {
     width: 95%!important;
     height: 95%;
-    margin-top: 1em;
+    margin:1em auto;
     padding:1em;
     background-color: #fff;
 }
