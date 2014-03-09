@@ -63,7 +63,7 @@
     font-size:20px;
 }
 
-@media (max-height: 480px) {
+@media (min-height: 480px) {
     #fileUpload-inner h1 {
         font-size:28px;
     }
