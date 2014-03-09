@@ -178,7 +178,9 @@ jQuery(document).ready(function($) {
         cropFields.show();
         $('#fileUpload-preview').Jcrop({
             setSelect: [0,0,150,150],
-            aspectRatio: 1
+            aspectRatio: 1,
+            boxWidth:300,
+            boxHeight:300
         });
 
         //Show native file upload UI
