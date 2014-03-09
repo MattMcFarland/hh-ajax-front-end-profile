@@ -166,8 +166,10 @@ jQuery(document).ready(function($) {
                         boxWidth: $editImage.width()
                     },function() {
                         jcrop_api = this;
+                        jcrop_width = jcrop_apigetWidgetSize()[0];
+                        if (jcrop_width > window.innerWidth) jcrop_width = window.innerWidth-20;
                         $canvas = $('#fileUpload-canvas');
-                        $canvas.width(jcrop_api.getWidgetSize()[0]);
+                        $canvas.width(jcrop_width);
                         //$canvas.height(jcrop_api.getWidgetSize()[1]);
                     });
 
