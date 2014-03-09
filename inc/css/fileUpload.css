@@ -34,7 +34,10 @@
 .fileUpload-body {
     text-align:center;
 }
-
+.fileUpload-belowCanvas {
+    padding:1em;
+    text-align:center;
+}
 /* Upper Right Close Button */
 .close-fileUpload-container {
     float: right;

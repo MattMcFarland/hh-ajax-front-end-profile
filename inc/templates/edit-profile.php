@@ -101,7 +101,7 @@ function hh_file_upload_ui() {
                 </section>
 
                 <!--- Below Canvas --->
-                <footer class="row">
+                <footer class="row fileUpload-belowCanvas">
 
                     <!--- Preview Stage --->
                     <div class="fileUpload-preview">
