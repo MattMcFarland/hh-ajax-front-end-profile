@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
                     },function() {
                         jcrop_api = this;
                     });
-                    console.log(jcrop_api);
+                    console.log(jcrop_api.getWidgetSize());
 
                 }
             } else {
