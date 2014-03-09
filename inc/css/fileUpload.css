@@ -16,6 +16,8 @@
     height: 95%;
     margin:1em auto;
     padding:1em;
+    max-width:600px;
+    max-height:600px;
     background-color: #fff;
 }
 .close-fileUpload-container {
@@ -58,9 +60,8 @@
         font-size: 28px;
     }
     #fileUpload-canvas {
-        width:600px;
-        height:600px;
-        margin: 2em auto;
+        width:500px;
+        height:500px;
     }
 }
 
@@ -68,18 +69,12 @@
     #fileUpload-tutorial {
         font-size: 32px;
     }
-    #fileUpload-canvas {
-        margin: 2.5em auto;
-    }
 
 }
 
 @media (min-width: 1200px) {
     #fileUpload-tutorial {
         font-size: 38px;
-    }
-    #fileUpload-canvas {
-        margin: 3em auto;
     }
 
 }
