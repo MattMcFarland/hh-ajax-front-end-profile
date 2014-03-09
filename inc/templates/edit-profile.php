@@ -103,6 +103,10 @@ function hh_file_upload_ui() {
                 <!--- Below Canvas --->
                 <footer class="row fileUpload-belowCanvas">
 
+                    <div class="fileUpload-select">
+                        <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
+                    </div>
+
                     <!--- Preview Stage --->
                     <div class="fileUpload-preview">
                         <div id="fileUpload-fileData"></div>
