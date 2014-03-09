@@ -128,16 +128,14 @@ jQuery(document).ready(function($) {
         errorFields.hide();
         selectFields.show();
         if (jcrop_api) {
-            console.log(jcrop_api);
-            jcrop_api.release();
-            console.log(jcrop_api);
+            jcrop_api.destroy();
         }
 
     });
 
     $(document).on('change','#fileUpload-file', function() {
         if (jcrop_api) {
-            jcrop_api.release();
+            jcrop_api.destroy();
         }
         var fileData = $('#fileUpload-fileData');
         var filePreview = $('#fileUpload-preview');
