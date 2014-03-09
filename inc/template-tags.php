@@ -69,8 +69,9 @@ function hh_ajax_load_profile_editor() {
         <div class="row">
             <div class="col-sm-5">
                 <div id="hh_pfe-avatar" class="well well-inverse">
-                    <h2>Profile Photo</h2><br/>
-                    <i class="fa fa-info"></i><em> Click on your photo to change it...</em>
+                    <h2>Profile Photo</h2>
+                    <i class="fa fa-circle-info" style="color:#effe5c"></i>
+                    <em> Click on your photo to change it...</em>
                     <div>
                         <?php if (get_the_author_meta( 'profile_pic', $current_user->ID ) =="") hh_download_gravatar($current_user->ID ); ?>
                         <img class="thumbnail" style="width:150px; height:150px;" src="<?php the_author_meta( 'profile_pic', $current_user->ID ); ?>"/>
