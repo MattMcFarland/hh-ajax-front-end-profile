@@ -71,7 +71,7 @@ function hh_ajax_load_profile_editor() {
                 <div id="hh_pfe-avatar" class="well well-inverse">
                     <div style="margin-bottom:1em">
                         <h2 style="display:inline-block;margin-right:0.4em;">Profile Photo</h2>
-                            <span style="border: thin dotted #999; padding:4px;">
+                            <span style="display:inline-block; border: thin dotted #999; padding:4px;">
                                 <i class="fa fa-info-circle" style="color:#effe5c"> </i>
                                 <em style="color:#aaa;"> Click on your photo to change it...</em>
                             </span>
