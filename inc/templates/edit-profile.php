@@ -59,30 +59,26 @@ function hh_file_upload_ui() {
     <div id="fileUpload-container">
         <div id="fileUpload-bg">
             <div id="fileUpload-wrapper">
-                <div id="fileUpload-inner" class="container">
-                    <div class="row">
-                        <div class="col-xs-10">
-                            <h1 style="color:#999">Upload Profile Photo</h1>
-                        </div>
-                        <div class="col-xs-2">
-                            <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
-                        </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h1 style="color:#999">Upload Profile Photo</h1>
                     </div>
-                    <div class="row">
-                        <div id = "fileUpload-canvas" class="col-xs-12">
-                            <div id="fileUpload-tutorial">Tap here to begin...</div>
-                            <a id="fileUpload-btn" onclick="fileUpload_select()">
-                                <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon">
-                            </a>
-                        </div>
-                        <div id="fileUpload-info"></div>
-                        <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
+                    <div class="col-xs-2">
+                        <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
                     </div>
+                </div>
+                <div class="row">
+                    <div id = "fileUpload-canvas" class="col-xs-12">
+                        <div id="fileUpload-tutorial">Tap here to begin...</div>
+                        <a id="fileUpload-btn" onclick="fileUpload_select()">
+                            <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/upload-cloud.gif'?>" id="fileUpload-icon">
+                        </a>
+                    </div>
+                    <div id="fileUpload-info"></div>
+                    <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
                 </div>
             </div>
         </div>
-
-    </div>
     </div>
 
     <?php $result = ob_get_clean();
