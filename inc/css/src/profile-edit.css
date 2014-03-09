@@ -1,3 +1,15 @@
+.well-inverse {
+    background-color: #333;
+    color: #fff;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: thin solid #eee;
+}
+
+.well-inverse a {
+    color:#fff;
+}
 .pr-field {
     overflow: hidden;
     text-overflow: ellipsis;
