@@ -35,6 +35,7 @@ function hh_update_user_profile() {
     }
     $meta_key = sanitize_text_field($_POST['meta_key']);
     $meta_value = sanitize_text_field($_POST['meta_value']);
+    $meta_value = trim($meta_value,'\x00..\x1F');
     update_user_meta($current_user->ID,$meta_key,$meta_value);
     wp_update_user( array ( 'ID' => $current_user->ID, $_POST['meta_key'] =>$_POST['meta_value']) ) ;
     $result['type'] = "success";

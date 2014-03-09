@@ -27,17 +27,15 @@ jQuery(document).ready(function($) {
             beforeSend: function() {
                 edit_stop(meta_key);
                 edit_alert_show(meta_key,'info','Submitting Request...',true);
-                console.log('before_send: '+meta_key)
+                $('.edit-field').removeClass('disabled');
             },
             complete: function() {
                 edit_stop(meta_key);
                 $('#message-'+meta_key).hide();
             },
             success: function(response) {
-                console.log(response);
                 var $data = $('#data-'+meta_key);
                 $data.html(response.new_value);
-                $('#input-'+meta_key).val(response.new_value);
                 $data.append(' <span class="label label-success fadeOut">Updated</span>');
                 $('.fadeOut').fadeOut(1600,function(){
                     $(this).remove();
