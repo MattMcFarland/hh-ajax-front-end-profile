@@ -86,6 +86,7 @@ function hh_file_upload_ui() {
             font-size: 40px;
             color: rgb(211, 211, 211);
             text-shadow: 0 0 8px #00F;
+            cursor:pointer;
         }
 
         #fileUpload-preview {
@@ -105,7 +106,7 @@ function hh_file_upload_ui() {
             <div id="fileUpload-inner" class="container">
                 <div class="row">
                     <div class="col-xs-2 col-xs-offset-10">
-                        <a type="button" role="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
+                        <a type="button" class="close-fileUpload-container"><i class="fa fa-times"></i></a>
                     </div>
                 </div>
                 <div class="row">
