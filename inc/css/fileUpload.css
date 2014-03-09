@@ -26,6 +26,7 @@
     width:160px;
     height:160px;
     margin: 0 auto;
+    margin-top:-1em;
 }
 #fileUpload-inner h1 {
     font-size:20px;
