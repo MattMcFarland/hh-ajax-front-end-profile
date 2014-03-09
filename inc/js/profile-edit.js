@@ -106,6 +106,7 @@ jQuery(document).ready(function($) {
 
 
     $(document).on('change','#fileUpload-file', function() {
+        console.log('change');
         var fileData = $('#fileUpload-fileData');
         var preview = $('#fileUpload-preview');
         $('#fileUpload-btn').hide();
@@ -124,6 +125,7 @@ jQuery(document).ready(function($) {
                     oFReader.onload = function (oFREvent) {
                         preview.css('visibility', 'visible');
                         preview.attr('src', oFREvent.target.result).fadeIn();
+                        $('#fileUpload-previewCanvas').show();
 
                     }
                 }
