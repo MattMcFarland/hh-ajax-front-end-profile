@@ -95,7 +95,7 @@
 }
 
 /* Smartphone Portrait (above this is landscape)*/
-@media (min-height: 480px) {
+@media (min-height: 460px) {
     #fileUpload-inner h1 {
         font-size:22px;
     }
