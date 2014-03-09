@@ -39,11 +39,12 @@
     text-align: center;
     margin-top: auto;
     position: absolute;
+    border:thick dashed #aaa;
+    padding:2em;
+
 }
 #fileUpload-btn {
     cursor:pointer;
-    padding:2em;
-    border:thick dashed #aaa;
 }
 #fileUpload-icon {
     opacity:0.3;
