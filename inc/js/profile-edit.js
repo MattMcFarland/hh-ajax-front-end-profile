@@ -113,6 +113,7 @@ jQuery(document).ready(function($) {
         jcrop_api.destroy();
         $('#fileUpload-container').hide();
         $('.edit-field').removeClass('disabled');
+        $('#fileUpload-fileData').reset();
     });
 
 
@@ -129,6 +130,7 @@ jQuery(document).ready(function($) {
         selectFields.show();
         if (jcrop_api) {
             jcrop_api.destroy();
+            $('#fileUpload-fileData').reset();
         }
 
     });
@@ -169,6 +171,7 @@ jQuery(document).ready(function($) {
                         setSelect: [100,100,400,400],
                         minSize: [80,80],
                         aspectRatio: 1,
+                        boxHeight: $canvas.height(),
                         boxWidth: $canvas.width()
                     },function() {
                         jcrop_api = this;
