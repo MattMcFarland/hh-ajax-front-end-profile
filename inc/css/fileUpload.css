@@ -65,22 +65,20 @@
 
 @media (min-height: 480px) {
     #fileUpload-inner h1 {
-        font-size:28px;
+        font-size:22px;
     }
 
     #fileUpload-tutorial {
-        font-size: 22px;
+        font-size: 20px;
     }
     #fileUpload-canvas {
         margin:2em auto;
-        width:350px;
-        height:350px;
+        width:320px;
+        height:320px;
     }
     #fileUpload-inner {
-        width: 95%!important;
-        height: 95%;
-        margin: 1em auto;
-        padding: 1em;
+        margin: -1em auto;
+        padding: 0;
     }
     #fileUpload-icon,
     #fileUpload-img{
