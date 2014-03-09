@@ -98,8 +98,8 @@
     }
     #fileUpload-canvas {
         margin:0em auto;
-        width:310px;
-        height:310px;
+        width:300px;
+        height:300px;
     }
     #fileUpload-inner {
         width: 95%!important;
@@ -109,7 +109,7 @@
     }
     #fileUpload-icon,
     #fileUpload-img{
-        margin-top:8em;
+        margin-top:5em;
     }
 
 }
