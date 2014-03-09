@@ -122,6 +122,7 @@ jQuery(document).ready(function($) {
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
         var cropFields = $('.fileUpload-crop');
+        filePreview.attr('src','');
         selectFields.hide();
         cropFields.hide();
         previewFields.hide().removeAttr('style');
@@ -141,6 +142,7 @@ jQuery(document).ready(function($) {
         }
         var fileData = $('#fileUpload-fileData');
         var filePreview = $('#fileUpload-preview');
+        filePreview.attr('src','');
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
