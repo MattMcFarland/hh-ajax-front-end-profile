@@ -58,7 +58,7 @@ function hh_file_upload_ui() {
     ob_start() ?>
     <div id="fileUpload-container">
         <div id="fileUpload-bg">
-            <div id="fileUpload-wrapper">
+            <div id="fileUpload-inner">
                 <div class="row">
                     <div class="col-xs-10">
                         <h1 style="color:#999">Upload Profile Photo</h1>
