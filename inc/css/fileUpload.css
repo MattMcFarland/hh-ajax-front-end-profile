@@ -42,7 +42,7 @@
     overflow:hidden;
     width:300px;
     height:300px;
-    margin: 1em auto;
+    margin: 0 auto;
 }
 #fileUpload-btn {
     cursor:pointer;
@@ -60,6 +60,7 @@
         font-size: 28px;
     }
     #fileUpload-canvas {
+        margin:1em auto;
         width:500px;
         height:500px;
     }
