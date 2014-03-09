@@ -103,3 +103,7 @@
 .pr-control:hover {
     background-color:#000!important;
 }
+
+#profile-editor-container {
+    display:none;
+}

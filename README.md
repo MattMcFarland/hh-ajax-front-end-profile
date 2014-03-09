@@ -68,7 +68,7 @@ ___
 2.  Insert the following shortcode:
     *   `[display_profile_editor]`
 3.  OR Insert the following HTML:
-    *   `<div onload="hh_profile_edit_ajax_load_template()" id="profile-editor-container"></div>`
+    *   `<div id="profile-editor-container"></div>`
 
 ### 3.2. Adding Custom User Meta ###
 Wordpress comes out of the box with giving room for custom fields!
