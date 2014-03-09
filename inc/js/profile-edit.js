@@ -148,3 +148,7 @@ window.hh_profile_edit_ajax_load_template = function () {
 
     });
 };
+
+window.fileUpload_select = function () {
+    jQuery.trigger('#fileUpload-file','click')
+}
