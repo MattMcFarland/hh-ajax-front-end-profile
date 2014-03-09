@@ -46,7 +46,7 @@ function hh_generate_text_field($label, $meta_key) {
 function hh_display_profile_editor() {
     if (!is_user_logged_in()) return '<h1>You must be logged in to view this page</h1>';
     if (!current_user_can('manage_options')) return 'Under Construction... -Matt';
-    return '<div id="profile-editor-container" data-preloader="'.plugin_dir_url( __FILE__ ).'"img/loading-form.gif"></div>';
+    return '<div id="profile-editor-container" data-preloader = "'.plugin_dir_url( __FILE__ ).'img/loading-form.gif"></div>';
 }
 
 add_shortcode('display_profile_editor','hh_display_profile_editor');
