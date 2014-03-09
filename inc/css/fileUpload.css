@@ -38,13 +38,12 @@
 }
 #fileUpload-canvas {
     text-align: center;
-    margin-top: auto;
     position: absolute;
     border:thick dashed #aaa;
-    margin:2em;
     overflow:hidden;
     min-height:320px;
     min-width:320px;
+    margin: 0 auto;
 }
 #fileUpload-btn {
     cursor:pointer;
