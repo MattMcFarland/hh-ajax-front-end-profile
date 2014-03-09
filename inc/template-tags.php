@@ -129,16 +129,13 @@ function hh_ajax_load_profile_editor() {
  * @param $message
  * @param string $type
  */
-if (!function_exists('hh_notify')) {
-    function hh_notify($title,$message,$type='info') {
-        echo '
-            <div style="margin:1em;" class="alert alert-'.$type.' alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <p>
-            <strong>'.$title.'</strong> - <span>'.$message.'</span>
-            </p>
-            </div>
-        ';
-    }
+function hh_fe_notify($title,$message,$type='info') {
+    echo '
+        <div style="margin:1em;" class="alert alert-'.$type.' alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <p>
+        <strong>'.$title.'</strong> - <span>'.$message.'</span>
+        </p>
+        </div>
+    ';
 }
-
