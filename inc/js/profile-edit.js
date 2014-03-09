@@ -159,7 +159,9 @@ jQuery(document).ready(function($) {
     /**
      * Handle upload photo
      */
-    $(document).on('submit','.hh-update-profile-photo',function(e) {
+    $(document).on('click','#fileUpload-approvePreview',function() {
+
+        $('#fileUpload-preview').Jcrop();
 
         //Show native file upload UI
 
