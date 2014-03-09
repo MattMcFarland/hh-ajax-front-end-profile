@@ -61,9 +61,13 @@
     width:100%;
     overflow:hidden;
 }
-
+.fileUpload-preview {
+    display:none;
+}
 /* Error Mode */
-
+.fileUpload-error {
+    display:none;
+}
 
 
 
