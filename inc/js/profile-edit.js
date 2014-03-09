@@ -132,6 +132,7 @@ jQuery(document).ready(function($) {
     });
 
     $(document).on('change','#fileUpload-file', function() {
+        jcrop_api.destroy();
         var fileData = $('#fileUpload-fileData');
         var filePreview = $('#fileUpload-preview');
         var previewFields = $('.fileUpload-preview');
