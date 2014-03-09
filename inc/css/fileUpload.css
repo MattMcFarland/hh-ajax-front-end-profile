@@ -98,9 +98,9 @@
         font-size: 22px;
     }
     #fileUpload-canvas {
-        margin:2em auto;
-        width:350px;
-        height:350px;
+        margin:0em auto;
+        width:310px;
+        height:310px;
     }
     #fileUpload-inner {
         width: 95%!important;
