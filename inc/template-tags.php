@@ -61,7 +61,7 @@ die();
  */
 function hh_ajax_load_profile_editor() {
     global $current_user; ?>
-    <div id = "hh_update_profile" class="container" data-processing-uri="<?php echo plugin_dir_url( __FILE__ ) . 'img/processing.gif '?>" data-loading-uri="">
+    <div id = "hh_update_profile" class="container" data-processing-uri="<?php echo plugin_dir_url( __FILE__ ) . 'img/processing.gif '?>">
 
         <div class="row" style="padding:1em">
             <?php hh_fe_notify('Edit Profile','Click on whatever you wish to change'); ?>
@@ -70,6 +70,7 @@ function hh_ajax_load_profile_editor() {
             <div class="col-sm-5">
                 <div id="hh_pfe-avatar" class="well well-inverse">
                     <h2>Profile Photo</h2><br/>
+                    <i class="fa fa-info"></i><em> Click on your photo to change it...</em>
                     <div>
                         <?php if (get_the_author_meta( 'profile_pic', $current_user->ID ) =="") hh_download_gravatar($current_user->ID ); ?>
                         <img class="thumbnail" style="width:150px; height:150px;" src="<?php the_author_meta( 'profile_pic', $current_user->ID ); ?>"/>
