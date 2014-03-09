@@ -42,9 +42,6 @@
     width:280px;
     height:280px;
     margin: 0 auto;
-    margin-top: -1em;
-    position:absolute;
-    bottom:1em;
 }
 #fileUpload-btn {
     cursor:pointer;
