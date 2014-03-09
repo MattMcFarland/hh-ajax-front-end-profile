@@ -67,7 +67,9 @@ function hh_file_upload_ui() {
                 <div class="row">
                     <div id = "fileUpload-preview" class="col-xs-12">
                         <div id="fileUpload-tutorial">Tap here to begin...</div>
-                        <a id="fileUpload-btn" onclick="fileUpload_select()"></i></a>
+                        <a id="fileUpload-btn" onclick="fileUpload_select()">
+                            <div id="fileUpload-icon"></div>
+                        </a>
                         <div id="fileUpload-info"></div>
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
                     </div>
