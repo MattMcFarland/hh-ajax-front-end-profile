@@ -1,5 +1,6 @@
 
 jQuery(document).ready(function($) {
+    var jcrop_api;
 
     $.ajaxSetup({
         type: "POST",
@@ -159,6 +160,8 @@ jQuery(document).ready(function($) {
                         aspectRatio: 1,
                         boxWidth: $editImage.width(),
                         boxHeight: $editImage.height()
+                    },function() {
+                        jcrop_api = this;
                     });
 
                 }
