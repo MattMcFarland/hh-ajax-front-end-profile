@@ -98,12 +98,28 @@ jQuery(document).ready(function($) {
     });
 
     $(document).on('click','.close-fileUpload-container',function() {
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        selectFields.hide();
+        previewFields.hide();
+        errorFields.hide();
+        selectFields.show();
         $('#fileUpload-container').hide();
         $('.edit-field').removeClass('disabled');
     });
 
 
+    $(document).on('click','#fileUpload-declinePreview',function() {
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        selectFields.hide();
+        previewFields.hide();
+        errorFields.hide();
+        selectFields.show();
 
+    });
 
     $(document).on('change','#fileUpload-file', function() {
         var fileData = $('#fileUpload-fileData');
