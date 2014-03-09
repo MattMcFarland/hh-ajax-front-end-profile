@@ -32,12 +32,9 @@
 }
 
 #fileUpload-canvas {
-    width:100%;
-    height:100%;
-    max-width:320px;
-    max-height:320px;
-    margin:0 auto;
-
+    text-align: center;
+    margin-top: auto;
+    position: absolute;
 }
 #fileUpload-icon {
     opacity:0.5;
