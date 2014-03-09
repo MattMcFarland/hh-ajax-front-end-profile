@@ -48,7 +48,7 @@
     text-shadow: 0 0 4px #00F;
     line-height:0.5;
 }
-.close-fileUpload-container:hover {
+#fileUpload-X-button:hover {
     color: rgb(211, 211, 211);
     text-shadow: 0 0 8px #00F;
     cursor:pointer;
@@ -180,3 +180,8 @@
     }
 }
 
+
+.fileUpload-error,
+.fileUpload-preview {
+    display:none;
+}
