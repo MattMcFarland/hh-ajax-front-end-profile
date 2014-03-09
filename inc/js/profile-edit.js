@@ -165,7 +165,8 @@ jQuery(document).ready(function($) {
                     filePreview.css('visibility', 'visible');
                     filePreview.attr('src', oFREvent.target.result).fadeIn();
                     cropFields.show();
-                    $editImage = $('#fileUpload-preview')
+                    $editImage = $('#fileUpload-preview');
+                    $canvas = $('#fileUpload-canvas');
                     $editImage.Jcrop({
                         setSelect: [100,100,400,400],
                         minSize: [150,150],
