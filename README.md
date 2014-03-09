@@ -5,7 +5,7 @@ By Matt McFarland
 
 
 > NOTE:
-> > I made this plugin mainly for my own project, so this plugin is not for newbies.  It takes a lot of time and effort to create a plugin that has
+> I made this plugin mainly for my own project, so this plugin is not for newbies.  It takes a lot of time and effort to create a plugin that has
 all the necessary things front-end only people love. Unfortunately I don't have time.
 If you dont enjoy coding, then this plugin is not for you.
 
@@ -52,7 +52,7 @@ ___
 *   jQuery 10.x
 
 > NOTE:
-> > This plugin is not compatable with buddypress.
+> This plugin is not compatable with buddypress.
 
 ### 2.2.Knowledge Prerequisites ###
 *   Intermediate Understanding of the Wordpress Codex
@@ -74,7 +74,7 @@ Wordpress comes out of the box with giving room for custom fields!
 To add custom fields, simply add this function to your functions.php file:
 
 > NOTE:
-> > You'll want to read up on wp_user_meta if you're confused.
+> You'll want to read up on wp_user_meta if you're confused.
 
 ```PHP
     function my_hh_custom_fields() {
