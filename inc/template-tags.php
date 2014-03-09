@@ -53,7 +53,7 @@ function hh_update_user_profile() {
         header("Location: ".$_SERVER["HTTP_REFERER"]);
     }
 
-die();
+    die();
 
 }
 /**
@@ -70,8 +70,12 @@ function hh_ajax_load_profile_editor() {
             <div class="col-sm-5">
                 <div id="hh_pfe-avatar" class="well well-inverse">
                     <h2>Profile Photo</h2>
-                    <p class="font-size:13px"><i class="fa fa-info-circle" style="color:#effe5c"> </i>
-                        <em style="color:#aaa;"> Click on your photo to change it...</em></p>
+                    <p>
+                        <span style="border: thin dotted #999">
+                            <i class="fa fa-info-circle" style="color:#effe5c"> </i>
+                            <em style="color:#aaa;"> Click on your photo to change it...</em>
+                        </span>
+                    </p>
 
                     <div>
                         <?php if (get_the_author_meta( 'profile_pic', $current_user->ID ) =="") hh_download_gravatar($current_user->ID ); ?>
