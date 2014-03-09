@@ -106,6 +106,7 @@ jQuery(document).ready(function($) {
         var cropFields = $('.fileUpload-crop');
         selectFields.hide();
         cropFields.hide();
+        $('#fileUpload-canvas').removeAttr('style');
         previewFields.hide().removeAttr('style');
         errorFields.hide();
         selectFields.show();
@@ -123,6 +124,7 @@ jQuery(document).ready(function($) {
         selectFields.hide();
         cropFields.hide();
         previewFields.hide().removeAttr('style');
+        $('#fileUpload-canvas').removeAttr('style');
         errorFields.hide();
         selectFields.show();
         jcrop_api.destroy();
@@ -164,10 +166,9 @@ jQuery(document).ready(function($) {
                         boxWidth: $editImage.width()
                     },function() {
                         jcrop_api = this;
-                        console.log(jcrop_api.getWidgetSize()[0]);
-                        console.log(jcrop_api.getWidgetSize()[1]);
-                        $editImage.width(jcrop_api.getWidgetSize()[0]);
-                        $editImage.height(jcrop_api.getWidgetSize()[1]);
+                        $canvas = $('#fileUpload-canvas');
+                        $canvas.width(jcrop_api.getWidgetSize()[0]);
+                        $canvas.height(jcrop_api.getWidgetSize()[1]);
                     });
 
 
