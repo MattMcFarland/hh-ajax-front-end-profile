@@ -109,7 +109,9 @@ jQuery(document).ready(function($) {
         previewFields.hide().removeAttr('style');
         errorFields.hide();
         selectFields.show();
-        jcrop_api.destroy();
+        if (jcrop_api) {
+            jcrop_api.destroy();
+        }
         $('#fileUpload-container').hide();
         $('.edit-field').removeClass('disabled');
     });
