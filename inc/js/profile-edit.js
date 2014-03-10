@@ -186,7 +186,8 @@ jQuery(document).ready(function($) {
                 y1 : jcrop_api.setSelect[1] ,
                 x2 : jcrop_api.setSelect[2] ,
                 y2 : jcrop_api.setSelect[3] ,
-                nonce: nonce
+                nonce: nonce,
+                form: $('fileUpload-container').JSON.stringify(),
             },
             beforeSend: function() {
                 console.log('beforeSend');
