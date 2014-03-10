@@ -140,13 +140,13 @@ jQuery(document).ready(function($) {
     $(document).on('change','#fileUpload-file', function() {
         hh_clear_photo_fields();
         $('.fileUpload-select').show();
-        $fileData = $('#fileUpload-fileData')
+        $fileData = $('#fileUpload-fileData');
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
         var ext = file.name.split('.').pop().toLowerCase();
         if (valid_exts.indexOf(ext) > -1) {
             if (file.size < 1048576) {
-                fileData.html(file.name+' ('+bytesToSize(file.size)+')');
+                $fileData.html(file.name+' ('+bytesToSize(file.size)+')');
                 /* html FileRender Api */
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
