@@ -191,11 +191,19 @@ jQuery(document).ready(function($) {
     $(document).on('submit','#fileUpload-container',function(e) {
         debugger;
         e.preventDefault();
+        var formData = new FormData($('#fileUpload-container')[0]);
         nonce = $(this).attr('data-nonce');
         $fileContainer = $('#fileUpload-file');
         console.log('#fileUpload-file');
         $.ajax({
             dataType : "json",
+            xhr: function() {  // Custom XMLHttpRequest
+                var myXhr = $.ajaxSettings.xhr();
+                if(myXhr.upload){ // Check if upload property exists
+                    myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+                }
+                return myXhr;
+            },
             data : {
                 action: "hh_save_profile_pic",
                 nonce: nonce,
@@ -203,7 +211,7 @@ jQuery(document).ready(function($) {
                 y1 : $fileContainer.attr('data-y1') ,
                 x2 : $fileContainer.attr('data-x2') ,
                 y2 : $fileContainer.attr('data-y2') ,
-                file : JSON.stringify($fileContainer)
+                formData: formData
             },
             beforeSend: function() {
                 console.log('beforeSend');
