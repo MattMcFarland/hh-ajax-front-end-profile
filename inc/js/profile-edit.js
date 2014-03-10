@@ -141,7 +141,7 @@ jQuery(document).ready(function($) {
         hh_clear_photo_fields();
         $('.fileUpload-preview').show();
         $('.fileUpload-crop').show();
-        $('#fileUpload-previewCanvas').append('<img src="" id="fileUpload-preview"/>');
+        $('#fileUpload-previewCanvas').append('<img src="" id="fileUpload-preview"/>').show();
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
