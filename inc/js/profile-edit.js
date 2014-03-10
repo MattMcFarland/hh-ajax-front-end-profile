@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
         $('#fileUpload-canvas').removeAttr('style');
 
         //Destroy Image
-        $('#fileUpload-previewCanvas').removeAttr('style').empty();
+        $('#fileUpload-previewCanvas').removeAttr('style');
 
         //Clear File Input
         var control = $('#fileUpload-file');
@@ -140,7 +140,7 @@ jQuery(document).ready(function($) {
     $(document).on('change','#fileUpload-file', function() {
         hh_clear_photo_fields();
         $('.fileUpload-select').hide();
-        $('#fileUpload-previewCanvas').append('<img src="" id="fileUpload-preview"/>').show();
+        $('#fileUpload-previewCanvas').show();
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions

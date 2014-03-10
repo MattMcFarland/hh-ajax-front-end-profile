@@ -94,7 +94,7 @@ function hh_file_upload_ui() {
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
                         <!--- Preview & Crop Stage --->
-                        <div id="fileUpload-previewCanvas"></div>
+                        <div id="fileUpload-previewCanvas"><img src="" id="fileUpload-preview"/></div>
 
                         <!--- Error Stage --->
                         <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
