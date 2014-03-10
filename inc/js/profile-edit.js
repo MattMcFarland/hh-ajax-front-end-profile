@@ -191,7 +191,8 @@ jQuery(document).ready(function($) {
             beforeSend: function() {
                 console.log('beforeSend');
             },
-            complete: function() {
+            complete: function(response) {
+                console.log(response);
                 console.log('complete');
             },
             success: function(response) {
