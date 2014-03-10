@@ -120,7 +120,7 @@ function hh_save_profile_pic() {
     header('Content-type: application/json');
     $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
     $max_size = 1048576;
-    $file = str_replace(' ', '_',$_FILES['hvac-hacks-post-file']['name']);
+    $file = str_replace(' ', '_',$_FILES['fileUpload-file']['name']);
     // get uploaded file extension
     $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
