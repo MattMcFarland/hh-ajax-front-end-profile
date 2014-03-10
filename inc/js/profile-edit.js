@@ -92,12 +92,19 @@ jQuery(document).ready(function($) {
         $('#message-'+meta_key).html(msg).show();
     }
 
+    /**
+     * When you click on your profile picture in form.
+     */
     $(document).on('click','#hh-change-profile-photo',function(e) {
         e.preventDefault();
         $('#fileUpload-container').show();
         $('.edit-field').addClass('disabled');
     });
 
+
+    /**
+     * When you click you click on the X button to close the container
+     */
     $(document).on('click','.close-fileUpload-container',function() {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
@@ -116,7 +123,9 @@ jQuery(document).ready(function($) {
         $('.edit-field').removeClass('disabled');
     });
 
-
+    /**
+     * ????????????
+     */
     $(document).on('click','.reset-fileUpload-container',function() {
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
@@ -135,10 +144,11 @@ jQuery(document).ready(function($) {
 
     });
 
+
+    /**
+     *  When the input id fileUpload-file has changed.
+     */
     $(document).on('change','#fileUpload-file', function() {
-        if (jcrop_api) {
-            jcrop_api.destroy();
-        }
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
@@ -224,6 +234,3 @@ window.hh_profile_edit_ajax_load_template = function () {
     });
 };
 
-window.fileUpload_select = function () {
-    jQuery.trigger('#fileUpload-file','click')
-}
