@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
 
     });
 
-    $(document).on('change','#fileUpload-file', function() {
+    $(document).on('change','fileUpload-file', function() {
         hh_clear_photo_fields();
         $('.fileUpload-select').show();
         $fileData = $('#fileUpload-fileData');
