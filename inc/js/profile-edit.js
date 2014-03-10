@@ -155,27 +155,14 @@ jQuery(document).ready(function($) {
         var ext = file.name.split('.').pop().toLowerCase();
         if (valid_exts.indexOf(ext) > -1) {
             if (file.size < 1048576) {
-                fileData.html(file.name+' ('+bytesToSize(file.size)+')');
                 /* html FileRender Api */
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
                 oFReader.onload = function (oFREvent) {
-                    var fileData = $('#fileUpload-fileData');
-                    var filePreview = $('#fileUpload-preview');
-                    var previewFields = $('.fileUpload-preview');
-                    var selectFields = $('.fileUpload-select');
-                    var errorFields = $('.fileUpload-error');
-                    var cropFields = $('.fileUpload-crop');
-                    selectFields.hide();
-                    cropFields.hide();
-                    previewFields.hide();
-                    errorFields.hide();
-                    filePreview.removeAttr('style');
-                    previewFields.show();
-                    filePreview.css('visibility', 'visible');
-                    filePreview.attr('src', oFREvent.target.result).fadeIn();
-                    cropFields.show();
                     $editImage = $('#fileUpload-preview');
+                    $editImage.removeAttr('style');
+                    $editImage.css('visibility', 'visible');
+                    $editImage.attr('src', oFREvent.target.result).fadeIn();
                     $canvas = $('#fileUpload-canvas');
                     $editImage.Jcrop({
                         setSelect: [100,100,400,400],
