@@ -175,12 +175,45 @@ jQuery(document).ready(function($) {
      * Save Cropped Photo
      */
     $(document).on('submit','.hh-update-profile-photo',function(e) {
+        e.preventDefault();
 
-        //close the cropping tool.
-
-        //ajax save the cropped file - hh_save_profile_pic()
-
-        //ajax return the new file to the form
+        $.ajax({
+            dataType : "json",
+            data : {
+                action: "hh_save_profile_pic",
+                x1 : jcrop_api.setSelect[0] ,
+                y1 : jcrop_api.setSelect[1] ,
+                x2 : jcrop_api.setSelect[2] ,
+                y2 : jcrop_api.setSelect[3] ,
+                nonce: nonce
+            },
+            beforeSend: function() {
+                edit_stop(meta_key);
+                edit_alert_show(meta_key,'info','Submitting Request...',true);
+                $('.edit-field').addClass('disabled');
+            },
+            complete: function() {
+                edit_stop(meta_key);
+                $('#message-'+meta_key).hide();
+            },
+            success: function(response) {
+                var $data = $('#data-'+meta_key);
+                $data.html(response.new_value);
+                $('<span class="label label-success fadeOut">Updated</span>').insertAfter('#data-'+meta_key);
+                $('.fadeOut').fadeOut(1600,function(){
+                    $(this).remove();
+                    $('.edit-field').removeClass('disabled');
+                });
+            },
+            error: function () {
+                var $data = $('#data-'+meta_key);
+                $('<span class="label label-danger fadeOut">Failed!!</span>').insertAfter('#data-'+meta_key);
+                $('.fadeOut').fadeOut(2600,function(){
+                    $(this).remove();
+                    $('.edit-field').removeClass('disabled');
+                });
+            }
+        });
 
     });
 

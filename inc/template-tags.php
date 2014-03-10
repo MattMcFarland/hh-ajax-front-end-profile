@@ -19,8 +19,6 @@ function hh_ajax_fe_profile_loaded(){
     add_action( 'wp_ajax_hh_update_user_profile', 'hh_update_user_profile' );
     add_action( 'wp_ajax_nopriv_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
     add_action( 'wp_ajax_hh_ajax_load_profile_editor', 'hh_ajax_load_profile_editor' );
-    add_action( 'wp_ajax_nopriv_hh_upload_profile_pic', 'hh_upload_profile_pic' );
-    add_action( 'wp_ajax_hh_upload_profile_pic', 'hh_upload_profile_pic' );
     add_action( 'wp_ajax_nopriv_hh_save_profile_pic', 'hh_save_profile_pic' );
     add_action( 'wp_ajax_hh_save_profile_pic', 'hh_save_profile_pic' );
 }
@@ -109,28 +107,52 @@ function hh_ajax_load_profile_editor() {
 }
 
 /**
- * Ajax upload of profile pic, then loads the cropping tool UI into view.
- */
-function hh_upload_profile_pic() {
-
-    //Handle uploaded photo
-
-    //ImageMagick Photo to smaller size / jpeg; keep aspect ratio
-
-    //return modified photo with cropping UI
-
-}
-
-/**
  * Save action after clicking save in cropping tool view.
  */
 function hh_save_profile_pic() {
+    var_dump($_POST);
 
-    //Copy Photo into wordpress upload dir
+    global $current_user;
+    if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
+        exit("No naughty business please");
+    }
 
-    //update user_meta for profile_pic
+    header('Content-type: application/json');
+    $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
+    $max_size = 1048576;
 
-    //Return new image on the form
+    if (in_array($valid_exts, $valid_exts) AND $_FILES['fileUpload-file']['size'] < $max_size)
+        {
+            $x1 = $_POST['x1'];
+            $y1 = $_POST['y1'];
+            $x2 = $_POST['x2'];
+            $y2 = $_POST['y2'];
+
+            $upload_dir =wp_upload_dir();
+
+            $oldFile = $_FILES['fileUpload-file']['tmp_name'];
+            $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
+
+            exec('/usr/local/bin/convert -crop '.$x1.'x'.$y1.' +'.$x2.'+'.$y2.' -auto-orient -strip -interlace Plane -resize 150x150^ -gravity center -extent 150x150 -quality 62 -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
+            $meta_value = $upload_dir['url'].'/'.basename($newFile);
+            $meta_key = 'profile_pic';
+            update_user_meta($current_user->ID,$meta_key,$meta_value);
+            wp_update_user( array ( 'ID' => $current_user->ID, $_POST['meta_key'] =>$_POST['meta_value']) ) ;
+            $result['type'] = "success";
+            $result['new_value'] = get_the_author_meta( $_POST['meta_key'], $current_user->ID);  //gets saved value from server
+        } else {
+        $result['type'] = "fail";
+    }
+
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        $result = json_encode($result);
+        echo $result;
+    }
+    else {
+        header("Location: ".$_SERVER["HTTP_REFERER"]);
+    }
+
+    die();
 
 }
 

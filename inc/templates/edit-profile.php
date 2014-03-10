@@ -55,8 +55,9 @@ add_shortcode('display_profile_editor','hh_display_profile_editor');
 
 
 function hh_file_upload_ui() {
+    $nonce = wp_create_nonce('hh_save_profile_pic_nonce');
     ob_start() ?>
-    <div id="fileUpload-container">
+    <form action="" data-nonce = "<?php echo $nonce; ?>" enctype="multipart/form-data" method="post" id="fileUpload-container">
         <div id="fileUpload-bg">
             <div id="fileUpload-inner">
                 <header class="row">
@@ -99,7 +100,7 @@ function hh_file_upload_ui() {
                 <footer class="row fileUpload-belowCanvas">
                     <div class="fileUpload-preview">
                         <div class= "fileUpload-message" id="Message"><div id="fileUpload-fileData"></div></div>
-                        <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
+                        <button type="submit" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
                         <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
                     </div>
                     <div class="fileUpload-select">
@@ -117,7 +118,7 @@ function hh_file_upload_ui() {
                 </footer>
             </div>
         </div>
-    </div>
+    </form>
 
     <?php $result = ob_get_clean();
     return $result;
