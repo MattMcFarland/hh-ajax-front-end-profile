@@ -60,28 +60,17 @@ function hh_file_upload_ui() {
         <div id="fileUpload-bg">
             <div id="fileUpload-inner">
                 <header class="row">
-                    <div class="col-xs-10">
-                        <h1>Upload Profile Photo</h1>
-                    </div>
-                    <div class="col-xs-2">
-                        <a type="button" class="close-fileUpload-container" id="fileUpload-X-button"><i class="fa fa-times"></i></a>
-                    </div>
-                    <!--- Crop Stage --->
-                                    </header>
+                    <div class="col-xs-10"><h1>Upload Profile Photo</h1></div>
+                    <h1 class="col-xs-2"><a type="button" class="close-fileUpload-container" id="fileUpload-X-button"><i class="fa fa-times"></i></a></h1>
+                </header>
 
                 <section class="row fileUpload-body">
-
                     <!--- Above Canvas --->
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
-                    <div class="fileUpload-Title fileUpload-crop" id="fileUpload-previewTitle">Crop Photo
-                        <div class="fileUpload-crop">
-                            <div class= "fileUpload-message" id="fileUpload-cropMessage"><div id="fileUpload-fileData"></div></div>
-                            <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
-                            <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
-                        </div>
-                    </div>
+                    <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Crop Photo</div>
+
                     <!--- Canvas Area --->
-                    <div id = "fileUpload-canvas">
+                    <canvas id = "fileUpload-canvas">
 
                         <!--- Select Stage --->
                         <a class="fileUpload-select fileUpload-canvasInner" id="fileUpload-btn" onclick="jQuery('#fileUpload-file').trigger('click')">
@@ -92,9 +81,9 @@ function hh_file_upload_ui() {
                         </a>
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
-                        <!--- Preview & Crop Stage --->
-                        <div class="fileUpload-canvasInner fileUpload-crop" id="fileUpload-previewCanvas">
-                            <img src="" class="thumbnail fileUpload-crop" id="fileUpload-preview"/>
+                        <!--- Preview Stage --->
+                        <div class="fileUpload-canvasInner fileUpload-preview" id="fileUpload-previewCanvas">
+                            <img src="" class="thumbnail " id="fileUpload-preview"/>
                         </div>
 
                         <!--- Error Stage --->
@@ -102,13 +91,17 @@ function hh_file_upload_ui() {
                             <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>
                         </div>
 
+                    </canvas>
 
-                    </div>
                 </section>
 
                 <!--- Below Canvas --->
                 <footer class="row fileUpload-belowCanvas">
-
+                    <div class="fileUpload-preview">
+                        <div class= "fileUpload-message" id="Message"><div id="fileUpload-fileData"></div></div>
+                        <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
+                        <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
+                    </div>
                     <div class="fileUpload-select">
                         <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
                     </div>
