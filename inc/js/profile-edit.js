@@ -187,7 +187,7 @@ jQuery(document).ready(function($) {
                 x2 : jcrop_api.setSelect[2] ,
                 y2 : jcrop_api.setSelect[3] ,
                 nonce: nonce,
-                form: $('fileUpload-container').JSON.stringify(),
+                form: JSON.stringify ($('#fileUpload-container'))
             },
             beforeSend: function() {
                 console.log('beforeSend');
