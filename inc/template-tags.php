@@ -120,8 +120,11 @@ function hh_save_profile_pic() {
     header('Content-type: application/json');
     $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
     $max_size = 1048576;
+    $file = str_replace(' ', '_',$_FILES['hvac-hacks-post-file']['name']);
+    // get uploaded file extension
+    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
-    if (in_array($valid_exts, $valid_exts) AND $_FILES['fileUpload-file']['size'] < $max_size)
+    if (in_array($ext, $valid_exts) AND $_FILES['fileUpload-file']['size'] < $max_size)
         {
             $x1 = $_POST['x1'];
             $y1 = $_POST['y1'];
@@ -142,6 +145,7 @@ function hh_save_profile_pic() {
             $result['new_value'] = get_the_author_meta( $_POST['meta_key'], $current_user->ID);  //gets saved value from server
         } else {
         $result['type'] = "fail";
+        $result['message'] = "Incorrect file extension or file size too big.";
     }
 
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
