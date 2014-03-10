@@ -193,7 +193,8 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         nonce = $(this).attr('data-nonce');
         $fileContainer = $('#fileUpload-file');
-        $.ajaxForm({
+        console.log('#fileUpload-file');
+        $.ajax({
             dataType : "json",
             data : {
                 action: "hh_save_profile_pic",
