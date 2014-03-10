@@ -70,7 +70,7 @@ function hh_file_upload_ui() {
                     <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Crop Photo</div>
 
                     <!--- Canvas Area --->
-                    <canvas id = "fileUpload-canvas">
+                    <div id = "fileUpload-canvas">
 
                         <!--- Select Stage --->
                         <a class="fileUpload-select fileUpload-canvasInner" id="fileUpload-btn" onclick="jQuery('#fileUpload-file').trigger('click')">
@@ -91,7 +91,7 @@ function hh_file_upload_ui() {
                             <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>
                         </div>
 
-                    </canvas>
+                    </div>
 
                 </section>
 
@@ -100,7 +100,7 @@ function hh_file_upload_ui() {
                     <div class="fileUpload-preview">
                         <div class= "fileUpload-message" id="Message"><div id="fileUpload-fileData"></div></div>
                         <button type="button" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
-                        <button type="button" class="btn btn-danger btn-large reset-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
+                        <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
                     </div>
                     <div class="fileUpload-select">
                         <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
