@@ -123,6 +123,7 @@ function hh_save_profile_pic() {
     //$result['file_name']['$_FILES']['tmp_name'];
     // get uploaded file extension
     //$ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+    $result['formData'] = $_POST['formData'];
 
     $max_size = 1048576;
     if ($_FILES['fileUpload-file']['size'] < $max_size)
