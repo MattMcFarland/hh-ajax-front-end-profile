@@ -124,28 +124,6 @@ jQuery(document).ready(function($) {
     });
 
     /**
-     * ????????????
-     */
-    $(document).on('click','.reset-fileUpload-container',function() {
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        selectFields.hide();
-        cropFields.hide();
-        previewFields.hide().removeAttr('style');
-        $('#fileUpload-canvas').removeAttr('style');
-        errorFields.hide();
-        selectFields.show();
-        if (jcrop_api) {
-            jcrop_api.destroy();
-            //jquery clone the input file element to clear it.
-        }
-
-    });
-
-
-    /**
      *  When the input id fileUpload-file has changed.
      */
     $(document).on('change','#fileUpload-file', function() {
