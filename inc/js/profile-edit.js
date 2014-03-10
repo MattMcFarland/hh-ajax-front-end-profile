@@ -193,18 +193,15 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         nonce = $(this).attr('data-nonce');
         $fileContainer = $('#fileUpload-file');
-        params = {
-            x1 : $fileContainer.attr('data-x1') ,
-            y1 : $fileContainer.attr('data-y1') ,
-            x2 : $fileContainer.attr('data-x2') ,
-            y2 : $fileContainer.attr('data-y2')
-        };
         $.ajaxForm({
             dataType : "json",
             data : {
                 action: "hh_save_profile_pic",
                 nonce: nonce,
-                params: params
+                x1 : $fileContainer.attr('data-x1') ,
+                y1 : $fileContainer.attr('data-y1') ,
+                x2 : $fileContainer.attr('data-x2') ,
+                y2 : $fileContainer.attr('data-y2')
             },
             beforeSend: function() {
                 console.log('beforeSend');
