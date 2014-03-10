@@ -139,17 +139,6 @@ jQuery(document).ready(function($) {
         if (jcrop_api) {
             jcrop_api.destroy();
         }
-        var fileData = $('#fileUpload-fileData');
-        var filePreview = $('#fileUpload-preview');
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        selectFields.hide();
-        cropFields.hide();
-        previewFields.hide();
-        errorFields.hide();
-        filePreview.removeAttr('style');
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
@@ -161,6 +150,17 @@ jQuery(document).ready(function($) {
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
                 oFReader.onload = function (oFREvent) {
+                    var fileData = $('#fileUpload-fileData');
+                    var filePreview = $('#fileUpload-preview');
+                    var previewFields = $('.fileUpload-preview');
+                    var selectFields = $('.fileUpload-select');
+                    var errorFields = $('.fileUpload-error');
+                    var cropFields = $('.fileUpload-crop');
+                    selectFields.hide();
+                    cropFields.hide();
+                    previewFields.hide();
+                    errorFields.hide();
+                    filePreview.removeAttr('style');
                     previewFields.show();
                     filePreview.css('visibility', 'visible');
                     filePreview.attr('src', oFREvent.target.result).fadeIn();
