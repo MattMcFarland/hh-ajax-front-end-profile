@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function($) {
     var jcrop_api;
 
@@ -93,30 +92,6 @@ jQuery(document).ready(function($) {
         $('#message-'+meta_key).html(msg).show();
     }
 
-    function hh_clear_photo_fields() {
-
-        //Destroy jcrop_api if it exists...
-        if (jcrop_api) {
-            jcrop_api.destroy();
-        }
-
-        //Clear Classes
-        $('.fileUpload-preview').removeAttr('style');
-        $('.fileUpload-select').removeAttr('style');
-        $('.fileUpload-error').removeAttr('style');
-        $('.fileUpload-crop').removeAttr('style');
-
-        //Clear Container
-        $('#fileUpload-canvas').removeAttr('style');
-
-        //Destroy Image
-        $('#fileUpload-previewCanvas').removeAttr('style');
-
-        //Clear File Input
-        var control = $('#fileUpload-file');
-        control.replaceWith( control = control.clone( true ) );
-    }
-
     $(document).on('click','#hh-change-profile-photo',function(e) {
         e.preventDefault();
         $('#fileUpload-container').show();
@@ -124,46 +99,76 @@ jQuery(document).ready(function($) {
     });
 
     $(document).on('click','.close-fileUpload-container',function() {
-        hh_clear_photo_fields();
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        var cropFields = $('.fileUpload-crop');
+        selectFields.hide();
+        cropFields.hide();
+        $('#fileUpload-canvas').removeAttr('style');
+        previewFields.hide().removeAttr('style');
+        errorFields.hide();
+        selectFields.show();
+        jcrop_api.destroy();
         $('#fileUpload-container').hide();
-        $('.edit-field').addClass('enabled');
-
+        $('.edit-field').removeClass('disabled');
     });
 
 
     $(document).on('click','.reset-fileUpload-container',function() {
-        hh_clear_photo_fields();
-        $('.fileUpload-select').show();
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        var cropFields = $('.fileUpload-crop');
+        selectFields.hide();
+        cropFields.hide();
+        previewFields.hide().removeAttr('style');
+        $('#fileUpload-canvas').removeAttr('style');
+        errorFields.hide();
+        selectFields.show();
+        if (jcrop_api) {
+            jcrop_api.destroy();
+            //jquery clone the input file element to clear it.
+        }
 
     });
 
-    $(document).on('change','fileUpload-file', function() {
-        hh_clear_photo_fields();
-        $('.fileUpload-select').show();
-        $fileData = $('#fileUpload-fileData');
+    $(document).on('change','#fileUpload-file', function() {
+        if (jcrop_api) {
+            jcrop_api.destroy();
+        }
+        var fileData = $('#fileUpload-fileData');
+        var filePreview = $('#fileUpload-preview');
+        var previewFields = $('.fileUpload-preview');
+        var selectFields = $('.fileUpload-select');
+        var errorFields = $('.fileUpload-error');
+        var cropFields = $('.fileUpload-crop');
+        selectFields.hide();
+        cropFields.hide();
+        previewFields.hide();
+        errorFields.hide();
+        filePreview.removeAttr('style');
+
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
         var ext = file.name.split('.').pop().toLowerCase();
         if (valid_exts.indexOf(ext) > -1) {
             if (file.size < 1048576) {
-                $fileData.html(file.name+' ('+bytesToSize(file.size)+')');
+                fileData.html(file.name+' ('+bytesToSize(file.size)+')');
                 /* html FileRender Api */
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
                 oFReader.onload = function (oFREvent) {
-                    $('#fileUpload-previewCanvas').show();
-                    $filePreview = $('#fileUpload-preview');
-                    $('.fileUpload-preview').show();
-                    $filePreview.css('visibility', 'visible');
-                    $filePreview.attr('src', oFREvent.target.result).fadeIn();
-                    $('.fileUpload-crop').show();
-                    $editImage = $filePreview;
+                    previewFields.show();
+                    filePreview.css('visibility', 'visible');
+                    filePreview.attr('src', oFREvent.target.result).fadeIn();
+                    cropFields.show();
+                    $editImage = $('#fileUpload-preview');
                     $canvas = $('#fileUpload-canvas');
                     $editImage.Jcrop({
                         setSelect: [100,100,400,400],
-                        minSize: [80,80],
+                        minSize: [150,150],
                         aspectRatio: 1,
-                        boxHeight: $canvas.height(),
                         boxWidth: $canvas.width()
                     },function() {
                         jcrop_api = this;
