@@ -111,7 +111,8 @@ function hh_ajax_load_profile_editor() {
  */
 function hh_save_profile_pic() {
     header('Content-type: application/json');
-
+    var_dump ($_POST);
+    die();
 
     global $current_user;
     if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
