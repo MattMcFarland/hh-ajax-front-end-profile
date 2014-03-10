@@ -159,6 +159,8 @@ jQuery(document).ready(function($) {
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
                 oFReader.onload = function (oFREvent) {
+                    $('.fileUpload-select').hide();
+                    $('.fileUpload-preview').show();
                     $editImage = $('#fileUpload-preview');
                     $editImage.removeAttr('style');
                     $editImage.css('visibility', 'visible');
