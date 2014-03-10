@@ -177,7 +177,9 @@ jQuery(document).ready(function($) {
     $(document).on('submit','#fileUpload-container',function(e) {
         debugger;
         e.preventDefault();
-        formData = $(this).serialize();
+        formData = $('#fileUpload-container').serialize();
+        console.log ($(this));
+        console.log ($(this).serialize());
         nonce = $(this).attr('data-nonce');
         params = {
             x1 : jcrop_api.setSelect[0] ,
@@ -185,6 +187,7 @@ jQuery(document).ready(function($) {
             x2 : jcrop_api.setSelect[2] ,
             y2 : jcrop_api.setSelect[3]
         };
+        console.log(params);
 
         $.ajax({
             dataType : "json",

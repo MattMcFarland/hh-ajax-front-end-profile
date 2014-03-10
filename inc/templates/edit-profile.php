@@ -57,7 +57,7 @@ add_shortcode('display_profile_editor','hh_display_profile_editor');
 function hh_file_upload_ui() {
     $nonce = wp_create_nonce('hh_save_profile_pic_nonce');
     ob_start() ?>
-    <form action="" data-nonce = "<?php echo $nonce; ?>" enctype="multipart/form-data" method="post" id="fileUpload-container">
+    <form action="" data-nonce = "<?php echo $nonce; ?>" enctype="multipart/form-data" method="post" name="fileUpload-containe" id="fileUpload-container">
         <div id="fileUpload-bg">
             <div id="fileUpload-inner">
                 <header class="row">
