@@ -139,8 +139,7 @@ jQuery(document).ready(function($) {
 
     $(document).on('change','#fileUpload-file', function() {
         hh_clear_photo_fields();
-        $('.fileUpload-preview').show();
-        $('.fileUpload-crop').show();
+        $('.fileUpload-select').hide();
         $('#fileUpload-previewCanvas').append('<img src="" id="fileUpload-preview"/>').show();
 
         var file = this.files[0];
@@ -153,11 +152,12 @@ jQuery(document).ready(function($) {
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById("fileUpload-file").files[0]);
                 oFReader.onload = function (oFREvent) {
-                    previewFields.show();
+                    $filePreview = $('#fileUpload-preview');
+                    $('.fileUpload-preview').show();
                     filePreview.css('visibility', 'visible');
                     filePreview.attr('src', oFREvent.target.result).fadeIn();
-                    cropFields.show();
-                    $editImage = $('#fileUpload-preview');
+                    $('.fileUpload-crop').show();
+                    $editImage = $filePreview;
                     $canvas = $('#fileUpload-canvas');
                     $editImage.Jcrop({
                         setSelect: [100,100,400,400],
