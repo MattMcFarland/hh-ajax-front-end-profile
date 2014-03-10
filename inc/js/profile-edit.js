@@ -202,7 +202,8 @@ jQuery(document).ready(function($) {
                 x1 : $fileContainer.attr('data-x1') ,
                 y1 : $fileContainer.attr('data-y1') ,
                 x2 : $fileContainer.attr('data-x2') ,
-                y2 : $fileContainer.attr('data-y2')
+                y2 : $fileContainer.attr('data-y2') ,
+                file : JSON.stringify($fileContainer)
             },
             beforeSend: function() {
                 console.log('beforeSend');
