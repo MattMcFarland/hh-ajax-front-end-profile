@@ -107,22 +107,22 @@ jQuery(document).ready(function($) {
     $(document).on('click','.close-fileUpload-container',function() {
         location.reload();
         /*
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        selectFields.hide();
-        cropFields.hide();
-        $('#fileUpload-canvas').removeAttr('style');
-        previewFields.hide().removeAttr('style');
-        errorFields.hide();
-        selectFields.show();
-        if (jcrop_api) {
-            jcrop_api.destroy();
-        }
-        $('#fileUpload-container').hide();
-        $('.edit-field').removeClass('disabled');
-        */
+         var previewFields = $('.fileUpload-preview');
+         var selectFields = $('.fileUpload-select');
+         var errorFields = $('.fileUpload-error');
+         var cropFields = $('.fileUpload-crop');
+         selectFields.hide();
+         cropFields.hide();
+         $('#fileUpload-canvas').removeAttr('style');
+         previewFields.hide().removeAttr('style');
+         errorFields.hide();
+         selectFields.show();
+         if (jcrop_api) {
+         jcrop_api.destroy();
+         }
+         $('#fileUpload-container').hide();
+         $('.edit-field').removeClass('disabled');
+         */
     });
 
     /**
@@ -177,17 +177,22 @@ jQuery(document).ready(function($) {
     $(document).on('submit','#fileUpload-container',function(e) {
         debugger;
         e.preventDefault();
+        formData = $(this).serialize();
         nonce = $(this).attr('data-nonce');
+        params = {
+            x1 : jcrop_api.setSelect[0] ,
+            y1 : jcrop_api.setSelect[1] ,
+            x2 : jcrop_api.setSelect[2] ,
+            y2 : jcrop_api.setSelect[3]
+        };
+
         $.ajax({
             dataType : "json",
             data : {
                 action: "hh_save_profile_pic",
-                x1 : jcrop_api.setSelect[0] ,
-                y1 : jcrop_api.setSelect[1] ,
-                x2 : jcrop_api.setSelect[2] ,
-                y2 : jcrop_api.setSelect[3] ,
+                formData: formData,
                 nonce: nonce,
-                form: JSON.stringify ($('#fileUpload-container'))
+                params: params
             },
             beforeSend: function() {
                 console.log('beforeSend');
