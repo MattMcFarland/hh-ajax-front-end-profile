@@ -112,23 +112,20 @@ function hh_ajax_load_profile_editor() {
 function hh_save_profile_pic() {
     header('Content-type: application/json');
 
-    $result['method'] = $_SERVER['REQUEST_METHOD'];
-    $result['$_FILES'] = print_r($_FILES,true);
-    $result['$_POST'] = print_r($_POST,true);
 
     global $current_user;
     if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
         exit("No naughty business please");
     }
 
-    $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
-    $max_size = 1048576;
-    $file = str_replace(' ', '_',$_FILES['fileUpload-file']['name']);
-    $result['$files = ']['$_FILES']['name'];
+    //$valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
+    //$file = str_replace(' ', '_',$_FILES['fileUpload-file']['tmp_name']);
+    //$result['file_name']['$_FILES']['tmp_name'];
     // get uploaded file extension
-    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+    //$ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
-    if (in_array($ext, $valid_exts) AND $_FILES['fileUpload-file']['size'] < $max_size)
+    $max_size = 1048576;
+    if ($_FILES['fileUpload-file']['size'] < $max_size)
         {
             $x1 = $_POST['x1'];
             $y1 = $_POST['y1'];

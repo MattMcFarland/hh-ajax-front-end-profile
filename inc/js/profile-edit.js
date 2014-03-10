@@ -192,7 +192,7 @@ jQuery(document).ready(function($) {
                 console.log('beforeSend');
             },
             complete: function(response) {
-                console.log(response);
+                console.log(response.responseText);
                 console.log('complete');
             },
             success: function(response) {
