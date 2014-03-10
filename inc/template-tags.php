@@ -110,14 +110,17 @@ function hh_ajax_load_profile_editor() {
  * Save action after clicking save in cropping tool view.
  */
 function hh_save_profile_pic() {
-    var_dump($_POST);
+    header('Content-type: application/json');
+
+    $result['method'] = $_SERVER['REQUEST_METHOD'];
+    $result['$_FILES'] = var_export($_FILES,true);
+    $result['$_POST'] = var_export($_POST,true);
 
     global $current_user;
     if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
         exit("No naughty business please");
     }
 
-    header('Content-type: application/json');
     $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
     $max_size = 1048576;
     $file = str_replace(' ', '_',$_FILES['fileUpload-file']['name']);
