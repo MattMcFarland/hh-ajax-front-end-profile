@@ -150,7 +150,8 @@ jQuery(document).ready(function($) {
                         setSelect: [100,100,400,400],
                         minSize: [150,150],
                         aspectRatio: 1,
-                        boxWidth: $canvas.width()
+                        boxWidth: $canvas.width(),
+                        onSelect: storeCoords
                     },function() {
                         jcrop_api = this;
                         $canvas.width(jcrop_api.getWidgetSize()[0]);
@@ -169,6 +170,19 @@ jQuery(document).ready(function($) {
         }
     });
 
+    function storeCoords(c)
+    {
+        // variables can be accessed here as
+        // c.x, c.y, c.x2, c.y2, c.w, c.h
+        $fileContainer = $('#fileUpload-file');
+        $fileContainer.attr('data-x1',c.x);
+        $fileContainer.attr('data-y1',c.y);
+        $fileContainer.attr('data-x2',c.x2);
+        $fileContainer.attr('data-y2',c.y2);
+        $fileContainer.attr('data-w',c.w);
+        $fileContainer.attr('data-h',c.h);
+
+    };
 
 
     /**
@@ -177,19 +191,15 @@ jQuery(document).ready(function($) {
     $(document).on('submit','#fileUpload-container',function(e) {
         debugger;
         e.preventDefault();
-        formData = $('#fileUpload-container').serialize();
-        console.log ($(this));
-        console.log ($(this).serialize());
         nonce = $(this).attr('data-nonce');
+        $fileContainer = $('#fileUpload-file');
         params = {
-            x1 : jcrop_api.setSelect[0] ,
-            y1 : jcrop_api.setSelect[1] ,
-            x2 : jcrop_api.setSelect[2] ,
-            y2 : jcrop_api.setSelect[3]
+            x1 : $fileContainer.attr('data-x1') ,
+            y1 : $fileContainer.attr('data-y1') ,
+            x2 : $fileContainer.attr('data-x2') ,
+            y2 : $fileContainer.attr('data-y2')
         };
-        console.log(params);
-
-        $.ajax({
+        $.ajaxForm({
             dataType : "json",
             data : {
                 action: "hh_save_profile_pic",
