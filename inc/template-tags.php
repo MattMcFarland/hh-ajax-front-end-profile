@@ -113,8 +113,8 @@ function hh_save_profile_pic() {
     header('Content-type: application/json');
 
     $result['method'] = $_SERVER['REQUEST_METHOD'];
-    $result['$_FILES'] = var_export($_FILES,true);
-    $result['$_POST'] = var_export($_POST,true);
+    $result['$_FILES'] = print_r($_FILES,true);
+    $result['$_POST'] = print_r($_POST,true);
 
     global $current_user;
     if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
