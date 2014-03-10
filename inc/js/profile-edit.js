@@ -112,6 +112,9 @@ jQuery(document).ready(function($) {
         //Destroy Image
         $('#fileUpload-previewCanvas').removeAttr('style').empty();
 
+        //Clear File Input
+        var control = $('#fileUpload-file');
+        control.replaceWith( control = control.clone( true ) );
     }
 
     $(document).on('click','#hh-change-profile-photo',function(e) {
@@ -138,7 +141,7 @@ jQuery(document).ready(function($) {
         hh_clear_photo_fields();
         $('.fileUpload-preview').show();
         $('.fileUpload-crop').show();
-        $('#fileUpload-previewCanvas').append('<img src="" id="#fileUpload-preview"/><input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">');
+        $('#fileUpload-previewCanvas').append('<img src="" id="#fileUpload-preview"/>');
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
