@@ -124,6 +124,7 @@ function hh_save_profile_pic() {
     $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
     $max_size = 1048576;
     $file = str_replace(' ', '_',$_FILES['fileUpload-file']['name']);
+    $result['$files = ']['$_FILES']['name'];
     // get uploaded file extension
     $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
