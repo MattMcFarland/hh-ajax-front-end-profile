@@ -176,7 +176,7 @@ jQuery(document).ready(function($) {
      */
     $(document).on('submit','.hh-update-profile-photo',function(e) {
         e.preventDefault();
-
+        nonce = $(this).attr('data-nonce');
         $.ajax({
             dataType : "json",
             data : {
@@ -188,30 +188,15 @@ jQuery(document).ready(function($) {
                 nonce: nonce
             },
             beforeSend: function() {
-                edit_stop(meta_key);
-                edit_alert_show(meta_key,'info','Submitting Request...',true);
-                $('.edit-field').addClass('disabled');
+                console.log('beforeSend');
             },
             complete: function() {
-                edit_stop(meta_key);
-                $('#message-'+meta_key).hide();
+                console.log('complete');
             },
             success: function(response) {
-                var $data = $('#data-'+meta_key);
-                $data.html(response.new_value);
-                $('<span class="label label-success fadeOut">Updated</span>').insertAfter('#data-'+meta_key);
-                $('.fadeOut').fadeOut(1600,function(){
-                    $(this).remove();
-                    $('.edit-field').removeClass('disabled');
-                });
+                console.log(response);
             },
             error: function () {
-                var $data = $('#data-'+meta_key);
-                $('<span class="label label-danger fadeOut">Failed!!</span>').insertAfter('#data-'+meta_key);
-                $('.fadeOut').fadeOut(2600,function(){
-                    $(this).remove();
-                    $('.edit-field').removeClass('disabled');
-                });
             }
         });
 
