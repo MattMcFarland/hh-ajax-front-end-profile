@@ -106,6 +106,8 @@ jQuery(document).ready(function($) {
      * When you click you click on the X button to close the container
      */
     $(document).on('click','.close-fileUpload-container',function() {
+        location.reload();
+        /*
         var previewFields = $('.fileUpload-preview');
         var selectFields = $('.fileUpload-select');
         var errorFields = $('.fileUpload-error');
@@ -121,6 +123,7 @@ jQuery(document).ready(function($) {
         }
         $('#fileUpload-container').hide();
         $('.edit-field').removeClass('disabled');
+        */
     });
 
     /**
