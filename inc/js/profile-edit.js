@@ -174,7 +174,8 @@ jQuery(document).ready(function($) {
     /**
      * Save Cropped Photo
      */
-    $(document).on('submit','.hh-update-profile-photo',function(e) {
+    $(document).on('submit','#fileUpload-container',function(e) {
+        debugger;
         e.preventDefault();
         nonce = $(this).attr('data-nonce');
         $.ajax({
