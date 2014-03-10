@@ -90,12 +90,10 @@ function hh_file_upload_ui() {
                                 <div class="fileUpload-Title">Tap here to browse your photos</div>
                             </div>
                         </a>
-                        <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
+
 
                         <!--- Preview & Crop Stage --->
-                        <div class="fileUpload-canvasInner fileUpload-crop" id="fileUpload-previewCanvas">
-                            <img src="" class="thumbnail fileUpload-crop" id="fileUpload-preview"/>
-                        </div>
+                        <div id="fileUpload-previewCanvas"></div>
 
                         <!--- Error Stage --->
                         <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
@@ -109,6 +107,7 @@ function hh_file_upload_ui() {
                 <!--- Below Canvas --->
                 <footer class="row fileUpload-belowCanvas">
 
+                    <!--- Select Stage --->
                     <div class="fileUpload-select">
                         <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
                     </div>

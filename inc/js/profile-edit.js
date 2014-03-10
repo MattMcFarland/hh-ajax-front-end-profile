@@ -93,6 +93,27 @@ jQuery(document).ready(function($) {
         $('#message-'+meta_key).html(msg).show();
     }
 
+    function hh_clear_photo_fields() {
+
+        //Destroy jcrop_api if it exists...
+        if (jcrop_api) {
+            jcrop_api.destroy();
+        }
+
+        //Clear Classes
+        $('.fileUpload-preview').removeAttr('style');
+        $('.fileUpload-select').removeAttr('style');
+        $('.fileUpload-error').removeAttr('style');
+        $('.fileUpload-crop').removeAttr('style');
+
+        //Clear Container
+        $('#fileUpload-canvas').removeAttr('style');
+
+        //Destroy Image
+        $('#fileUpload-previewCanvas').removeAttr('style').empty();
+
+    }
+
     $(document).on('click','#hh-change-profile-photo',function(e) {
         e.preventDefault();
         $('#fileUpload-container').show();
@@ -100,58 +121,24 @@ jQuery(document).ready(function($) {
     });
 
     $(document).on('click','.close-fileUpload-container',function() {
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        selectFields.hide();
-        cropFields.hide();
-        $('#fileUpload-canvas').removeAttr('style');
-        previewFields.hide().removeAttr('style');
-        errorFields.hide();
-        selectFields.show();
-        jcrop_api.destroy();
+        hh_clear_photo_fields();
         $('#fileUpload-container').hide();
-        $('.edit-field').removeClass('disabled');
-        $('#fileUpload-fileData').reset();
+        $('.edit-field').addClass('enabled');
+
     });
 
 
     $(document).on('click','.reset-fileUpload-container',function() {
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        filePreview.attr('src','');
-        selectFields.hide();
-        cropFields.hide();
-        previewFields.hide().removeAttr('style');
-        $('#fileUpload-canvas').removeAttr('style');
-        errorFields.hide();
-        selectFields.show();
-        if (jcrop_api) {
-            jcrop_api.destroy();
-            $('#fileUpload-fileData').reset();
-        }
+        hh_clear_photo_fields();
+        $('.fileUpload-select').show();
 
     });
 
     $(document).on('change','#fileUpload-file', function() {
-        if (jcrop_api) {
-            jcrop_api.destroy();
-        }
-        var fileData = $('#fileUpload-fileData');
-        var filePreview = $('#fileUpload-preview');
-        filePreview.attr('src','');
-        var previewFields = $('.fileUpload-preview');
-        var selectFields = $('.fileUpload-select');
-        var errorFields = $('.fileUpload-error');
-        var cropFields = $('.fileUpload-crop');
-        selectFields.hide();
-        cropFields.hide();
-        previewFields.hide();
-        errorFields.hide();
-        filePreview.removeAttr('style');
+        hh_clear_photo_fields();
+        $('.fileUpload-preview').show();
+        $('.fileUpload-crop').show();
+        $('#fileUpload-previewCanvas').append('<img src="" id="#fileUpload-preview"/><input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">');
 
         var file = this.files[0];
         var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
