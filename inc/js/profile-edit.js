@@ -203,7 +203,6 @@ jQuery(document).ready(function($) {
             dataType : "json",
             data : {
                 action: "hh_save_profile_pic",
-                formData: formData,
                 nonce: nonce,
                 params: params
             },
