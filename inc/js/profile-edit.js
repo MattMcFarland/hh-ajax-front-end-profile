@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
             async: true,
 
             beforeSend: function() {
-                ('#fileUpload-Process').show();
+                $('#fileUpload-Process').show();
             },
 
             /* progress bar call back*/
