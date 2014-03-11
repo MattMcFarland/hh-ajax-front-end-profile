@@ -139,6 +139,7 @@ jQuery(document).ready(function($) {
                 $(selectMode).show();
                 var response = data.responseText;
                 console.log(response);
+                $(selectMode).append('<img src="'+response.meta_value+'"/>')
                 //$(close_container).trigger('click');
                 $('body').css('cursor', 'auto');
             }
