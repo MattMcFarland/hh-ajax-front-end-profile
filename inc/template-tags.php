@@ -125,14 +125,16 @@ function hh_save_profile_pic() {
         $y2 = $_POST['y2'];
         $w = $_POST['w'];
         $h = $_POST['h'];
-
+        $cw = $_POST['cw'];
+        $ch = $_POST['ch'];
         $upload_dir =wp_upload_dir();
 
         $oldFile = $_FILES['fileUpload-file']['tmp_name'];
-        $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
-
-        exec('/usr/local/bin/convert -crop '.$w.'x'.$h.'+'.$x1.'+'.$y1.' -resize '.$w.'x'.$h.'-format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
-        $meta_value = $upload_dir['url'].'/'.basename($newFile);
+        $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic_full.jpg';
+        $cropped = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
+        exec('/usr/local/bin/convert -resize '.$ch.'x'.$cy. '-format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
+        exec('/usr/local/bin/convert -crop '.$w.'x'.$h.'+'.$x1.'+'.$y1.' -resize '.$w.'x'.$h.'-format jpg '.$newFile.' '.$cropped.' 2>&1',$error);
+        $meta_value = $upload_dir['url'].'/'.basename($cropped);
         $meta_key = 'profile_pic';
         update_user_meta($current_user->ID,$meta_key,$meta_value);
         wp_update_user( array ( 'ID' => $current_user->ID, $meta_key => $meta_value ) );

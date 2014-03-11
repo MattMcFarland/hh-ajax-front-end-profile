@@ -8,7 +8,7 @@ var preview = '#fileUpload-preview';
 var selectMode = '.fileUpload-select';
 var previewMode = '.fileUpload-preview';
 var form = '#fileUpload-control';
-
+var uploading = false;
 
 jQuery(document).ready(function($) {
     /**
@@ -79,6 +79,8 @@ jQuery(document).ready(function($) {
         $fileInput.attr('data-y2',c.y2);
         $fileInput.attr('data-w',c.w);
         $fileInput.attr('data-h',c.h);
+        $fileInput.attr('data-cw',$(img_canvas).width());
+        $fileInput.attr('data-ch',$(img_canvas).height());
     }
 
     $(document).on('submit',form,function(e) {
@@ -102,12 +104,15 @@ jQuery(document).ready(function($) {
                 x2:     $(fileInput).attr('data-x2'),
                 y2:     $(fileInput).attr('data-y2'),
                 w:     $(fileInput).attr('data-w'),
-                h:     $(fileInput).attr('data-h')
+                h:     $(fileInput).attr('data-h'),
+                cw:     $(fileInput).attr('data-cw'),
+                ch:     $(fileInput).attr('data-ch')
             },
             async: true,
 
             /* reset before submitting */
             beforeSend: function() {
+                uploading=true;
                 $(selectMode).hide();
                 $(previewMode).hide();
                 submit.show();
@@ -145,5 +150,6 @@ jQuery(document).ready(function($) {
                 $('body').css('cursor', 'auto');
             }
         });
+        if (uploading===false) $(form).submit();
     });
 });
