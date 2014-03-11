@@ -19,9 +19,9 @@ jQuery(document).ready(function($) {
         var nonce = $formfield.attr('data-nonce');  console.log('nonce: '+nonce);
         var meta_value = $('#input-'+meta_key).val();  console.log('meta_value: '+meta_value);
 
-        $.ajaxForm({
+        $.ajax({
             dataType : "json",
-            data : {action: "hh_update_user_profile" },
+            data : {action: "hh_update_user_profile", meta_key : meta_key, meta_value : meta_value, nonce: nonce},
             beforeSend: function() {
                 edit_stop(meta_key);
                 edit_alert_show(meta_key,'info','Submitting Request...',true);
@@ -182,7 +182,7 @@ jQuery(document).ready(function($) {
         $fileContainer.attr('data-w',c.w);
         $fileContainer.attr('data-h',c.h);
 
-    };
+    }
 
 
     /**
@@ -191,39 +191,35 @@ jQuery(document).ready(function($) {
     $(document).on('submit','#fileUpload-container',function(e) {
         debugger;
         e.preventDefault();
-        var formData = new FormData($('#fileUpload-container')[0]);
-        nonce = $(this).attr('data-nonce');
         $fileContainer = $('#fileUpload-file');
-        console.log('#fileUpload-file');
-        $.ajax({
+        console.log($fileContainer);
+
+
+        $(this).ajaxForm({
+            url: _hh_ajax_fe_profile.ajaxurl,
             dataType : "json",
-            xhr: function() {  // Custom XMLHttpRequest
-                var myXhr = $.ajaxSettings.xhr();
-                if(myXhr.upload){ // Check if upload property exists
-                    myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
-                }
-                return myXhr;
-            },
-            data : {
-                action: "hh_save_profile_pic",
-                nonce: nonce,
-                x1 : $fileContainer.attr('data-x1') ,
-                y1 : $fileContainer.attr('data-y1') ,
-                x2 : $fileContainer.attr('data-x2') ,
-                y2 : $fileContainer.attr('data-y2') ,
-                formData: formData
-            },
+            data : { action: "hh_save_profile_pic"},
+            async: true,
+
             beforeSend: function() {
-                console.log('beforeSend');
+                ('#fileUpload-Process').show();
             },
-            complete: function(response) {
-                console.log(response.responseText);
+
+            /* progress bar call back*/
+            uploadProgress: function(event, position, total, percentComplete) {
+                var pVel = percentComplete + '%';
+                if (pVel === '100%') {
+                    $('#upload_percent').hide();
+                    $('#upload_processing').show();
+                    $('#upload_status').html('Processing...');
+                } else {
+                    $('#upload_percent').html(pVel);
+                }
+            },
+
+            complete: function(data) {
+                console.log(data.responseText);
                 console.log('complete');
-            },
-            success: function(response) {
-                console.log(response);
-            },
-            error: function () {
             }
         });
 

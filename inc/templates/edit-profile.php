@@ -80,6 +80,7 @@ function hh_file_upload_ui() {
                                 <div class="fileUpload-Title">Tap here to browse your photos</div>
                             </div>
                         </a>
+
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
                         <!--- Preview Stage --->
@@ -90,6 +91,13 @@ function hh_file_upload_ui() {
                         <!--- Error Stage --->
                         <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
                             <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>
+                        </div>
+
+                        <!--- Processing Stage --->
+                        <div class="fileUpload-Process" style="text-align:center;display:none;">
+                            <span id ="upload_percent" class="font-size:30px;"></span>
+                            <img id ="upload_processing" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="display:none;"/>
+                            <span id = "upload_status" class="Uploading..."></span>
                         </div>
 
                     </div>
