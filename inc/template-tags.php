@@ -129,7 +129,7 @@ function hh_save_profile_pic() {
         $oldFile = $_FILES['fileUpload-file']['tmp_name'];
         $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
 
-        exec('/usr/local/bin/convert -crop '.$x1.'x'.$y1.' +'.$x2.'+'.$y2.' -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
+        exec('/usr/local/bin/convert -crop '.$x1.'x'.$y1.'+'.$x2.'+'.$y2.' -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
         $meta_value = $upload_dir['url'].'/'.basename($newFile);
         $meta_key = 'profile_pic';
         update_user_meta($current_user->ID,$meta_key,$meta_value);
