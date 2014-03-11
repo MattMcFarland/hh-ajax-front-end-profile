@@ -131,7 +131,7 @@ function hh_save_profile_pic() {
 
         $oldFile = $_FILES['fileUpload-file']['tmp_name'];
         $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic_full.jpg';
-        $cropped = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
+        $cropped = $upload_dir['path'].'/id_'.$current_user->ID.'_pic._'.generateRandomString(25).'jpg';
         exec('/usr/local/bin/convert -resize '.$cw.'x'.$ch. ' -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
         exec('/usr/local/bin/convert -crop '.$w.'x'.$h.'+'.$x1.'+'.$y1.' -format jpg '.$newFile.' '.$cropped.' 2>&1',$error);
         $meta_value = $upload_dir['url'].'/'.basename($cropped);
