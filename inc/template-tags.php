@@ -134,12 +134,13 @@ function hh_save_profile_pic() {
         $meta_key = 'profile_pic';
         update_user_meta($current_user->ID,$meta_key,$meta_value);
         wp_update_user( array ( 'ID' => $current_user->ID, $meta_key => $meta_value ) );
-        $result['stdout'] = $error;
+        $result['stdout'] = print_r($error,true);
         $result['type'] = "success";
         $result['meta_key'] = $meta_key;
         $result['meta_value'] = $meta_value;
         json_encode($result);
         echo $result;
+        var_dump($result);
     die();
 
 }
