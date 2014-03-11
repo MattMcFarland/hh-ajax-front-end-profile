@@ -93,7 +93,7 @@ jQuery(document).ready(function($) {
 
         $(this).ajaxForm({
             type : "post",
-            dataType : "json",
+            dataType : "html",
             url : _hh_ajax_fileUploader.ajaxurl,
             data : {action: "hh_save_profile_pic"},
             async: true,
