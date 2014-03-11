@@ -113,41 +113,41 @@ function hh_save_profile_pic() {
     header('Content-type: application/json');
     var_dump ($_POST);
     var_dump ($_FILES);
-    die();
+
 
     global $current_user;
     if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
         exit("No naughty business please");
     }
 
-    //$valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
-    //$file = str_replace(' ', '_',$_FILES['fileUpload-file']['tmp_name']);
-    //$result['file_name']['$_FILES']['tmp_name'];
+    $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
+    $file = str_replace(' ', '_',$_FILES['fileUpload-file']['tmp_name']);
+    $result['file_name']['$_FILES']['tmp_name'];
     // get uploaded file extension
-    //$ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     $result['formData'] = $_POST['formData'];
 
     $max_size = 1048576;
-    if ($_FILES['fileUpload-file']['size'] < $max_size)
-        {
-            $x1 = $_POST['x1'];
-            $y1 = $_POST['y1'];
-            $x2 = $_POST['x2'];
-            $y2 = $_POST['y2'];
+    if (in_array($ext, $valid_exts) AND $_FILES['hvac-hacks-post-file']['size'] < $max_size)
+    {
+        $x1 = $_POST['x1'];
+        $y1 = $_POST['y1'];
+        $x2 = $_POST['x2'];
+        $y2 = $_POST['y2'];
 
-            $upload_dir =wp_upload_dir();
+        $upload_dir =wp_upload_dir();
 
-            $oldFile = $_FILES['fileUpload-file']['tmp_name'];
-            $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
+        $oldFile = $_FILES['fileUpload-file']['tmp_name'];
+        $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic.jpg';
 
-            exec('/usr/local/bin/convert -crop '.$x1.'x'.$y1.' +'.$x2.'+'.$y2.' -auto-orient -strip -interlace Plane -resize 150x150^ -gravity center -extent 150x150 -quality 62 -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
-            $meta_value = $upload_dir['url'].'/'.basename($newFile);
-            $meta_key = 'profile_pic';
-            update_user_meta($current_user->ID,$meta_key,$meta_value);
-            wp_update_user( array ( 'ID' => $current_user->ID, $_POST['meta_key'] =>$_POST['meta_value']) ) ;
-            $result['type'] = "success";
-            $result['new_value'] = get_the_author_meta( $_POST['meta_key'], $current_user->ID);  //gets saved value from server
-        } else {
+        exec('/usr/local/bin/convert -crop '.$x1.'x'.$y1.' +'.$x2.'+'.$y2.' -auto-orient -strip -interlace Plane -resize 150x150^ -gravity center -extent 150x150 -quality 62 -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
+        $meta_value = $upload_dir['url'].'/'.basename($newFile);
+        $meta_key = 'profile_pic';
+        update_user_meta($current_user->ID,$meta_key,$meta_value);
+        wp_update_user( array ( 'ID' => $current_user->ID, $_POST['meta_key'] =>$_POST['meta_value']) ) ;
+        $result['type'] = "success";
+        $result['new_value'] = get_the_author_meta( $_POST['meta_key'], $current_user->ID);  //gets saved value from server
+    } else {
         $result['type'] = "fail";
         $result['message'] = "Incorrect file extension or file size too big.";
     }

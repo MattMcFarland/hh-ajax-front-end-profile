@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
      * When you click you click on the X button to close the container
      */
     $(document).on('click',close_container,function() {
-        $('#fileUpload-container').hide();
+        location.reload();
     });
 
     /**
@@ -23,6 +23,7 @@ jQuery(document).ready(function($) {
      */
     $(document).on('click',change_photo,function() {
         $('#fileUpload-container').show();
+        $('.edit-field').addClass('disabled');
     });
 
     /**
@@ -87,14 +88,22 @@ jQuery(document).ready(function($) {
         var status = $('#upload_status');
         var process = $('#upload_processing');
         var submit = $('.fileUpload-process');
-
+        nonce = $(this).attr('data-nonce');
         $('body').css('cursor', 'wait');
 
         $(this).ajaxForm({
             type : "post",
             dataType : "html",
             url : _hh_ajax_fileUploader.ajaxurl,
-            data : {action: "hh_save_profile_pic"},
+            data : {action: "hh_save_profile_pic",
+                nonce:  nonce,
+                x1:     $(fileInput).attr('data-x1'),
+                y1:     $(fileInput).attr('data-y1'),
+                x2:     $(fileInput).attr('data-x2'),
+                y2:     $(fileInput).attr('data-y2'),
+                w:     $(fileInput).attr('data-w'),
+                h:     $(fileInput).attr('data-h')
+            },
             async: true,
 
             /* reset before submitting */
@@ -130,7 +139,7 @@ jQuery(document).ready(function($) {
                 $(selectMode).show();
                 var response = data.responseText;
                 console.log(response);
-                $(close_container).trigger('click');
+                //$(close_container).trigger('click');
                 $('body').css('cursor', 'auto');
             }
         });
