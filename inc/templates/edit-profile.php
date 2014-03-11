@@ -57,7 +57,7 @@ add_shortcode('display_profile_editor','hh_display_profile_editor');
 function hh_file_upload_ui() {
     $nonce = wp_create_nonce('hh_save_profile_pic_nonce');
     ob_start() ?>
-    <form action="" data-nonce = "<?php echo $nonce; ?>" enctype="multipart/form-data" method="post" name="fileUpload-containe" id="fileUpload-container">
+    <div id="fileUpload-container">
         <div id="fileUpload-bg">
             <div id="fileUpload-inner">
                 <header class="row">
@@ -66,6 +66,7 @@ function hh_file_upload_ui() {
                 </header>
 
                 <section class="row fileUpload-body">
+
                     <!--- Above Canvas --->
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
                     <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Crop Photo</div>
@@ -81,7 +82,6 @@ function hh_file_upload_ui() {
                             </div>
                         </a>
 
-                        <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
 
                         <!--- Preview Stage --->
                         <div class="fileUpload-canvasInner fileUpload-preview" id="fileUpload-previewCanvas">
@@ -94,10 +94,10 @@ function hh_file_upload_ui() {
                         </div>
 
                         <!--- Processing Stage --->
-                        <div class="fileUpload-Process" style="text-align:center;display:none;">
+                        <div class="fileUpload-process" style="text-align:center;display:none;">
                             <span id ="upload_percent" class="font-size:30px;"></span>
                             <img id ="upload_processing" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="display:none;"/>
-                            <span id = "upload_status" class="Uploading..."></span>
+                            <span id = "upload_status"></span>
                         </div>
 
                     </div>
@@ -106,16 +106,21 @@ function hh_file_upload_ui() {
 
                 <!--- Below Canvas --->
                 <footer class="row fileUpload-belowCanvas">
-                    <div class="fileUpload-preview">
+
+                    <!--Preview Controls (save etc)--->
+                    <form class="fileUpload-preview" name = "fileUpload-control" id = "fileUpload-control" action="" data-nonce = "<?php echo $nonce; ?>" enctype="multipart/form-data" method="post" >
+                        <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
                         <div class= "fileUpload-message" id="Message"><div id="fileUpload-fileData"></div></div>
                         <button type="submit" class="btn btn-success btn-large" ><i class="fa fa-check"></i> Save</button>
                         <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban "></i> Cancel</button>
-                    </div>
+                    </form>
+
+                    <!---Select Message--->
                     <div class="fileUpload-select">
                         <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
                     </div>
 
-                    <!--- Error Stage --->
+                    <!--- Error --->
                     <div class="fileUpload-error">
                         <div class= "fileUpload-message" id="fileUpload-errorMessage"></div>
                         <button type="button" class="btn btn-success btn-large" onclick="jQuery('#fileUpload-file').trigger('click')" ><i class="fa fa-check"></i> Try Again</button>
@@ -126,7 +131,7 @@ function hh_file_upload_ui() {
                 </footer>
             </div>
         </div>
-    </form>
+    </div>
 
     <?php $result = ob_get_clean();
     return $result;
