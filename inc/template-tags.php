@@ -135,8 +135,6 @@ function hh_save_profile_pic() {
         update_user_meta($current_user->ID,$meta_key,$meta_value);
         wp_update_user( array ( 'ID' => $current_user->ID, $_POST['meta_key'] =>$_POST['meta_value']) ) ;
         $result['type'] = "success";
-        $result['new_value'] = get_the_author_meta( $_POST['meta_key'], $current_user->ID);  //gets saved value from server
-
 
     die();
 
