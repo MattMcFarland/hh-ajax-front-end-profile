@@ -19,9 +19,9 @@ jQuery(document).ready(function($) {
         var nonce = $formfield.attr('data-nonce');  console.log('nonce: '+nonce);
         var meta_value = $('#input-'+meta_key).val();  console.log('meta_value: '+meta_value);
 
-        $.ajax({
+        $.ajaxForm({
             dataType : "json",
-            data : {action: "hh_update_user_profile", meta_key : meta_key, meta_value : meta_value, nonce: nonce},
+            data : {action: "hh_update_user_profile" },
             beforeSend: function() {
                 edit_stop(meta_key);
                 edit_alert_show(meta_key,'info','Submitting Request...',true);
