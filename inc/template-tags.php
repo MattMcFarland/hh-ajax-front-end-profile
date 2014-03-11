@@ -122,10 +122,8 @@ function hh_save_profile_pic() {
 
     $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
     $file = str_replace(' ', '_',$_FILES['fileUpload-file']['tmp_name']);
-    $result['file_name']['$_FILES']['tmp_name'];
     // get uploaded file extension
     $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-    $result['formData'] = $_POST['formData'];
 
     $max_size = 1048576;
     if (in_array($ext, $valid_exts) AND $_FILES['hvac-hacks-post-file']['size'] < $max_size)
