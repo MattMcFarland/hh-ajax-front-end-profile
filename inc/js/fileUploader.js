@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
      * When you click you click on the X button to close the container
      */
     $(document).on('click',close_container,function() {
-        location.reload();
+        $('#fileUpload-container').hide();
     });
 
     /**
@@ -23,7 +23,6 @@ jQuery(document).ready(function($) {
      */
     $(document).on('click',change_photo,function() {
         $('#fileUpload-container').show();
-        $('.edit-field').addClass('disabled');
     });
 
     /**
