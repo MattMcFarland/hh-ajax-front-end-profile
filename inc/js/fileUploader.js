@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
             if (file.size < 1048576) {
                 /* html FileRender Api */
                 var oFReader = new FileReader();
-                oFReader.readAsDataURL(document.getElementById(fileInput).files[0]);
+                oFReader.readAsDataURL(document.getElementById('fileUpload-file').files[0]);
                 oFReader.onload = function (oFREvent) {
                     $(selectMode).hide();
                     $(previewMode).show();
