@@ -114,6 +114,7 @@ jQuery(document).ready(function($) {
                 percent.html(pVel);
                 if (pVel === '100%') {
                     percent.hide();
+                    $('#upload_processing').show();
                     status.html('<b>Processing...</b>');
                     $('#hh_upload_progress').hide();
                 } else {
@@ -124,12 +125,13 @@ jQuery(document).ready(function($) {
 
             /* complete call back */
             complete: function(data) {
+                submit.hide();
                 process.hide();
                 status.hide();
+                $(selectMode).show();
                 var response = data.responseText;
                 console.log(response);
-                //response = response.substring(0, response.length - 1);
-                //status.html(response).fadeIn();
+                $(close_container).trigger('click');
                 $('body').css('cursor', 'auto');
             }
         });
