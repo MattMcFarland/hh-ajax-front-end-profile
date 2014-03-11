@@ -100,6 +100,8 @@ jQuery(document).ready(function($) {
 
             /* reset before submitting */
             beforeSend: function() {
+                selectMode.hide();
+                previewMode.hide();
                 submit.show();
                 percent.html('0%').show();
                 status.html('<b>Connecting...</b>')
