@@ -111,8 +111,7 @@ function hh_ajax_load_profile_editor() {
  */
 function hh_save_profile_pic() {
     header('Content-type: application/json');
-    var_dump ($_POST);
-    var_dump ($_FILES);
+
 
 
     global $current_user;
@@ -120,14 +119,6 @@ function hh_save_profile_pic() {
         exit("No naughty business please");
     }
 
-    $valid_exts = array('jpeg', 'jpg', 'png', 'gif' ); // valid extensions
-    $file = str_replace(' ', '_',$_FILES['fileUpload-file']['tmp_name']);
-    // get uploaded file extension
-    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-
-    $max_size = 1048576;
-    if (in_array($ext, $valid_exts) AND $_FILES['hvac-hacks-post-file']['size'] < $max_size)
-    {
         $x1 = $_POST['x1'];
         $y1 = $_POST['y1'];
         $x2 = $_POST['x2'];
@@ -145,18 +136,7 @@ function hh_save_profile_pic() {
         wp_update_user( array ( 'ID' => $current_user->ID, $_POST['meta_key'] =>$_POST['meta_value']) ) ;
         $result['type'] = "success";
         $result['new_value'] = get_the_author_meta( $_POST['meta_key'], $current_user->ID);  //gets saved value from server
-    } else {
-        $result['type'] = "fail";
-        $result['message'] = "Incorrect file extension or file size too big.";
-    }
 
-    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-        $result = json_encode($result);
-        echo $result;
-    }
-    else {
-        header("Location: ".$_SERVER["HTTP_REFERER"]);
-    }
 
     die();
 
