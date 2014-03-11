@@ -138,16 +138,7 @@ jQuery(document).ready(function($) {
 
             /* complete call back */
             complete: function(data) {
-                submit.hide();
-                process.hide();
-                status.hide();
-                $(selectMode).show();
-                var response = data.responseText;
-                console.log(response);
-                console.log(response.type);
-                $(selectMode).append('<img src="'+response.meta_value+'"/>')
-                //$(close_container).trigger('click');
-                $('body').css('cursor', 'auto');
+                $(close_container).trigger('click');
             }
         });
         if (uploading===false) $(form).submit();
