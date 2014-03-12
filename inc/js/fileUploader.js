@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
         var ext = file.name.split('.').pop().toLowerCase();
 
         if (valid_exts.indexOf(ext) > -1) {
-            if (file.size < 1048576) {
+            if (file.size < 6291456) {
                 /* html FileRender Api */
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById('fileUpload-file').files[0]);
@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
                     });
                 }
             } else {
-                $(errorMessage).html('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Your file must be less than 1MB in size)').fadeIn();
+                $(errorMessage).html('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Filesize must be less than 6 Megabytes)').fadeIn();
             }
         } else {
             $(errorMessage).html('<span style="font-weight:bold;color:#FF0000;">Invalid Filetype!</span><br/> (Only jpeg, jpg, png, gif are supported)').fadeIn();

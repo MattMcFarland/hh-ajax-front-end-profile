@@ -117,7 +117,7 @@ function hh_file_upload_ui() {
 
                     <!---Select Message--->
                     <div class="fileUpload-select">
-                        <div class="fileUpload-message">Max Filesize: 1MB (jpg, gif, png only)</div>
+                        <div class="fileUpload-message">Standard Images (jpg, gif, png) only</div>
                     </div>
 
                     <!--- Error --->
