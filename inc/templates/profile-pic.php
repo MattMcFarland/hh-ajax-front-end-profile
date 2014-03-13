@@ -34,7 +34,7 @@ function hh_download_gravatar($user_id,$size='150') {
         exec('/usr/local/bin/convert -auto-orient -strip -interlace Plane -resize 150x150^ -gravity center -extent 150x150 -quality 62 -format jpg '.$process.' '.$final.' 2>&1',$error);
         $profile_pic = $upload_dir['url'].'/'.basename($final);
     } else {
-        $profile_pic = plugin_dir_url(). '../img/mystery.gif';
+        $profile_pic = plugin_dir_url(__FILE__). '../img/mystery.gif';
     }
     update_user_meta($user_id,'profile_pic',$profile_pic);
 }
