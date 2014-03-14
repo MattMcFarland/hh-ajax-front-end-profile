@@ -88,7 +88,7 @@ add_action('init', 'hh_profile_editor_enqueue_scripts');
 
 
 function hh_init_fileUploader_scripts(){
-    wp_register_script( 'hh_ajax_fileUploader-script', plugin_dir_url( __FILE__ ) . 'inc/js/fileUploader.js', array('jquery'),'a05',true);
+    wp_register_script( 'hh_ajax_fileUploader-script', plugin_dir_url( __FILE__ ) . 'inc/js/fileUploader.js', array('jquery'),'a05');
     if ( !is_admin() && is_page('edit-profile') ) {
         wp_enqueue_script( 'hh_ajax_fileUploader-script' );
         wp_localize_script(
@@ -107,7 +107,7 @@ add_action('init', 'hh_init_fileUploader_scripts');
 function hh_init_Jcrop_plugin(){
     $JcropPath = plugin_dir_url( __FILE__ ) . 'inc/vendor/Jcrop/';
     wp_register_style( 'hh_ajax_jcrop-style',  $JcropPath . 'css/jquery.Jcrop.min.css' );
-    wp_register_script( 'hh_ajax_jcrop-script',  $JcropPath . 'js/jquery.Jcrop.min.js', array('jquery'),'a05',true);
+    wp_register_script( 'hh_ajax_jcrop-script',  $JcropPath . 'js/jquery.Jcrop.min.js', array('jquery'),'a05');
     if ( !is_admin() && is_page('edit-profile') ) {
         wp_enqueue_script( 'hh_ajax_jcrop-script' );
         wp_enqueue_style( 'hh_ajax_jcrop-style' );
