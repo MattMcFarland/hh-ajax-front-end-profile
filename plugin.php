@@ -84,7 +84,7 @@ function hh_profile_editor_enqueue_scripts(){
     }
 
 }
-add_action('init', 'hh_profile_editor_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'hh_profile_editor_enqueue_scripts');
 
 
 function hh_init_fileUploader_scripts(){
@@ -101,7 +101,7 @@ function hh_init_fileUploader_scripts(){
     }
 
 }
-add_action('init', 'hh_init_fileUploader_scripts');
+add_action('wp_enqueue_scripts', 'hh_init_fileUploader_scripts');
 
 
 function hh_init_Jcrop_plugin(){
@@ -113,4 +113,4 @@ function hh_init_Jcrop_plugin(){
         wp_enqueue_style( 'hh_ajax_jcrop-style' );
     }
 }
-add_action('init', 'hh_init_Jcrop_plugin');
+add_action('wp_enqueue_scripts', 'hh_init_Jcrop_plugin');
