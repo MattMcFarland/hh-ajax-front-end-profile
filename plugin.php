@@ -69,9 +69,9 @@ if ( is_admin() )
 function hh_profile_editor_enqueue_scripts(){
 
     if ( !is_admin() && is_page('edit-profile') ) {
-        wp_register_style( 'hh_ajax_fe_profile-style', plugin_dir_url( __FILE__ ) . 'inc/css/profile-edit.min.css' );
-        wp_enqueue_style( 'hh_ajax_fe_fileUpload-style', plugin_dir_url( __FILE__ ) . 'inc/css/fileUpload.min.css' );
-        wp_register_script( 'hh_ajax_fe_profile-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.min.js', array('jquery'),'b10');
+        wp_register_style( 'hh_ajax_fe_profile-style', plugin_dir_url( __FILE__ ) . 'inc/css/profile-edit.min.css',null,'1.0.1a' );
+        wp_enqueue_style( 'hh_ajax_fe_fileUpload-style', plugin_dir_url( __FILE__ ) . 'inc/css/fileUpload.min.css',null,'1.0.1a' );
+        wp_register_script( 'hh_ajax_fe_profile-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.min.js', array('jquery'),'1.0.1.a');
         wp_enqueue_script( 'hh_ajax_fe_profile-script' );
         wp_enqueue_style( 'hh_ajax_fe_profile-style' );
         wp_localize_script(
@@ -88,7 +88,7 @@ add_action('wp_enqueue_scripts', 'hh_profile_editor_enqueue_scripts');
 
 
 function hh_init_fileUploader_scripts(){
-    wp_register_script( 'hh_ajax_fileUploader-script', plugin_dir_url( __FILE__ ) . 'inc/js/fileUploader.min.js', array('jquery'),'a05');
+    wp_register_script( 'hh_ajax_fileUploader-script', plugin_dir_url( __FILE__ ) . 'inc/js/fileUploader.min.js', array('jquery'),'1.0.1.a');
     if ( !is_admin() && is_page('edit-profile') ) {
         wp_enqueue_script( 'hh_ajax_fileUploader-script' );
         wp_localize_script(
