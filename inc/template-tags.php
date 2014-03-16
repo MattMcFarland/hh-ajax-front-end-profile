@@ -85,7 +85,7 @@ function hh_ajax_load_profile_editor() {
             <div class="col-sm-7">
                 <div id="hh_pfe-name" class="well well-inverse">
                     <h2>Basic Info</h2><br/>
-                    <?php hh_generate_text_field('Display Name','display_name'); ?>
+                    <?php hh_generate_text_field('Display As','display_name'); ?>
                     <?php hh_generate_text_field('First Name','first_name'); ?>
                     <?php hh_generate_text_field('Last Name','last_name'); ?>
                 </div>

@@ -49,7 +49,8 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $(document).on('click','.edit-field', function() {
+    $(document).on('click','a.edit-field', function(e) {
+        e.preventDefault();
         if ( $(this).hasClass('disabled') ) return;
         edit_start($(this).attr('data-meta_key'));
     });
@@ -59,16 +60,15 @@ jQuery(document).ready(function($) {
     });
 
     function edit_start(meta_key) {
-        $('#current_meta_key').val(meta_key);
-        $('#'+meta_key).show();
+        $('#pad-'+meta_key).addClass('field-highlight').css('padding','0');
         $('#main-'+meta_key).addClass('edit-highlight');
         $('#swap-'+meta_key).hide();
-        $('#pad-'+meta_key).addClass('field-highlight').css('padding','0');
+        $('#edit-'+meta_key).show();
         $('#controls-'+meta_key).show().css('height','auto');
         $('#input-'+meta_key).focus();
     }
     function edit_stop(meta_key) {
-        $('#'+meta_key).removeAttr('style');
+        $('#edit-'+meta_key).removeAttr('style');
         $('#input-'+meta_key).val($('#data-'+meta_key).text());
         $('#main-'+meta_key).removeClass('edit-highlight').removeAttr('style');
         $('#pad-'+meta_key).removeClass('field-highlight').removeAttr('style');

@@ -6,19 +6,19 @@ function hh_generate_text_field($label, $meta_key) {
     global $current_user;
     echo '
 <form action="" method="post" data-meta_key="'.$meta_key.'" enctype="multipart/form-data" class="hh-update-profile" id="update-'.$meta_key.'">
-    <div id = "main-'.$meta_key.'" data-nonce = "' . $nonce . '" data-meta_key="'.$meta_key.'" class="row edit-field">
+    <div id = "main-'.$meta_key.'" data-nonce = "' . $nonce . '" data-meta_key="'.$meta_key.'" class="row">
         <div id="label-'.$meta_key.'" class="col-xs-5">
             <span class="pr-label pull-right">'.$label.'</span>
         </div>
-        <div id="pad-'.$meta_key.'" class="col-xs-7 pr-field">
+        <a href="#" data-meta_key="'.$meta_key.'" id="pad-'.$meta_key.'" class="col-xs-7 pr-field edit-field">
                 <span id="swap-'.$meta_key.'">
                     <span id ="data-'.$meta_key.'">'. get_the_author_meta( $meta_key, $current_user->ID ).'</span>
                     <span class="pr-change"><i class="fa fa-pencil"></i></span>
                 </span>
-            <div class="pr-input-wrap" class="col-xs-12" id="'.$meta_key.'">
+            <div class="pr-input-wrap" class="col-xs-12" id="edit-'.$meta_key.'">
                 <input id="input-'.$meta_key.'" name="input-'.$meta_key.'" type="text" value="'.get_the_author_meta( $meta_key, $current_user->ID ).'">
             </div>
-        </div>
+        </a>
         <div class="pr-message col-xs-7" id ="message-'.$meta_key.'"></div>
     </div>
     <div class="row">
