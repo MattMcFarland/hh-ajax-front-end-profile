@@ -25,7 +25,7 @@ function hh_generate_text_field($label, $meta_key) {
         <div class="col-xs-12">
             <div class="pr-control"  id = "controls-'.$meta_key.'" >
                     <span class="pull-right">
-                    <button type="submit" role="button" class="btn btn-success btn-sm pr-save"><i class="fa fa-check"></i> Save</a>
+                    <button title="save" type="submit" role="button" class="btn btn-success btn-sm pr-save"><i class="fa fa-check"></i> Save</a>
                         <button data-meta_key="'.$meta_key.'" type="button" role="button" id ="cancel-'.$meta_key.'" class="btn btn-danger btn-sm pr-cancel"><i class="fa fa-times-circle"></i> Cancel</button>
                     </span>
             </div>
