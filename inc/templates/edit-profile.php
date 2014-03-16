@@ -62,7 +62,7 @@ function hh_file_upload_ui() {
             <div id="fileUpload-inner">
                 <header class="row">
                     <div class="col-xs-10"><h1>Upload Profile Photo</h1></div>
-                    <h1 class="col-xs-2"><a type="button" class="close-fileUpload-container" id="fileUpload-X-button"><i class="fa fa-times"></i></a></h1>
+                    <h1 class="col-xs-2"><a href="/edit-profile" type="button" class="close-fileUpload-container" id="fileUpload-X-button"><i class="fa fa-times"></i></a></h1>
                 </header>
 
                 <section class="row fileUpload-body">
