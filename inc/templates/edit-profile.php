@@ -85,7 +85,7 @@ function hh_file_upload_ui() {
 
                         <!--- Preview Stage --->
                         <img src="" class="fileUpload-preview" id="fileUpload-preview"/>
-\
+
                         <!--- Error Stage --->
                         <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
                             <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>
