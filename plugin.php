@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Ajax Front End Profile
  * Description: Adds a Front End Profile / Account / Custom Avatar to wordpress.
- * Version: 1.0.1.a.issue1.3
+ * Version: 1.0.1.a.issue1.4
  * Author: Matthew A McFarland
  * Email: mmcfarland@hvac-hacks.com
  * Dependencies: Twitter Bootstrap 3.0.3, jQuery 10x, jQuery UI,
