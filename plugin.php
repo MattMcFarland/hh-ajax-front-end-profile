@@ -110,7 +110,7 @@ function hh_init_Jcrop_plugin(){
     $JcropPath = plugin_dir_url( __FILE__ ) . 'inc/vendor/Jcrop/';
     if ( !is_admin() && is_page('edit-profile') ) {
         wp_register_style( 'hh_ajax_jcrop-style',  $JcropPath . 'css/jquery.Jcrop.min.css' );
-        wp_register_script( 'hh_ajax_jcrop-script',  $JcropPath . 'js/jquery.Jcrop.min.js', array('jquery'),$hh_ajax_front_end_profile_name['version_value']);
+        wp_register_script( 'hh_ajax_jcrop-script',  $JcropPath . 'js/jquery.Jcrop.min.js', array('jquery'),NULL);
         wp_enqueue_script( 'hh_ajax_jcrop-script' );
         wp_enqueue_style( 'hh_ajax_jcrop-style' );
     }
