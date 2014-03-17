@@ -46,7 +46,7 @@ jQuery(document).ready(function($) {
                     var $editImage = $(preview);
                     $editImage.css('visibility', 'visible');
                     $editImage.attr('src', oFREvent.target.result).fadeIn();
-                    alert('version 1.0.1.a.4');
+                    alert('version 1.0.1.a.5');
 
 
                     $editImage.show();
@@ -117,6 +117,7 @@ jQuery(document).ready(function($) {
                //hide preview mode
                 $(previewMode).hide();
                 $(preview).hide();
+                $('#fileUpload-file').hide();
 
                 container.show();
                 percent.html('0%').show();
