@@ -92,10 +92,10 @@ function hh_file_upload_ui() {
                         </div>
 
                         <!--- Processing Stage --->
-                        <div id="fuProcessContainer" style="padding:2em 1em; text-align:center;display:none; color:#666;">
-                            <div id ="fuProcessPercent" style="font-size:8em; font-weight:bold;"></div>
-                            <img id ="fuProcessImage" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="margin-top:3em; display:none;"/>
-                            <div id = "fuProcessStatus" style="margin-top:1em;font-size:2em;"></div>
+                        <div id="fuProcessContainer" style="padding:2em 1em; text-align:center;display:none; color:#777;">
+                            <div id ="fuProcessPercent" style="font-size:7em; font-weight:bold;"></div>
+                            <img id ="fuProcessImage" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="margin-top:4em; display:none;"/>
+                            <div id = "fuProcessStatus" style="margin-top:2em;font-size:2em;"></div>
                         </div>
 
                     </div>
