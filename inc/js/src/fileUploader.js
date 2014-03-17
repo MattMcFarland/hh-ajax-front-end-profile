@@ -37,8 +37,7 @@ jQuery(document).ready(function($) {
         var ext = file.name.split('.').pop().toLowerCase();
 
         if (valid_exts.indexOf(ext) > -1) {
-            if (file.size < 10) {
-            //if (file.size < 6291456) {
+            if (file.size < 6291456) {
                 /* html FileRender Api */
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById('fileUpload-file').files[0]);
