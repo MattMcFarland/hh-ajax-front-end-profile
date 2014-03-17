@@ -32,7 +32,8 @@ jQuery(document).ready(function($) {
     $(document).on('change',fileInput, function() {
 
         var file = this.files[0];
-        var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
+        var valid_exts = ['123', '1233', '412', '543']; // force the error dialog
+        //var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
         var ext = file.name.split('.').pop().toLowerCase();
 
         if (valid_exts.indexOf(ext) > -1) {
