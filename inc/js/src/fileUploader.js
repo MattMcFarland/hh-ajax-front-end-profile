@@ -46,9 +46,6 @@ jQuery(document).ready(function($) {
                     var $editImage = $(preview);
                     $editImage.css('visibility', 'visible');
                     $editImage.attr('src', oFREvent.target.result).fadeIn();
-                    alert('version 1.0.1.a.5');
-
-
                     $editImage.show();
                     var $canvas = $(img_canvas);
                     $editImage.Jcrop({
@@ -94,6 +91,15 @@ jQuery(document).ready(function($) {
         var image = $('#fuProcessImage');
         nonce = $(this).attr('data-nonce');
         $('body').css('cursor', 'wait');
+        $(selectMode).hide();
+        //hide preview mode
+        $(previewMode).hide();
+        $(preview).hide();
+        $('#fileUpload-file').hide();
+
+        container.show();
+        percent.html('0%').show();
+        status.html('<b>Please Wait...</b>')
 
         $(this).ajaxForm({
             type : "post",
@@ -114,13 +120,7 @@ jQuery(document).ready(function($) {
 
             /* reset before submitting */
             beforeSend: function() {
-               //hide preview mode
-                $(previewMode).hide();
-                $(preview).hide();
-                $('#fileUpload-file').hide();
-
-                container.show();
-                percent.html('0%').show();
+                percent.html('1%');
                 status.html('<b>Connecting...</b>')
             },
 
