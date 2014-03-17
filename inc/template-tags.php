@@ -119,33 +119,35 @@ function hh_save_profile_pic() {
         exit("No naughty business please");
     }
 
-        $x1 = $_POST['x1'];
-        $y1 = $_POST['y1'];
-        $x2 = $_POST['x2'];
-        $y2 = $_POST['y2'];
-        $w = $_POST['w'];
-        $h = $_POST['h'];
-        $cw = $_POST['cw'];
-        $ch = $_POST['ch'];
-        $upload_dir =wp_upload_dir();
+    $x1 = $_POST['x1'];
+    $y1 = $_POST['y1'];
+    $x2 = $_POST['x2'];
+    $y2 = $_POST['y2'];
+    $w = $_POST['w'];
+    $h = $_POST['h'];
+    $cw = $_POST['cw'];
+    $ch = $_POST['ch'];
+    $upload_dir =wp_upload_dir();
 
-        $oldFile = $_FILES['fileUpload-file']['tmp_name'];
-        $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic_full.jpg';
-        $cropped = $upload_dir['path'].'/id_'.$current_user->ID.'_pic._'.generateRandomString(25).'.jpg';
-        exec('/usr/local/bin/convert -resize '.$cw.'x'.$ch. ' -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
-        exec('/usr/local/bin/convert -crop '.$w.'x'.$h.'+'.$x1.'+'.$y1.' -format jpg '.$newFile.' '.$cropped.' 2>&1',$error);
-        $meta_value = $upload_dir['url'].'/'.basename($cropped);
-        $meta_key = 'profile_pic';
-        update_user_meta($current_user->ID,$meta_key,$meta_value);
-        wp_update_user( array ( 'ID' => $current_user->ID, $meta_key => $meta_value ) );
-        $result['post'] = print_r($_POST);
-        $result['error'] = print_r($error);
-        $result['type'] = "success";
-        $result['meta_key'] = $meta_key;
-        $result['meta_value'] = $meta_value;
-        json_encode($result);
-        echo $result;
-        var_dump($result);
+    $oldFile = $_FILES['fileUpload-file']['tmp_name'];
+    $newFile = $upload_dir['path'].'/id_'.$current_user->ID.'_pic_full.jpg';
+    $cropped = $upload_dir['path'].'/id_'.$current_user->ID.'_pic._'.generateRandomString(25).'.jpg';
+    exec('/usr/local/bin/convert -resize '.$cw.'x'.$ch. ' -format jpg '.$oldFile.' '.$newFile.' 2>&1',$error);
+    exec('/usr/local/bin/convert -crop '.$w.'x'.$h.'+'.$x1.'+'.$y1.' -format jpg '.$newFile.' '.$cropped.' 2>&1',$error);
+    $meta_value = $upload_dir['url'].'/'.basename($cropped);
+    $meta_key = 'profile_pic';
+    $old_meta_value = get_user_meta($current_user->ID,$meta_key);
+    update_user_meta($current_user->ID,$meta_key,$meta_value,$old_meta_value);
+    wp_update_user( array ( 'ID' => $current_user->ID, $meta_key => $meta_value ) );
+    $result['post'] = print_r($_POST);
+    $result['error'] = print_r($error);
+    $result['type'] = "success";
+    $result['meta_key'] = $meta_key;
+    $result['meta_value'] = $meta_value;
+    $result['old_meta_value'] = $old_meta_value;
+    json_encode($result);
+    error_log("Profile Pic Updated\n".$result);
+    echo $result;
     die();
 
 }
