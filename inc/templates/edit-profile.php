@@ -69,7 +69,7 @@ function hh_file_upload_ui() {
 
                     <!--- Above Canvas --->
                     <div class="fileUpload-Title fileUpload-error" id="fileUpload-previewTitle">Please Try Again</div>
-                    <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Crop Photo</div>
+                    <div class="fileUpload-Title fileUpload-preview" id="fileUpload-previewTitle">Crop Photo!!!</div>
 
                     <!--- Canvas Area --->
                     <div id = "fileUpload-canvas">
@@ -84,10 +84,8 @@ function hh_file_upload_ui() {
 
 
                         <!--- Preview Stage --->
-                        <div class="fileUpload-canvasInner fileUpload-preview" id="fileUpload-previewCanvas">
-                            <img src="" class="thumbnail " id="fileUpload-preview"/>
-                        </div>
-
+                        <img src="" class="fileUpload-preview" id="fileUpload-preview"/>
+\
                         <!--- Error Stage --->
                         <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
                             <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>

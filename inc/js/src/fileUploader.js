@@ -44,9 +44,12 @@ jQuery(document).ready(function($) {
                     $(selectMode).hide();
                     $(previewMode).show();
                     var $editImage = $(preview);
-                    $editImage.removeAttr('style');
                     $editImage.css('visibility', 'visible');
                     $editImage.attr('src', oFREvent.target.result).fadeIn();
+                    alert('version 1.0.1.a.4');
+
+
+                    $editImage.show();
                     var $canvas = $(img_canvas);
                     $editImage.Jcrop({
                         setSelect: [100,100,400,400],

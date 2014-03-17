@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Ajax Front End Profile
  * Description: Adds a Front End Profile / Account / Custom Avatar to wordpress.
- * Version: 1.0.1
+ * Version: 1.0.1.a.4
  * Author: Matthew A McFarland
  * Email: mmcfarland@hvac-hacks.com
  * Dependencies: Twitter Bootstrap 3.0.3, jQuery 10x, jQuery UI,
@@ -69,9 +69,10 @@ if ( is_admin() )
 function hh_profile_editor_enqueue_scripts(){
 
     if ( !is_admin() && is_page('edit-profile') ) {
-        wp_register_style( 'hh_ajax_fe_profile-style', plugin_dir_url( __FILE__ ) . 'inc/css/profile-edit.min.css',null,'1.0.1a' );
-        wp_enqueue_style( 'hh_ajax_fe_fileUpload-style', plugin_dir_url( __FILE__ ) . 'inc/css/fileUpload.min.css',null,'1.0.1a' );
-        wp_register_script( 'hh_ajax_fe_profile-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.min.js', array('jquery'),'1.0.1.a');
+        global $hh_ajax_front_end_profile_name;
+        wp_register_style( 'hh_ajax_fe_profile-style', plugin_dir_url( __FILE__ ) . 'inc/css/profile-edit.min.css',null,$hh_ajax_front_end_profile_name['version_value'] );
+        wp_enqueue_style( 'hh_ajax_fe_fileUpload-style', plugin_dir_url( __FILE__ ) . 'inc/css/fileUpload.min.css',null,$hh_ajax_front_end_profile_name['version_value'] );
+        wp_register_script( 'hh_ajax_fe_profile-script', plugin_dir_url( __FILE__ ) . 'inc/js/profile-edit.min.js', array('jquery'),$hh_ajax_front_end_profile_name['version_value']);
         wp_enqueue_script( 'hh_ajax_fe_profile-script' );
         wp_enqueue_style( 'hh_ajax_fe_profile-style' );
         wp_localize_script(
@@ -88,8 +89,9 @@ add_action('wp_enqueue_scripts', 'hh_profile_editor_enqueue_scripts');
 
 
 function hh_init_fileUploader_scripts(){
-    wp_register_script( 'hh_ajax_fileUploader-script', plugin_dir_url( __FILE__ ) . 'inc/js/fileUploader.min.js', array('jquery'),'1.0.1.a');
     if ( !is_admin() && is_page('edit-profile') ) {
+        global $hh_ajax_front_end_profile_name;
+        wp_register_script( 'hh_ajax_fileUploader-script', plugin_dir_url( __FILE__ ) . 'inc/js/src/fileUploader.js', array('jquery'),$hh_ajax_front_end_profile_name['version_value']);
         wp_enqueue_script( 'hh_ajax_fileUploader-script' );
         wp_localize_script(
             'hh_ajax_fileUploader-script',
@@ -108,7 +110,7 @@ function hh_init_Jcrop_plugin(){
     $JcropPath = plugin_dir_url( __FILE__ ) . 'inc/vendor/Jcrop/';
     if ( !is_admin() && is_page('edit-profile') ) {
         wp_register_style( 'hh_ajax_jcrop-style',  $JcropPath . 'css/jquery.Jcrop.min.css' );
-        wp_register_script( 'hh_ajax_jcrop-script',  $JcropPath . 'js/jquery.Jcrop.min.js', array('jquery'),'a05');
+        wp_register_script( 'hh_ajax_jcrop-script',  $JcropPath . 'js/jquery.Jcrop.min.js', array('jquery'),$hh_ajax_front_end_profile_name['version_value']);
         wp_enqueue_script( 'hh_ajax_jcrop-script' );
         wp_enqueue_style( 'hh_ajax_jcrop-style' );
     }
