@@ -57,14 +57,18 @@ add_shortcode('display_profile_editor','hh_display_profile_editor');
 function hh_file_upload_ui() {
     $nonce = wp_create_nonce('hh_save_profile_pic_nonce');
     ob_start() ?>
+    <!--- File Upload Modal --->
     <div id="fileUpload-container">
         <div id="fileUpload-bg">
             <div id="fileUpload-inner">
+
+                <!--- File Upload Header --->
                 <header class="row">
                     <div class="col-xs-10"><h1>Upload Profile Photo</h1></div>
                     <h1 class="col-xs-2"><a href="/edit-profile" type="button" class="close-fileUpload-container" id="fileUpload-X-button"><i class="fa fa-times"></i></a></h1>
                 </header>
 
+                <!--- File Upload Body --->
                 <section class="row fileUpload-body">
 
                     <!--- Above Canvas --->
@@ -82,30 +86,27 @@ function hh_file_upload_ui() {
                             </div>
                         </a>
 
-
                         <!--- Preview Stage --->
                         <img src="" class="fileUpload-preview" id="fileUpload-preview"/>
 
                         <!--- Error Stage --->
-                        <div class="fileUpload-error fileUpload-canvasInner" id="fileUpload-previewCanvas">
-                            <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" class="fileUpload-img"/>
-                        </div>
+                        <img src="<?php echo plugin_dir_url( __FILE__ ).'../img/error.gif'?>" style="display:none;" id="fuErrorIcon" class= "fileUpload-error fileUpload-img" />
 
                         <!--- Processing Stage --->
                         <div id="fuProcessContainer" style="padding:2em 1em; text-align:center;display:none; color:#777;">
-                            <div id ="fuProcessPercent" style="font-size:7em; font-weight:bold;"></div>
-                            <img id ="fuProcessImage" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="margin-top:4em; display:none;"/>
+                            <div id = "fuProcessPercent" style="font-size:7em; font-weight:bold;"></div>
+                            <img id = "fuProcessImage" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="margin-top:4em; display:none;"/>
                             <div id = "fuProcessStatus" style="margin-top:2em;font-size:2em;"></div>
                         </div>
 
-                    </div>
+                    </div><!--- #fileUpload-canvas --->
 
-                </section>
+                </section><!--- .fileUpload-body --->
 
                 <!--- Below Canvas --->
                 <footer class="row fileUpload-belowCanvas">
 
-                    <!--Preview Controls (save etc)--->
+                    <!--Preview Controls --->
                     <form class="fileUpload-preview" name = "fileUpload-control" id = "fileUpload-control" action="" data-nonce = "<?php echo $nonce; ?>" enctype="multipart/form-data" method="post" >
                         <input style="display:none;" type="file" name = "fileUpload-file" id="fileUpload-file">
                         <div class= "fileUpload-message" id="Message"><div id="fileUpload-fileData"></div></div>
@@ -118,18 +119,18 @@ function hh_file_upload_ui() {
                         <div class="fileUpload-message">Standard Images (jpg, gif, png) only</div>
                     </div>
 
-                    <!--- Error --->
-                    <div class="fileUpload-error">
-                        <div class= "fileUpload-message" id="fileUpload-errorMessage"></div>
+                    <!--- Error Message --->
+                    <div id="fuErrorMessageContainer" class="fuMode_error" style="display:none;">
+                        <div id="fuErrorMessageText"></div>
                         <button type="button" class="btn btn-success btn-large" onclick="jQuery('#fileUpload-file').trigger('click')" ><i class="fa fa-check"></i> Try Again</button>
                         <button type="button" class="btn btn-danger btn-large close-fileUpload-container"><i class="fa fa-ban "></i> Nevermind</button>
                     </div>
 
 
-                </footer>
-            </div>
-        </div>
-    </div>
+                </footer><!--- .fileUpload-belowCanvas --->
+            </div><!--- .fileUpload-inner --->
+        </div><!--- .fileUpload-bg --->
+    </div><!--- .fileUpload-container --->
 
     <?php $result = ob_get_clean();
     return $result;

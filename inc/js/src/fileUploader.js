@@ -1,12 +1,13 @@
 var close_container = '.close-fileUpload-container';
 var change_photo = '#hh-change-profile-photo';
 var fileInput = '#fileUpload-file';
-var errorMessage = '#fileUpload-errorMessage';
+var errorMessage = '#fuErrorMessageText';
 var jcrop_api;
 var img_canvas = '#fileUpload-canvas';
 var preview = '#fileUpload-preview';
 var selectMode = '.fileUpload-select';
 var previewMode = '.fileUpload-preview';
+var errorMode = '.fileUpload-error';
 var form = '#fileUpload-control';
 var uploading = false;
 
@@ -62,12 +63,22 @@ jQuery(document).ready(function($) {
                     });
                 }
             } else {
-                $(errorMessage).html('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Filesize must be less than 6 Megabytes)').fadeIn();
+                throwError('<span style="font-weight:bold;color:#FF0000;">Too big!</span><br/> (Filesize must be less than 6 Megabytes)');
             }
         } else {
-            $(errorMessage).html('<span style="font-weight:bold;color:#FF0000;">Invalid Filetype!</span><br/> (Only jpeg, jpg, png, gif are supported)').fadeIn();
+            throwError('<span style="font-weight:bold;color:#FF0000;">Invalid Filetype!</span><br/> (Only jpeg, jpg, png, gif are supported)');
         }
     });
+
+    function throwError($msg) {
+        $(selectMode).hide();
+        $(errorMessage).html($msg);
+        $(errorMode).fadeIn();
+    }
+
+    function hideErrorStuff() {
+
+    }
 
     function storeCoords(c)
     {
