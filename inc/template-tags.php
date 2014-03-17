@@ -111,11 +111,13 @@ function hh_ajax_load_profile_editor() {
  */
 function hh_save_profile_pic() {
     header('Content-type: application/json');
-
-
+    error_log("Profile Pic Updated\n");
+    error_log("POST DATA\n");
+    error_log(print_r($_POST));
 
     global $current_user;
     if ( !wp_verify_nonce( $_POST['nonce'], "hh_save_profile_pic_nonce")) {
+        error_log("nonce mismatch\n");
         exit("No naughty business please");
     }
 
@@ -145,8 +147,10 @@ function hh_save_profile_pic() {
     $result['meta_key'] = $meta_key;
     $result['meta_value'] = $meta_value;
     $result['old_meta_value'] = $old_meta_value;
+    error_log("Results\n");
+    error_log(var_export($result,true));
     json_encode($result);
-    error_log("Profile Pic Updated\n". print_r($result));
+    error_log(var_export($result,true));
     echo $result;
     die();
 
