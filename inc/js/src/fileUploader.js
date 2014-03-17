@@ -95,6 +95,7 @@ jQuery(document).ready(function($) {
         //hide preview mode
         $(previewMode).hide();
         $(preview).hide();
+        $('.jcrop-holder').hide();
         $('#fileUpload-file').hide();
 
         container.show();
