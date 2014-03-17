@@ -146,7 +146,7 @@ function hh_save_profile_pic() {
     $result['meta_value'] = $meta_value;
     $result['old_meta_value'] = $old_meta_value;
     json_encode($result);
-    error_log("Profile Pic Updated\n".$result);
+    error_log("Profile Pic Updated\n". print_r($result));
     echo $result;
     die();
 
