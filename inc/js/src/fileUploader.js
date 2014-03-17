@@ -33,12 +33,12 @@ jQuery(document).ready(function($) {
     $(document).on('change',fileInput, function() {
 
         var file = this.files[0];
-        var valid_exts = ['123', '1233', '412', '543']; // force the error dialog
-        //var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
+        var valid_exts = ['jpeg', 'jpg', 'png', 'gif']; // valid extensions
         var ext = file.name.split('.').pop().toLowerCase();
 
         if (valid_exts.indexOf(ext) > -1) {
-            if (file.size < 6291456) {
+            if (file.size < 10) {
+            //if (file.size < 6291456) {
                 /* html FileRender Api */
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(document.getElementById('fileUpload-file').files[0]);
