@@ -88,11 +88,10 @@ jQuery(document).ready(function($) {
 
     $(document).on('submit',form,function(e) {
         e.preventDefault();
-
-        var percent = $('#upload_percent');
-        var status = $('#upload_status');
-        var process = $('#upload_processing');
-        var submit = $('.fileUpload-process');
+        var container = $('#fuProcessContainer');
+        var percent = $('#fuProcessPercent');
+        var status = $('#fuProcessStatus');
+        var image = $('#fuProcessImage');
         nonce = $(this).attr('data-nonce');
         $('body').css('cursor', 'wait');
 
@@ -115,10 +114,11 @@ jQuery(document).ready(function($) {
 
             /* reset before submitting */
             beforeSend: function() {
-                uploading=true;
-                $(selectMode).hide();
+               //hide preview mode
                 $(previewMode).hide();
-                submit.show();
+                $(preview).hide();
+
+                container.show();
                 percent.html('0%').show();
                 status.html('<b>Connecting...</b>')
             },
@@ -130,9 +130,8 @@ jQuery(document).ready(function($) {
                 percent.html(pVel);
                 if (pVel === '100%') {
                     percent.hide();
-                    $('#upload_processing').show();
+                    image.show();
                     status.html('<b>Processing...</b>');
-                    $('#hh_upload_progress').hide();
                 } else {
                     status.html('<b>Uploading...</b>')
                 }
