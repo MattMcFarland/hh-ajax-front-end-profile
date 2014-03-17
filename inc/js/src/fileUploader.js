@@ -85,6 +85,7 @@ jQuery(document).ready(function($) {
 
     $(document).on('submit',form,function(e) {
         e.preventDefault();
+        alert('save button hit');
         var container = $('#fuProcessContainer');
         var percent = $('#fuProcessPercent');
         var status = $('#fuProcessStatus');
