@@ -85,7 +85,6 @@ jQuery(document).ready(function($) {
 
     $(document).on('submit',form,function(e) {
         e.preventDefault();
-        alert('save button hit');
         var container = $('#fuProcessContainer');
         var percent = $('#fuProcessPercent');
         var status = $('#fuProcessStatus');
@@ -121,6 +120,7 @@ jQuery(document).ready(function($) {
 
             /* reset before submitting */
             beforeSend: function() {
+                uploading = true;
                 percent.html('1%');
                 status.html('<b>Connecting...</b>')
             },
