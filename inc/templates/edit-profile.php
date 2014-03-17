@@ -93,9 +93,9 @@ function hh_file_upload_ui() {
 
                         <!--- Processing Stage --->
                         <div id="fuProcessContainer" style="padding:2em 1em; text-align:center;display:none; color:#666;">
-                            <div id ="fuProcessPercent" style="font-size:10em; font-weight:bold;"></div>
+                            <div id ="fuProcessPercent" style="font-size:8em; font-weight:bold;"></div>
                             <img id ="fuProcessImage" src = "<?php echo plugin_dir_url( __FILE__ ).'../img/process.gif' ?>"  style="margin-top:3em; display:none;"/>
-                            <div id = "fuProcessStatus" style="margin-top:1em;font-size:16px;"></div>
+                            <div id = "fuProcessStatus" style="margin-top:1em;font-size:2em;"></div>
                         </div>
 
                     </div>
